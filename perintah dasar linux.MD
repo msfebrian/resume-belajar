@@ -391,10 +391,19 @@ Aktifkan atau non aktifkan service saat boot
   systemctl disable <nama-service>
 ```
 
-Setting firewall
+Setting firewall dasar
+Pastikan OpenSSH sudah diijinkan terlebih dahulu sebelum enable firewall agar dapat diremot
 ```
-  sudo ufw enable
+  sudo ufw app list
+
+  sudo ufw allow OpenSSH
+
   sudo ufw allow 80,443/tcp
+
+  sudo ufw enable
+
+  sudo ufw status
+  
 ```
 
 Lihat ip address 
