@@ -397,8 +397,26 @@ Pastikan OpenSSH sudah diijinkan terlebih dahulu sebelum enable firewall agar da
   sudo ufw app list
 
   sudo ufw allow OpenSSH
+  
+  Utk port SSH
+  sudo ufw allow 22/tcp
 
   sudo ufw allow 80,443/tcp
+
+  Utk zerotier
+  sudo ufw allow 9993/udp
+  sudo ufw allow 9993/tcp
+
+  Utk zero trust cloudflare
+  sudo ufw allow 7844/tcp
+  sudo ufw allow 7844/udp
+
+  Port utk peer-to-peer
+  sudo ufw allow 3478/tcp
+  sudo ufw allow 3478/udp
+
+  Utk FTP Opsional jika dibutuhkan
+  sudo ufw allow 21/tcp
 
   sudo ufw enable
 
