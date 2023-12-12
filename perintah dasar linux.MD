@@ -429,6 +429,36 @@ Lihat ip address
   sudo ip add
 ```
 
+Konfigurasi ip address
+```
+sudo  nano /etc/netplan/00-installer-config.yaml
+```
+untuk DHCP
+```
+# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    ens33:
+      dhcp4: true
+  version: 2
+```
+
+untuk static
+```
+# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    ens33:
+      addresses:
+        - 192.168.88.3/24
+      route:
+        - to: default
+          via: 192.168.88.1
+      nameservers:
+        addresses: [8.8.8.8,8.8.4.4]
+  version: 2
+```
+
 ## Perintah service docker
 Perintah service pada docker contoh
 ```
