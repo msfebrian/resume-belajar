@@ -135,6 +135,18 @@ contoh tampil
     Fri Dec  8 10:00:20 AM WIB 2023
 ```
 
+## update dan upgrade repositories & os
+perintah satu-satu
+```
+  sudo update
+  sudo upgrade
+```
+
+perintah sekaligus
+```
+  sudo update && sudo upgrade -y
+```
+
 ## Mengelola File & Folder
 
 Melihat dan mengelola file  dengan Midnight Commander (mc)
