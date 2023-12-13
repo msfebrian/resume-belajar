@@ -162,7 +162,7 @@ Untuk menyimpan volume docker di partisi lain, perlu mengubah lokasi default dar
 
 ke partisi yang Anda inginkan. Ada beberapa cara untuk melakukannya, antara lain:
 
-Menggunakan opsi -g atau --data-root saat menjalankan perintah dockerd. Misalnya, jika Ana ingin menyimpan volume docker di partisi /mnt/data, bisa mengetikkan:
+Menggunakan opsi -g atau --data-root saat menjalankan perintah dockerd. Misalnya, jika Anda ingin menyimpan volume docker di partisi /mnt/data, bisa mengetikkan:
 
 ```
     $ dockerd -g /mnt/data
@@ -193,4 +193,59 @@ Setelah mengubah lokasi default dari volume docker, Maka bisa membuat dan menggu
 Kemudian juga bisa melihat informasi lebih detail tentang volume docker dengan perintah docker 
 ```
     volume inspect
+```
+
+## Contoh run docker via docker run
+Berikut contoh run docker dgn konfigurasi roo password = admin portExpose:portDocker 3306:3306 dan create volume my-db
+image daemon yang akan dijalankan adalah mysql dengan tag versi 5.7.44
+```
+docker run \
+--name=mysql \
+-e MYSQL_ROOT_PASSWORD=admin \
+-p 3306:3306 \
+-v my-db:/var/lib/mysql \
+-d mysql:5.7.44
+```
+
+## Contoh Docker Compose
+menjalankan maupun langsung pull image jika belum tersdia dapat langsung mengkonfigurasi melalui file docker-compose
+```
+   buat file docker-compose.yml
+```
+isi file docker seperti contoh berikut. pada contoh ini akan mempull/men-run adminer (pengganti phpmyadmin)
+```
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: mysql:5.7.44
+    # NOTE: use of "mysql_native_password" is not recommended: https://dev.mysql.com/doc/refman/8.0/en/upgrading-from-previous-series.html#upgrade-caching-sha2-password
+    # (this is just an example, not intended to be a production configuration)
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+    ports:
+      - 3306:3306
+    volumes:
+      - my-db:/var/lib/mysql
+
+  # Aplikasi semacam phpmyadmin jika tidak ingin pakai hapus
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+# Names our volume
+volumes:
+  my-db:  
+```
+cara run dengan metode compose
+```
+   masuk ke di direktori yg berisi docker-compose.yml
+   kemudian run di terminal
+      docker compose up
 ```
