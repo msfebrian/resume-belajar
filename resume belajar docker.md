@@ -195,8 +195,8 @@ Kemudian juga bisa melihat informasi lebih detail tentang volume docker dengan p
     volume inspect
 ```
 
-## Contoh run docker via docker run
-Berikut contoh run docker dgn konfigurasi roo password = admin portExpose:portDocker 3306:3306 dan create volume my-db
+## Contoh run docker mysql via docker run
+Berikut contoh run docker dgn konfigurasi root password = admin portExpose:portDocker 3306:3306 dan create volume my-db
 image daemon yang akan dijalankan adalah mysql dengan tag versi 5.7.44
 ```
 docker run \
