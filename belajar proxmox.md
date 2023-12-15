@@ -128,3 +128,13 @@ cara via shell
     Kemudian hapus pool ZFS yang diinginkan
         zpool destroy -f Disk2
 ```
+
+## Install & Konfigurasi Zerotier
+```
+  curl -s https://install.zerotier.com | bash
+```
+  contoh perintah join
+```
+  zerotier-cli join d3ecf572698u91cd
+```
+
