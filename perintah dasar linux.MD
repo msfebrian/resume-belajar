@@ -436,6 +436,12 @@ Pastikan OpenSSH sudah diijinkan terlebih dahulu sebelum enable firewall agar da
   
 ```
 
+hapus firewall
+```
+   sudo ufw delete allow 8291
+```
+
+
 Lihat ip address 
 ```
   sudo ip add
