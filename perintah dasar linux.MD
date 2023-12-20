@@ -98,6 +98,7 @@ Cek status time
 
 Jika ntp & syncron blm aktiv
 ```
+   sudo apt install chrony
    sudo nano /etc/chrony/chrony.conf
       Cek alamat server ntp sdh ada/blm
    sudo /etc/init.d/chrony restart
