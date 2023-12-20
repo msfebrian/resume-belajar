@@ -430,7 +430,24 @@ Pastikan OpenSSH sudah diijinkan terlebih dahulu sebelum enable firewall agar da
 
   Utk FTP Opsional jika dibutuhkan
   sudo ufw allow 21/tcp
+```
 
+sebelum enable firewall pastikan juga user telah diijinkan akses ssh agar dapat meremot
+```
+  sudo nano /etc/ssh/sshd_config
+
+  tambahkan baris
+     AllowUsers nama_pengguna
+
+  pastikan ssh dapat diakses dr ip yg diinginkan (contoh utk dr mana saja
+     ListenAddress 0.0.0.0
+  save dgn ctrl+o dan ctrl+x
+  
+  restart service ssh
+     sudo systemctl restart sshd
+```
+
+```
   sudo ufw enable
 
   sudo ufw status
