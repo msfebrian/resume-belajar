@@ -3,7 +3,7 @@
 saat install awal proxmox pada saat menu disk pilih option
 ```
   pilih disk ukuran
-    40GB
+    20GB
   sisanya akan dipartisi setelah instalasi proxmox selesai
 ```
 
@@ -128,6 +128,21 @@ cara via shell
     Kemudian hapus pool ZFS yang diinginkan
         zpool destroy -f Disk2
 ```
+
+
+## Auto mount disk
+sebelum auto mount pastikan lokasi mount sudah ada dgn mkdir dan disk sudah terformat
+```
+   lihat uuid disk
+   lsblk -f
+
+   nano /etc/fstab
+
+   tambahkan 
+   UUID= nomor-uuid /lokasi/mount ext4
+```
+
+cara buat direktori pada disk ext4 sama dengan ZFS pastikan terlebih dahulu disk sudah terformat dan sdh dimount. di menu storage masukan lokasi mount dan pilih peruntukan content yang dinginkan 
 
 ## Install & Konfigurasi Zerotier
 ```
