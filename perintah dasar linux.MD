@@ -43,6 +43,8 @@ Keterangan :
     -G : grup yg dituju (misalkan grup sudo)
 ```
 
+## lihat daftar user dan status grupnya.
+
 Lihat list user & foldernya
 ```
    cat /etc/paswd atau getent passwd
@@ -51,6 +53,17 @@ Lihat hanya nama pengguna (cut dan awk)
 ```
    cut -d: -f1 /etc/passwd
 ```
+
+melihat list user yg ada digroup sudo
+```
+   sudo getent group sudo
+```
+
+melihat status grup username
+```
+   sudo groups nama_username
+```
+
 Lihat direktori pengguna
 ```
    ls /home
