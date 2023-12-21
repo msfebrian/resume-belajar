@@ -107,27 +107,31 @@ Masuk ke terminal container misalkan postgresql
 ```
 
 
-## Hapus 
-
-untuk menjalankan via compose
-pastikan nama docker-compose.yml ada dan format sesuai kemudian run
-   docker compose up -d
-
-mematikan dan menyalakan service container
+## mematikan dan menyalakan service container
+```
    docker stop nama_container
    docker start nama_container
+```
 
-menghapus container. biasanya distop dlu servicenya kemudian hapus
+## menghapus container. biasanya distop dlu servicenya kemudian hapus
+```
    docker rm nama_container_atau_ID_container
+```
 
-Hapus semua container
-docker ps -aq: Menampilkan ID dari semua container (termasuk yang sedang berjalan dan yang tidak).
-docker rm -f $(docker ps -aq): Menghapus semua container dengan menggunakan ID yang didapatkan dari docker ps -aq.
-    docker rm -f $(docker ps -aq)
+## Hapus semua container
+Menampilkan ID dari semua container (termasuk yang sedang berjalan dan yang tidak).
+```
+   docker ps -aq
+```
+Menghapus semua container dengan menggunakan ID yang didapatkan dari docker ps -aq.
+```
+   docker rm -f $(docker ps -aq)
+```
 
 Hapus Container yang Tidak Digunakan
+```
    docker container prune -f
-   
+```
 
 
 ## cara binding port
@@ -281,4 +285,6 @@ cara run dengan metode compose
    masuk ke di direktori yg berisi docker-compose.yml
    kemudian run di terminal
       docker compose up
+   atau
+      docker compose up -d
 ```
