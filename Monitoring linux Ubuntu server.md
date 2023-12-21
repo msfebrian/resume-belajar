@@ -43,9 +43,13 @@ Via the repository
 Manually, downloading first the package and taking care for dependencies, and finally installing it.
 ```
   apt-get update
+```
+```
   apt-get install rrdtool perl libwww-perl libmailtools-perl libmime-lite-perl librrds-perl libdbi-perl libxml-simple-perl libhttp-server-simple-perl libconfig-general-perl libio-socket-ssl-perl
   dpkg -i monitorix*.deb
+```
 
+```
   apt-get -f install
 ```
 
