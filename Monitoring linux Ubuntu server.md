@@ -37,16 +37,16 @@ Aplikasi monitoring webbase
 
 Via the repository
 ```
-# apt-get update
-# apt-get install monitorix
+  apt-get update
+  apt-get install monitorix
 ```
 Manually, downloading first the package and taking care for dependencies, and finally installing it.
 ```
-# apt-get update
-# apt-get install rrdtool perl libwww-perl libmailtools-perl libmime-lite-perl librrds-perl libdbi-perl libxml-simple-perl libhttp-server-simple-perl libconfig-general-perl libio-socket-ssl-perl
-# dpkg -i monitorix*.deb
+  apt-get update
+  apt-get install rrdtool perl libwww-perl libmailtools-perl libmime-lite-perl librrds-perl libdbi-perl libxml-simple-perl libhttp-server-simple-perl libconfig-general-perl libio-socket-ssl-perl
+  dpkg -i monitorix*.deb
 
-# apt-get -f install
+  apt-get -f install
 ```
 
 To fine-tune your installation, take a look at the /etc/monitorix/monitorix.conf
@@ -56,7 +56,7 @@ The Debian package also comes with an extra configuration file in /etc/monitorix
 
 When you are done, restart Monitorix to let your changes take effect:
 ```
-# service monitorix restart
+  service monitorix restart
 ```
 View from browser 
 http://localhost:8080/monitorix/
