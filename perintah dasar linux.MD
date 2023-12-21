@@ -449,7 +449,7 @@ sebelum enable firewall pastikan juga user telah diijinkan akses ssh agar dapat 
 ```
   sudo nano /etc/ssh/sshd_config
 
-  tambahkan baris diakhir
+  tambahkan user diakhir baris
      AllowUsers nama_pengguna
 
   hapus # pada port 22
@@ -475,6 +475,16 @@ hapus firewall
    sudo ufw delete allow 8291
 ```
 
+melihat log ssh (utk cek login atau error)
+
+```
+  tampilkan log 100 baris saja
+  tail /var/log/auth.log -n 100
+```
+```
+  menyaring log dgn kata kunci tertentu
+  tail /var/log/auth.log -n 100 | grep 'sshd'
+```
 
 Lihat ip address 
 ```
@@ -628,6 +638,3 @@ melihat perangkat usb yang sedang terkoneksi ke komputer
 ```
 Lsusb 
 ```
-
-
-
