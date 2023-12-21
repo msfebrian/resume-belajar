@@ -91,10 +91,19 @@ Menghentikan image yang sedang berjalan
     docker stop IdImage
 ```
 
-
 ```
     docker exec -it
     docker logs
+```
+
+Masuk ke terminal container misalkan postgresql
+```
+    docker exec -it nama_container bash
+    contoh
+    docker exec -it postgresql bash
+    
+    coba login postgresql
+    psql -U nama_username --password --db mydb
 ```
 
 ## cara binding port
