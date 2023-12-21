@@ -15,10 +15,11 @@ jika blm install
 ```
   sudo apt install neofetch
 ```
+
 Cara lihat
 ```
   sudo neofetch
-``
+```
 
 ## CPU X versi CPU Z linux
 ```
