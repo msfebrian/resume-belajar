@@ -31,6 +31,10 @@ contoh
 UUID=41267f53-8a46-4e67-971b-c02d55538ecb /mnt/disk2 ext4 defaults 0 2
 
 ```
+
+jika error jangan gunakan/hapus default 0 2.
+
+
 ## Execute mount dan cek hasil konfigurasi mount sebelum reboot
 execute mount fstab
 ```
