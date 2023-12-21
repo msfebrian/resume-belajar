@@ -140,6 +140,10 @@ sebelum auto mount pastikan lokasi mount sudah ada dgn mkdir dan disk sudah terf
 
    tambahkan 
    UUID= nomor-uuid /lokasi/mount ext4
+
+   vefikasi mount apakah berhasil
+   mount -a
+   findmnt --verify
 ```
 
 cara buat direktori pada disk ext4 sama dengan ZFS pastikan terlebih dahulu disk sudah terformat dan sdh dimount. di menu storage masukan lokasi mount dan pilih peruntukan content yang dinginkan 
