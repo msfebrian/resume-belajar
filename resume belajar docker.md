@@ -123,6 +123,7 @@ Menampilkan ID dari semua container (termasuk yang sedang berjalan dan yang tida
 ```
    docker ps -aq
 ```
+
 Menghapus semua container dengan menggunakan ID yang didapatkan dari docker ps -aq.
 ```
    docker rm -f $(docker ps -aq)
@@ -158,7 +159,7 @@ kemudian lihat image yg berhasil run
 Untuk menyimpan volume docker di partisi D dalam sistem operasi Windows, Anda perlu mengubah lokasi default dari direktori 
 ```
     C:\\ProgramData\\Docker
-`````` 
+```
 ke partisi yang diinginkan. Ada beberapa cara untuk melakukannya, antara lain:
 
 Menggunakan file konfigurasi daemon.json yang berada di "C:\\ProgramData\\Docker\\config". Anda bisa menambahkan baris berikut di file tersebut:
@@ -280,6 +281,7 @@ services:
 volumes:
   my-db:  
 ```
+
 cara run dengan metode compose
 ```
    masuk ke di direktori yg berisi docker-compose.yml
