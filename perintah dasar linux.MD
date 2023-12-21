@@ -449,8 +449,11 @@ sebelum enable firewall pastikan juga user telah diijinkan akses ssh agar dapat 
 ```
   sudo nano /etc/ssh/sshd_config
 
-  tambahkan baris
+  tambahkan baris diakhir
      AllowUsers nama_pengguna
+
+  hapus # pada port 22
+     port 22
 
   pastikan ssh dapat diakses dr ip yg diinginkan (contoh utk dr mana saja
      ListenAddress 0.0.0.0
