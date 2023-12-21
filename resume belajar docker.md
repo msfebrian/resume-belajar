@@ -16,9 +16,59 @@ untuk cek tipe os apa saja pada wsl
 ```
 wsl --list v
 ```
-
 setelah terinstall wsl kemudian install Docker Desktop Install, 
 kemudian Restart PC.
+
+## Install Dokcer di ubuntu
+## 1. Hapus Versi Lama (Opsional):
+```
+   sudo apt remove docker docker-engine docker.io containerd runc
+```
+
+## 2. Instal Dependensi yang Diperlukan:
+```
+   sudo apt update
+   sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+```
+
+## 4. Tambahkan Kunci GPG Resmi Docker:
+```
+   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+```
+
+## 5. Tambahkan Repositori Docker ke APT Sources:
+Untuk Ubuntu 20.04 (Focal Fossa): sesuaikan dengan versi ubuntu
+```
+   sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+```
+
+## 6. Update Database Paket:
+```
+   sudo apt update
+```
+
+## 7. Instal Docker Engine:
+```
+   sudo apt install docker-ce docker-ce-cli containerd.io
+```
+
+## 8. Verifikasi Instalasi:
+```
+   sudo systemctl status docker
+```
+
+## 9. Konfigurasi Pengguna untuk Akses Docker (Opsional):
+Untuk dapat menjalankan perintah Docker tanpa perlu menggunakan sudo, tambahkan pengguna ke grup docker.
+```
+   sudo usermod -aG docker <username>
+```
+
+## 10. Uji Docker:
+Untuk menguji apakah Docker terinstal dengan baik, jalankan perintah:
+```
+   docker --version
+   docker run hello-world
+```
 
 ## Perintah-perintah docker
 running docker desktop kemudian cek via powershell
