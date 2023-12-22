@@ -1,18 +1,18 @@
 # config pve-firewall proxmox
-dasar command
+## dasar command
 ```
 pve-firewall add rule <VM_ID> allow tcp --source <IP_ADDRESS> --dest <VM_IP_ADDRESS> --dest-port 22
 ```
 
 Ganti <VM_ID> dengan ID VM yang ingin Anda akses, <IP_ADDRESS> dengan alamat IP Anda dari luar yang akan diizinkan, dan <VM_IP_ADDRESS> dengan alamat IP VM yang terkait.
 
-# contoh mengijinkan port 22 diakses dari mana saja
+## contoh mengijinkan port 22 diakses dari mana saja
 
 ```
 pve-firewall add rule all allow tcp --dport 22
 ```
 
-# contoh lainnya
+## contoh lainnya
 ```
 pve-firewall add rule 100 allow tcp --source 192.168.88.0/24 --dest 0.0.0.0/0 --dest-port 22
 
@@ -23,3 +23,31 @@ Penjelasan dari perintah di atas:
 --dest 0.0.0.0/0 mengizinkan akses ke semua alamat IP VM yang ada pada Proxmox (VM dengan alamat IP apa pun).
 --dest-port 22 mengizinkan akses hanya ke port 22 (port SSH).
 Perintah tersebut akan menambahkan aturan firewall dengan nomor aturan 100 yang memungkinkan akses SSH dari jaringan 192.168.88.0/24 ke semua VM di Proxmox pada port 22.
+
+## melihat daftar aturan firewall
+```
+pve-firewall list
+```
+
+## melihat status firewall
+```
+pve-firewall status
+```
+
+## mengaktifkan dan menonaktifkan firewall
+```
+pve-firewall stop
+pve-firewall start
+```
+
+## Menonaktifkan (Disable) Layanan pve-firewall
+```
+systemctl stop pve-firewall.service
+systemctl disable pve-firewall.service
+```
+
+## Mengaktifkan (Enable) Layanan pve-firewall
+```
+systemctl enable pve-firewall.service
+systemctl start pve-firewall.service
+```
