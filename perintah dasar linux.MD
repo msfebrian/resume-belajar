@@ -452,11 +452,19 @@ sebelum enable firewall pastikan juga user telah diijinkan akses ssh agar dapat 
   tambahkan user diakhir baris
      AllowUsers nama_pengguna
 
+  atau tambahkan group
+    AllowGroups sudo
+
   hapus # pada port 22
      port 22
 
   pastikan ssh dapat diakses dr ip yg diinginkan (contoh utk dr mana saja
      ListenAddress 0.0.0.0
+
+  Ijinkan user root login
+    PermitRootLogin Yes
+
+  
   save dgn ctrl+o dan ctrl+x
   
   restart service ssh
@@ -484,6 +492,22 @@ melihat log ssh (utk cek login atau error)
 ```
   menyaring log dgn kata kunci tertentu
   tail /var/log/auth.log -n 100 | grep 'sshd'
+```
+
+jika remote ssh masih error install ulang openssh dan config ulang
+```
+  sudo apt update
+  sudo apt-get --reinstall install openssh-server
+  sudo systemctl status ssh
+```
+
+
+Melihat list port dan service yang berjalan
+```
+  ss -ltpn
+
+  atau dengan filter port 22
+  ss -ltpn | grep :22
 ```
 
 Lihat ip address 
