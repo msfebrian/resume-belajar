@@ -417,7 +417,7 @@ Aktifkan atau non aktifkan service saat boot
   systemctl disable <nama-service>
 ```
 
-Setting firewall dasar
+## Setting firewall dasar
 Pastikan OpenSSH sudah diijinkan terlebih dahulu sebelum enable firewall agar dapat diremot
 ```
   sudo ufw app list
@@ -447,6 +447,39 @@ Pastikan OpenSSH sudah diijinkan terlebih dahulu sebelum enable firewall agar da
 
 sebelum enable firewall pastikan juga user telah diijinkan akses ssh agar dapat meremot
 ```
+  sudo ufw enable
+
+  sudo ufw status
+  
+```
+
+hapus firewall
+```
+   sudo ufw delete allow 8291
+```
+
+## Mengatasi error remote SSH
+melihat log ssh (utk cek login atau error)
+```
+  tampilkan log 100 baris saja
+  tail /var/log/auth.log -n 100
+```
+```
+  menyaring log dgn kata kunci tertentu
+  tail /var/log/auth.log -n 100 | grep 'sshd'
+```
+
+jika remote ssh masih error install ulang openssh dan config ulang
+```
+  sudo apt update
+  sudo apt-get --reinstall install openssh-server
+  sudo systemctl status ssh
+```
+
+Konfigurasi /etc/ssh/sshd_config
+```
+  sudo systemctl stop sshd
+
   sudo nano /etc/ssh/sshd_config
 
   tambahkan user diakhir baris
@@ -471,36 +504,6 @@ sebelum enable firewall pastikan juga user telah diijinkan akses ssh agar dapat 
      sudo systemctl restart sshd
 ```
 
-```
-  sudo ufw enable
-
-  sudo ufw status
-  
-```
-
-hapus firewall
-```
-   sudo ufw delete allow 8291
-```
-
-melihat log ssh (utk cek login atau error)
-
-```
-  tampilkan log 100 baris saja
-  tail /var/log/auth.log -n 100
-```
-```
-  menyaring log dgn kata kunci tertentu
-  tail /var/log/auth.log -n 100 | grep 'sshd'
-```
-
-jika remote ssh masih error install ulang openssh dan config ulang
-```
-  sudo apt update
-  sudo apt-get --reinstall install openssh-server
-  sudo systemctl status ssh
-```
-
 penjelasan konfigurasi PermitRootLogin nano /etc/ssh/sshd_config
 ```
 Perintah PermitRootLogin menentukan apakah user root dapat login menggunakan ssh. Argumen yang dapat digunakan adalah yes, prohibit-password, without-password, forced-commands-only, atau no. Secara default, argumennya adalah prohibit-password1.
@@ -514,7 +517,7 @@ Jika opsi ini diatur menjadi forced-commands-only, maka user root dapat login me
 Jika opsi ini diatur menjadi no, maka user root tidak dapat login menggunakan ssh sama sekali
 ```
 
-Melihat list port dan service yang berjalan
+## Melihat list port dan service yang berjalan
 ```
   ss -ltpn
 
@@ -522,7 +525,7 @@ Melihat list port dan service yang berjalan
   ss -ltpn | grep :22
 ```
 
-Lihat ip address 
+## Lihat ip address 
 ```
   sudo ip add
 ```
