@@ -51,3 +51,128 @@ systemctl disable pve-firewall.service
 systemctl enable pve-firewall.service
 systemctl start pve-firewall.service
 ```
+
+# konfigurasi remote ssh umum dilinux
+## mengizinkan akses SSH ke sistem Ubuntu dari sistem operasi selain Linux
+
+```
+sudo apt update
+sudo apt install openssh-server
+```
+
+```
+sudo systemctl enable ssh
+sudo systemctl start ssh
+```
+
+
+# konfigurasi firewall dasar linux ubuntu
+## Setting firewall dasar
+Pastikan OpenSSH sudah diijinkan terlebih dahulu sebelum enable firewall agar dapat diremot
+```
+  sudo ufw app list
+
+  sudo ufw allow OpenSSH
+  
+  Utk port SSH
+  sudo ufw allow 22/tcp
+
+  sudo ufw allow 80,443/tcp
+
+  Utk zerotier
+  sudo ufw allow 9993/udp
+  sudo ufw allow 9993/tcp
+
+  Utk zero trust cloudflare
+  sudo ufw allow 7844/tcp
+  sudo ufw allow 7844/udp
+
+  Port utk peer-to-peer
+  sudo ufw allow 3478/tcp
+  sudo ufw allow 3478/udp
+
+  Utk FTP Opsional jika dibutuhkan
+  sudo ufw allow 21/tcp
+```
+
+sebelum enable firewall pastikan juga user telah diijinkan akses ssh agar dapat meremot
+```
+  sudo ufw enable
+
+  sudo ufw status
+  
+```
+
+## hapus firewall
+```
+   sudo ufw delete allow 8291
+```
+
+## Mengatasi error remote SSH
+melihat log ssh (utk cek login atau error)
+```
+  tampilkan log 100 baris saja
+  tail /var/log/auth.log -n 100
+```
+```
+  menyaring log dgn kata kunci tertentu
+  tail /var/log/auth.log -n 100 | grep 'sshd'
+```
+
+jika remote ssh masih error install ulang openssh dan config ulang
+```
+  sudo apt update
+  sudo apt-get --reinstall install openssh-server
+  sudo systemctl status ssh
+```
+
+Konfigurasi /etc/ssh/sshd_config
+```
+  sudo systemctl stop sshd
+
+  sudo nano /etc/ssh/sshd_config
+
+  tambahkan user diakhir baris
+     AllowUsers nama_pengguna
+
+  atau tambahkan group
+    AllowGroups sudo
+
+  hapus # pada port 22
+     port 22
+
+  pastikan ssh dapat diakses dr ip yg diinginkan (contoh utk dr mana saja
+     ListenAddress 0.0.0.0
+
+  Ijinkan user root login
+    PermitRootLogin Yes
+
+  
+  save dgn ctrl+o dan ctrl+x
+  
+  restart service ssh
+     sudo systemctl restart sshd
+```
+
+penjelasan konfigurasi PermitRootLogin nano /etc/ssh/sshd_config
+```
+Perintah PermitRootLogin menentukan apakah user root dapat login menggunakan ssh. Argumen yang dapat digunakan adalah yes, prohibit-password, without-password, forced-commands-only, atau no. Secara default, argumennya adalah prohibit-password1.
+
+Jika opsi ini diatur menjadi prohibit-password atau without-password, maka autentikasi menggunakan password dan keyboard-interactive dinonaktifkan untuk user root. Ini berarti user root hanya dapat login menggunakan metode lain, seperti kunci publik12.
+
+Jika opsi ini diatur menjadi yes, maka user root dapat login menggunakan semua metode autentikasi, termasuk password. Ini berisiko karena user root dapat diserang secara brute force12.
+
+Jika opsi ini diatur menjadi forced-commands-only, maka user root dapat login menggunakan kunci publik, tetapi hanya jika opsi command telah ditentukan. Ini berguna untuk menjalankan perintah tertentu secara remote, misalnya untuk backup12.
+
+Jika opsi ini diatur menjadi no, maka user root tidak dapat login menggunakan ssh sama sekali
+```
+
+## Melihat list port dan service yang berjalan
+```
+  ss -ltpn
+
+  atau dengan filter port 22
+  ss -ltpn | grep :22
+```
+
+
