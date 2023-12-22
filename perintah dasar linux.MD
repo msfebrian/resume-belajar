@@ -501,6 +501,18 @@ jika remote ssh masih error install ulang openssh dan config ulang
   sudo systemctl status ssh
 ```
 
+penjelasan konfigurasi PermitRootLogin nano /etc/ssh/sshd_config
+```
+Perintah PermitRootLogin menentukan apakah user root dapat login menggunakan ssh. Argumen yang dapat digunakan adalah yes, prohibit-password, without-password, forced-commands-only, atau no. Secara default, argumennya adalah prohibit-password1.
+
+Jika opsi ini diatur menjadi prohibit-password atau without-password, maka autentikasi menggunakan password dan keyboard-interactive dinonaktifkan untuk user root. Ini berarti user root hanya dapat login menggunakan metode lain, seperti kunci publik12.
+
+Jika opsi ini diatur menjadi yes, maka user root dapat login menggunakan semua metode autentikasi, termasuk password. Ini berisiko karena user root dapat diserang secara brute force12.
+
+Jika opsi ini diatur menjadi forced-commands-only, maka user root dapat login menggunakan kunci publik, tetapi hanya jika opsi command telah ditentukan. Ini berguna untuk menjalankan perintah tertentu secara remote, misalnya untuk backup12.
+
+Jika opsi ini diatur menjadi no, maka user root tidak dapat login menggunakan ssh sama sekali
+```
 
 Melihat list port dan service yang berjalan
 ```
