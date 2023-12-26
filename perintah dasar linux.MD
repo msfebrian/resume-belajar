@@ -69,6 +69,12 @@ Lihat direktori pengguna
    ls /home
 ```
 
+## Lihat task manager
+```
+  sudo htop
+```
+
+
 ## Konfigurasi Date Timezone
 Set Default timezone cara mudah (rekomeded)
 ```
