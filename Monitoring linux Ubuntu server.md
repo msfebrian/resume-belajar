@@ -1,5 +1,11 @@
 # Monitoring Hardware dan Proses pada Linux
 
+
+## Lihat task manager
+```
+  sudo htop
+```
+
 ## Melihat processor, ram, network dll dgn package glances
 jika blm install
 ```
