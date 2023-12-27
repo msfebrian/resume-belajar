@@ -28,26 +28,47 @@ kemudian Restart PC.
 ## 2. Instal Dependensi yang Diperlukan:
 ```
    sudo apt update
-   sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+```
+```
+   sudo apt install apt-transport-https ca-certificates curl software-properties-common
 ```
 
 ## 4. Tambahkan Kunci GPG Resmi Docker:
+rekomendasi pakai ini
+```
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+```
+atau gunakan ini jika diatas tidak bisa
 ```
    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ```
 
 ## 5. Tambahkan Repositori Docker ke APT Sources:
-Untuk Ubuntu 20.04 (Focal Fossa): sesuaikan dengan versi ubuntu
+rekomendasi pakai ini
+```
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+
+atau untuk Ubuntu 20.04 (Focal Fossa): sesuaikan dengan versi ubuntu
 ```
    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 ```
 
-## 6. Update Database Paket:
+## 6. Update Database Paket: (bisa di run saat akhir setelah docker install selesai)
 ```
    sudo apt update
 ```
 
 ## 7. Instal Docker Engine:
+rekomendasi pakai ini
+```
+sudo apt update | sudo apt-cache policy docker-ce
+```
+```
+sudo apt install docker-ce
+```
+
+atau gunakan ini jika diatas tidak bisa
 ```
    sudo apt install docker-ce docker-ce-cli containerd.io
 ```
@@ -57,10 +78,10 @@ Untuk Ubuntu 20.04 (Focal Fossa): sesuaikan dengan versi ubuntu
    sudo systemctl status docker
 ```
 
-## 9. Konfigurasi Pengguna untuk Akses Docker (Opsional):
+## 9. Konfigurasi Pengguna untuk Akses Docker (Rekomended):
 Untuk dapat menjalankan perintah Docker tanpa perlu menggunakan sudo, tambahkan pengguna ke grup docker.
 ```
-   sudo usermod -aG docker <username>
+   sudo usermod -aG docker nama_username
 ```
 
 ## 10. Uji Docker:
