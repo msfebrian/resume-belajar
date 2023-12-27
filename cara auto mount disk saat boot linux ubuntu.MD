@@ -42,6 +42,12 @@ jika error jangan gunakan/hapus default 0 2.
 
 
 ## Execute mount dan cek hasil konfigurasi mount sebelum reboot
+
+lakukan verifikasi dan pastikan tidak error sebelum reboot. jika error dan di reboot akan menyebabkan ke gagalan booting os
+```
+sudo findmnt --verify
+```
+
 execute mount fstab
 ```
 sudo mount -a
@@ -50,12 +56,6 @@ sudo mount -a
 pastikan disk2 sudah termount
 ```
 sudo ls -l /mnt/disk
-```
-
-lakukan verifikasi dan pastikan tidak error sebelum reboot. jika error dan di reboot akan menyebabkan ke gagalan booting os
-
-```
-sudo findmnt --verify
 ```
 
 jika tidak ada error maka rebbot os
