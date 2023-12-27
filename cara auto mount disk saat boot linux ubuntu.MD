@@ -32,6 +32,12 @@ UUID=41267f53-8a46-4e67-971b-c02d55538ecb /mnt/disk2 ext4 defaults 0 2
 
 ```
 
+contoh lainnya
+```
+  # Automount partisi 2 to /mnt/second-partition
+  /dev/disk/by-uuid/570e6d84-9164-40f8-9d0f-dec46e7f7254 /mnt/second-partition ext4 defaults 0 2
+```
+
 jika error jangan gunakan/hapus default 0 2.
 
 
