@@ -91,6 +91,87 @@ Untuk menguji apakah Docker terinstal dengan baik, jalankan perintah:
    docker run hello-world
 ```
 
+##  Menyimpan volume docker di partisi D dalam system operasi windows
+
+Untuk menyimpan volume docker di partisi D dalam sistem operasi Windows, Anda perlu mengubah lokasi default dari direktori 
+```
+    C:\\ProgramData\\Docker
+```
+ke partisi yang diinginkan. Ada beberapa cara untuk melakukannya, antara lain:
+
+Menggunakan file konfigurasi daemon.json yang berada di "C:\\ProgramData\\Docker\\config". Anda bisa menambahkan baris berikut di file tersebut:
+
+```
+{
+    "data-root": "D:\\Docker"
+}
+```
+
+Menggunakan opsi --data-root saat menjalankan perintah dockerd. Misalnya, jika ingin menyimpan volume docker di partisi D, bisa mengetikkan:
+
+```
+    $ dockerd --data-root D:\\Docker
+```
+
+Setelah Anda mengubah lokasi default dari volume docker, Anda bisa membuat dan menggunakan volume docker seperti biasa dengan perintah
+
+```
+    docker volume create
+    dan 
+    docker run -v
+```
+
+Anda juga bisa melihat informasi lebih detail tentang volume docker dengan perintah
+
+```
+    docker volume inspect
+```
+
+##  Menyimpan volume docker di partisi lain dalam system operasi linux
+
+Untuk menyimpan volume docker di partisi lain, perlu mengubah lokasi default dari direktori
+
+```
+    /var/lib/docker/volumes
+```
+
+ke partisi yang Anda inginkan. Ada beberapa cara untuk melakukannya, antara lain:
+
+Menggunakan opsi -g atau --data-root saat menjalankan perintah dockerd. Misalnya, jika Anda ingin menyimpan volume docker di partisi /mnt/data, bisa mengetikkan:
+
+```
+    $ dockerd -g /mnt/second-partition
+```
+
+Menggunakan file konfigurasi daemon.json yang berada di /etc/docker/. Anda bisa menambahkan baris berikut di file tersebut:
+```
+    {
+        "data-root": "/mnt/second-partition/docker"
+    }
+```
+
+Menggunakan symbolic link untuk menghubungkan direktori /var/lib/docker/volumes ke partisi yang diinginkan. Misalnya, jika ingin menyimpan volume docker di partisi /mnt/data, bisa mengetikkan:
+
+```
+   sudo systemctl disable docker
+   sudo mv /var/lib/docker/ /mnt/second-partition
+   sudo ln -s /mnt/second-partition/docker /var/lib/docker/
+   sudo systemctl enable docker
+   sudo systemctl start docker
+   sudo systemctl status docker
+```
+
+Setelah mengubah lokasi default dari volume docker, Maka bisa membuat dan menggunakan volume docker seperti biasa dengan perintah 
+```
+    docker volume create2
+    dan 
+    docker run -v3
+``` 
+Kemudian juga bisa melihat informasi lebih detail tentang volume docker dengan perintah docker 
+```
+    volume inspect
+```
+
 ## Perintah-perintah docker
 running docker desktop kemudian cek via powershell
 ```
@@ -225,86 +306,6 @@ kemudian lihat image yg berhasil run
     docker ps
 ```
 
-##  Menyimpan volume docker di partisi D dalam system operasi windows
-
-Untuk menyimpan volume docker di partisi D dalam sistem operasi Windows, Anda perlu mengubah lokasi default dari direktori 
-```
-    C:\\ProgramData\\Docker
-```
-ke partisi yang diinginkan. Ada beberapa cara untuk melakukannya, antara lain:
-
-Menggunakan file konfigurasi daemon.json yang berada di "C:\\ProgramData\\Docker\\config". Anda bisa menambahkan baris berikut di file tersebut:
-
-```
-{
-    "data-root": "D:\\Docker"
-}
-```
-
-Menggunakan opsi --data-root saat menjalankan perintah dockerd. Misalnya, jika ingin menyimpan volume docker di partisi D, bisa mengetikkan:
-
-```
-    $ dockerd --data-root D:\\Docker
-```
-
-Setelah Anda mengubah lokasi default dari volume docker, Anda bisa membuat dan menggunakan volume docker seperti biasa dengan perintah
-
-```
-    docker volume create
-    dan 
-    docker run -v
-```
-
-Anda juga bisa melihat informasi lebih detail tentang volume docker dengan perintah
-
-```
-    docker volume inspect
-```
-
-##  Menyimpan volume docker di partisi lain dalam system operasi linux
-
-Untuk menyimpan volume docker di partisi lain, perlu mengubah lokasi default dari direktori
-
-```
-    /var/lib/docker/volumes
-```
-
-ke partisi yang Anda inginkan. Ada beberapa cara untuk melakukannya, antara lain:
-
-Menggunakan opsi -g atau --data-root saat menjalankan perintah dockerd. Misalnya, jika Anda ingin menyimpan volume docker di partisi /mnt/data, bisa mengetikkan:
-
-```
-    $ dockerd -g /mnt/second-partition
-```
-
-Menggunakan file konfigurasi daemon.json yang berada di /etc/docker/. Anda bisa menambahkan baris berikut di file tersebut:
-```
-    {
-        "data-root": "/mnt/second-partition/docker"
-    }
-```
-
-Menggunakan symbolic link untuk menghubungkan direktori /var/lib/docker/volumes ke partisi yang diinginkan. Misalnya, jika ingin menyimpan volume docker di partisi /mnt/data, bisa mengetikkan:
-
-```
-   sudo systemctl disable docker
-   sudo mv /var/lib/docker/ /mnt/second-partition
-   sudo ln -s /mnt/second-partition/docker /var/lib/docker/
-   sudo systemctl enable docker
-   sudo systemctl start docker
-   sudo systemctl status docker
-```
-
-Setelah mengubah lokasi default dari volume docker, Maka bisa membuat dan menggunakan volume docker seperti biasa dengan perintah 
-```
-    docker volume create2
-    dan 
-    docker run -v3
-``` 
-Kemudian juga bisa melihat informasi lebih detail tentang volume docker dengan perintah docker 
-```
-    volume inspect
-```
 
 ## Install Portainer
 ```
