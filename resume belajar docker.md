@@ -304,6 +304,18 @@ Kemudian juga bisa melihat informasi lebih detail tentang volume docker dengan p
     volume inspect
 ```
 
+## Install Portainer
+```
+docker volume create portainer_data
+```
+```
+docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+```
+buka portainer via browser
+```
+http://localhost:9443
+```
+
 ## Contoh run docker mysql via docker run
 Berikut contoh run docker dgn konfigurasi root password = admin portExpose:portDocker 3306:3306 dan create volume my-db
 image daemon yang akan dijalankan adalah mysql dengan tag versi 5.7.44
