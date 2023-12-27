@@ -274,23 +274,25 @@ ke partisi yang Anda inginkan. Ada beberapa cara untuk melakukannya, antara lain
 Menggunakan opsi -g atau --data-root saat menjalankan perintah dockerd. Misalnya, jika Anda ingin menyimpan volume docker di partisi /mnt/data, bisa mengetikkan:
 
 ```
-    $ dockerd -g /mnt/data
+    $ dockerd -g /mnt/second-partition
 ```
 
 Menggunakan file konfigurasi daemon.json yang berada di /etc/docker/. Anda bisa menambahkan baris berikut di file tersebut:
 ```
     {
-        "data-root": "/mnt/data"
+        "data-root": "/mnt/second-partition"
     }
 ```
 
 Menggunakan symbolic link untuk menghubungkan direktori /var/lib/docker/volumes ke partisi yang diinginkan. Misalnya, jika ingin menyimpan volume docker di partisi /mnt/data, bisa mengetikkan:
 
 ```
-    $ sudo service docker stop
-    $ sudo mv /var/lib/docker/volumes /mnt/data
-    $ sudo ln -s /mnt/data /var/lib/docker/volumes
-    $ sudo service docker start
+   sudo systemctl disable docker
+   sudo mv /var/lib/docker/ /mnt/second-partition/docker
+   sudo ln -s /mnt/second-partition/docker /var/lib/docker/
+   sudo systemctl enable docker
+   sudo systemctl start docker
+   sudo systemctl status docker
 ```
 
 Setelah mengubah lokasi default dari volume docker, Maka bisa membuat dan menggunakan volume docker seperti biasa dengan perintah 
