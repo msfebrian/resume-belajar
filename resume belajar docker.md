@@ -155,7 +155,14 @@ Menggunakan symbolic link untuk menghubungkan direktori /var/lib/docker/volumes 
 ```
    sudo systemctl disable docker
    sudo mv /var/lib/docker/ /mnt/second-partition
+```
+binding (opsional)
+```
    sudo ln -s /mnt/second-partition/docker /var/lib/docker/
+```
+
+restart dan cek service docker
+```
    sudo systemctl enable docker
    sudo systemctl start docker
    sudo systemctl status docker
