@@ -280,7 +280,7 @@ Menggunakan opsi -g atau --data-root saat menjalankan perintah dockerd. Misalnya
 Menggunakan file konfigurasi daemon.json yang berada di /etc/docker/. Anda bisa menambahkan baris berikut di file tersebut:
 ```
     {
-        "data-root": "/mnt/second-partition"
+        "data-root": "/mnt/second-partition/docker"
     }
 ```
 
@@ -288,7 +288,7 @@ Menggunakan symbolic link untuk menghubungkan direktori /var/lib/docker/volumes 
 
 ```
    sudo systemctl disable docker
-   sudo mv /var/lib/docker/ /mnt/second-partition/docker
+   sudo mv /var/lib/docker/ /mnt/second-partition
    sudo ln -s /mnt/second-partition/docker /var/lib/docker/
    sudo systemctl enable docker
    sudo systemctl start docker
