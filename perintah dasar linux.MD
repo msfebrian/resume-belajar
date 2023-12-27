@@ -465,6 +465,14 @@ hapus firewall
 ```
 
 ## Mengatasi error remote SSH
+## reset key ssh client di windows
+```
+  contoh di windows hapus line ip dan key yg error
+  C:\Users\User\.ssh\known_hosts
+```
+
+## Cara lainnya jika reset key tidak berhasil
+
 melihat log ssh (utk cek login atau error)
 ```
   tampilkan log 100 baris saja
@@ -473,12 +481,6 @@ melihat log ssh (utk cek login atau error)
 ```
   menyaring log dgn kata kunci tertentu
   tail /var/log/auth.log -n 100 | grep 'sshd'
-```
-
-reset key ssh client
-```
-  contoh di windows hapus line ip dan key yg error
-  C:\Users\User\.ssh\known_hosts
 ```
 
 jika remote ssh masih error install ulang openssh dan config ulang
