@@ -67,3 +67,39 @@ untuk login gunakan username baru
 masukkan ip & port 5901
 masukkan username & password
 ```
+
+# Install XRDP Server
+xrdp berfungsi untuk mengakses ubuntu via aplikasi remote desktop connection microsoft
+
+## Install Package xrdp
+```
+sudo apt install xrdp
+```
+
+## add xrdp user to the group
+by default xrdp menggunakan /etc/ssl/private/ssl-cert-snakeoil.key. 
+file ini hanya dapat dibaca oleh member group "ssl-cert.
+```
+sudo adduser xrdp ssl-cert
+```
+
+## restart xrdp dan cek service 
+```
+sudo systemctl restart xrdp
+```
+```
+sudo systemctl status xrdp
+```
+
+## Ijinkan port xrdp di port 3389
+```
+sudo ufw allow 3389 
+```
+
+
+
+
+
+
+
+
