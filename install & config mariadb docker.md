@@ -11,9 +11,15 @@ docker run \
 
 ## install nano ke container utk edit conf
 ```
-docker exec -it [container name or ID] bash -c 'apt -y install nano'
+docker exec -it [container name or ID] bash -c 'apt-get -y update && apt -y install nano'
 ```
+jika stuck tengah jalan coba lagi hapus perintah update
+
 ## contoh running dalam docker
+```
+docker exec -it mariadb-lts-jammy bash
+```
+
 ```
 docker exec -it [container name or ID] nano /etc/host.conf
 ```
