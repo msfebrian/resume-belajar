@@ -9,13 +9,14 @@ docker run \
 -d mariadb:lts-jammy
 ```
 
-## install nano ke container utk edit conf
+# Cara mematikan casesensitive table name
+## Install nano ke container utk edit conf
 ```
 docker exec -it [container name or ID] bash -c 'apt-get -y update && apt -y install nano'
 ```
 jika stuck tengah jalan coba lagi hapus perintah update
 
-## contoh running dalam docker
+## masuk ke terminal dalam docker container mariadb
 ```
 docker exec -it mariadb-lts-jammy bash
 ```
@@ -23,10 +24,9 @@ docker exec -it mariadb-lts-jammy bash
 ## rubah config mariadb untuk lowercase
 agar tabel dapat diakses tanpa casesensitive
 ```
-docker exec -it mariadb-lts-jammy bash
 nano /etc/mysql/mariadb.cnf
 ```
-tambah konfigurasi
+tambah line konfigurasi mariadb.cnf
 ```
 [mariadb]
 lower_case_table_names=1
