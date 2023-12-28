@@ -20,6 +20,16 @@ jika stuck tengah jalan coba lagi hapus perintah update
 docker exec -it mariadb-lts-jammy bash
 ```
 
+## rubah config mariadb untuk lowercase
+agar tabel dapat diakses tanpa casesensitive
 ```
-docker exec -it [container name or ID] nano /etc/host.conf
+docker exec -it mariadb-lts-jammy bash
+nano /etc/mysql/mariadb.cnf
 ```
+tambah konfigurasi
+```
+[mariadb]
+lower_case_table_names=1
+```
+matikan dan jalankan ulang container
+
