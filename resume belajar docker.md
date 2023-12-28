@@ -313,11 +313,12 @@ kemudian lihat image yg berhasil run
     docker ps
 ```
 
-## install nano ke container utk edit conf
+## Install package ke dalam container docker
+contoh install package nano ke container utk edit conf
 ```
 docker exec -it [container name or ID] bash -c 'apt-get -y update && apt -y install nano'
 ```
-jika stuck tengah jalan coba lagi hapus perintah update
+jika stuck tengah jalan coba lagi, atau hapus perintah update jika tidak bisa
 
 
 ## Install Portainer
