@@ -14,7 +14,7 @@ docker run \
 ```
 docker exec -it [container name or ID] bash -c 'apt-get -y update && apt -y install nano'
 ```
-jika stuck tengah jalan coba lagi hapus perintah update
+jika stuck tengah jalan coba lagi atau hapus perintah update jika tidak bisa
 
 ## masuk ke terminal dalam docker container mariadb
 ```
