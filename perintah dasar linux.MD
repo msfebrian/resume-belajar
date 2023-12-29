@@ -465,10 +465,27 @@ hapus firewall
 ```
 
 ## Mengatasi error remote SSH
-## reset key ssh client di windows
+## Reset key ssh client di windows
 ```
   contoh di windows hapus line ip dan key yg error
   C:\Users\User\.ssh\known_hosts
+```
+
+## Reset key ssh client di linux
+```
+cat ~/.ssh/known_hosts
+```
+atau
+```
+nano ~/.ssh/known_hosts
+```
+atau dengan perintah -R (remove)
+```
+ssh-keygen -R hostname/ip
+```
+contoh
+```
+ssh-keygen -R 192.168.88.2
 ```
 
 ## Cara lainnya jika reset key tidak berhasil
@@ -488,6 +505,12 @@ jika remote ssh masih error install ulang openssh dan config ulang
   sudo apt update
   sudo apt-get --reinstall install openssh-server
   sudo systemctl status ssh
+```
+atau
+```
+sudo apt-get remove openssh-server
+sudo apt-get install openssh-server
+sudo systemctl status ssh
 ```
 
 Konfigurasi /etc/ssh/sshd_config
