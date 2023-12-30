@@ -96,7 +96,19 @@ sudo systemctl status xrdp
 sudo ufw allow 3389 
 ```
 
-
+## Mengaktifkan RDP di ARMBIAN 21
+masuk ke terminal
+```
+sudo armbian-config
+```
+```
+pilih software
+pilih rdp enable
+```
+```
+jika tulisan pada config rdp enable (berarti belum aktif)
+jika tulisan pada config rdp disable (berarti sudah aktif)
+```
 
 
 
