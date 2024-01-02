@@ -74,6 +74,38 @@ Lihat direktori pengguna
   sudo htop
 ```
 
+## Update dan upgrade
+Update
+```
+sudo apt update
+```
+
+Lihat berapa banyak paket yang dapat diupgrade
+```
+apt list --upgradable
+```
+
+Upgrade
+```
+sudo apt upgrade
+atau 
+sudo apt upgrade -y
+```
+
+mengupgrade semua paket yang tersedia,
+```
+sudo apt full-upgrade
+```
+
+remove package yg sudah tidak digunakan setelah update / upgrade
+```
+sudo apt auto remove
+```
+
+## Cara Melihat Versi Linux
+```
+sudo lsb_release -a
+```
 
 ## Konfigurasi Date Timezone
 Set Default timezone cara mudah (rekomeded)
