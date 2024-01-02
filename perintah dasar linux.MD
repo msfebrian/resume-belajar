@@ -102,6 +102,21 @@ remove package yg sudah tidak digunakan setelah update / upgrade
 sudo apt auto remove
 ```
 
+## Perintah update distro dan kernel baru
+upgrade ke versi distro yang lebih baru atau menginstall kernel baru
+```
+sudo apt dist-upgrade
+```
+## Install paket update-manager-core
+```
+sudo apt install update-manager-core
+```
+
+## mendapatkan versi terbaru yang belum resmi di rilis
+```
+sudo do-release-upgrade -d
+```
+
 ## Cara Melihat Versi Linux
 ```
 sudo lsb_release -a
