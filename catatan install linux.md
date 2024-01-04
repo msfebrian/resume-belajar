@@ -24,3 +24,11 @@ sisanya external storage
 hapus semua partisi dlu menggunakan acronis partition atau software lainnya.
 
 ## penggunaan volume grup (vg) & lvm (list volume manager) .....
+
+## install snap sdh di test di armbian
+'''
+sudo apt update
+sudo apt install
+sudo reboot now
+sudo snap install core
+'''
