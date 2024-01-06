@@ -121,7 +121,11 @@ atur permission agar hanya dpt diakses oleh root
 sudo chmod 600 /path/to/credentials_file
 ```
 
-lakukan mount
+lakukan verifikasi & mount 
+```
+sudo findmnt --verify
+```
+
 ```
 sudo mount -a
 ```
