@@ -103,3 +103,25 @@ sudo nano /etc/fstab
 4. credentials=/path/to/credentials_file: Path menuju file yang berisi kredensial pengguna (biasanya berisi username=nama_pengguna\npassword=sandi_pengguna).
 5. nama_pengguna_lokal: Nama pengguna lokal di Ubuntu.
 6. nama_grup_lokal: Nama grup pengguna lokal di Ubuntu.
+
+## Buat file untuk menyimpan kredensial pengguna (opsional tapi direkomendasikan).
+Untuk keamanan, disarankan untuk menyimpan kredensial pengguna dalam file terpisah. Buat file teks yang berisi kredensial pengguna di lokasi yang aman. Misalnya:
+```
+sudo nano /path/to/credentials_file
+```
+
+isi file seperti ini
+```
+username=nama_pengguna
+password=sandi_pengguna
+```
+
+atur permission agar hanya dpt diakses oleh root
+```
+sudo chmod 600 /path/to/credentials_file
+```
+
+lakukan mount
+```
+sudo mount -a
+```
