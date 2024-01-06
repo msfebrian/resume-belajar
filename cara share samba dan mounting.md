@@ -80,3 +80,26 @@ untuk unmounting caranya
 ```
 sudo umount /home/samba
 ```
+
+# cara automount dari fstab
+## buat directory jika blm ada
+```
+sudo mkdir /mnt/nama_mount_point
+```
+
+## edit fstab
+```
+sudo nano /etc/fstab
+```
+
+## tambahkan pada fstab
+```
+//alamat_IP_server/nama_share /mnt/nama_mount_point cifs credentials=/path/to/credentials_file,uid=nama_pengguna_lokal,gid=nama_grup_lokal 0 0
+```
+
+1. alamat_IP_server: Alamat IP server.
+2. nama_share: Nama folder yang dibagikan.
+3. /mnt/nama_mount_point: Lokasi di mana folder tersebut akan di-mount.
+4. credentials=/path/to/credentials_file: Path menuju file yang berisi kredensial pengguna (biasanya berisi username=nama_pengguna\npassword=sandi_pengguna).
+5. nama_pengguna_lokal: Nama pengguna lokal di Ubuntu.
+6. nama_grup_lokal: Nama grup pengguna lokal di Ubuntu.
