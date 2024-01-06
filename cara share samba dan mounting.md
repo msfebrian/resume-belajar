@@ -72,6 +72,12 @@ contoh cara mounting smb
 ```
 sudo mount -t cifs -o user=nama_user //192.168.2.1/shared /home/samba/
 ```
+
+atau
+```
+sudo mount -t cifs //<alamat_IP_server>/<nama_berbagi> /mnt/smb -o username=<nama_pengguna>,password=<kata_sandi>
+```
+
 lihat apakah sdh ada share smb yg sudah dimount 
 ```
 df -h
