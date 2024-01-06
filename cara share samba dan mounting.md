@@ -104,6 +104,15 @@ sudo nano /etc/fstab
 5. nama_pengguna_lokal: Nama pengguna lokal di Ubuntu.
 6. nama_grup_lokal: Nama grup pengguna lokal di Ubuntu.
 
+lakukan verifikasi & mount 
+```
+sudo findmnt --verify
+```
+
+```
+sudo mount -a
+```
+
 ## Buat file untuk menyimpan kredensial pengguna (opsional tapi direkomendasikan).
 Untuk keamanan, disarankan untuk menyimpan kredensial pengguna dalam file terpisah. Buat file teks yang berisi kredensial pengguna di lokasi yang aman. Misalnya:
 ```
