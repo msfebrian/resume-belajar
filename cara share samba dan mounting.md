@@ -49,6 +49,15 @@ sudo systemctl restart smbd
 sudo ufw allow samba
 ```
 
+## cara akses difile explorer
+```
+smb://alamat_IP_server/nama_share
+```
+
+## cara buka smb dr terminal
+```
+smbclient //alamat_IP_server/nama_share -U nama_pengguna
+```
 
 ## Cara Mounting Share smb
 Buat folder utk lokasi mount contoh
