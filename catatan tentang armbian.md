@@ -25,7 +25,7 @@ synaptic package manager adalah aplikasi gui untuk manajemen package di linux de
 update linux jika diperlukan 
 ```
 sudo apt update
-sudo
+sudo apt upgrade
 ```
 install synaptic package manager 
 ```
