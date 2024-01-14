@@ -1,3 +1,7 @@
+## Resolusi layar max 728p
+
+Resolusi layar desktop yang direkomendasikan maximal 728p. jika lebih dr itu berat, lag
+
 ## Cara fix sound tdk befungsi di armbian
 ```
 apt install alsamixer
