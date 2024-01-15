@@ -700,6 +700,12 @@ Lihat properties pc
    sudo neofetch 
 ```
 
+## Extract file tar.gz
+```
+tar xvf nama_file.tar.gz
+```
+
+
 ## Perintah Lainnya
 
 
