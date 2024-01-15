@@ -622,6 +622,13 @@ atau
   ss -ltpn | grep :22
 ```
 
+atau
+```
+  sudo lsof -n -i | grep nama_aplikasi
+  contoh
+  sudo lsof -n -i | grep openssh
+```
+
 ## Lihat ip address 
 ```
   sudo ip add
