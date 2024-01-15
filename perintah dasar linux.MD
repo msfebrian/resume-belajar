@@ -456,6 +456,11 @@ Melihat service
   systemctl --type=service --state=running
 ```
 
+Me-restart service linux
+```
+sudo systemctl daemon-reload
+```
+
 Start, stop, restart dan status service
 ```
   systemctl start <nama-service>
