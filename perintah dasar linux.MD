@@ -332,6 +332,67 @@ Membuka file dan edit dengan vim
     :wq berfungsi untuk keluar dari editor sekaligus menyimpan file
 ```
 
+## Permission Folder & File dengan CHMOD
+```
+- owner	Pengguna yang membuat dan memiliki file / direktori.
+- group	Semua pengguna yang merupakan anggota dalam grup yang sama.
+- others	Semua pengguna lainnya dalam sistem yang bukan owner atau member dari sebuah grup..
+```
+struktur permission
+```
+r (read) – 4
+w (write) – 2
+x (execute) – 1
+```
+contoh format
+```
+  rwxrwxrwx pemilik:group folder/file
+  owner group other
+  rwx   rwx   rwx    pemilik:group folder/file
+```
+contoh perintah
+```
+chmod 746 file1.txt
+atau
+chmod 746 namafolder
+```
+penjelasan
+```
+permission untuk owner
+7 = rwx (dari kode perhitungan 4+2+1 = 7)
+
+permission untuk group
+4 = r-- (dari kode permission read adalah 4)
+
+permission untuk other
+6 = rw- (dari perhitungan 4+2 = 6)
+```
+## Permission folder dengan CHOWN
+format
+```
+chown [owner/group owner] [nama file]
+```
+
+contoh owner bambang
+```
+chown bambang demo.txt
+```
+
+contoh group client
+```
+chown :clients demo.txt
+```
+
+contoh owner bambang group client
+```
+chown bambang:clients demo.txt
+```
+
+tambahkan opsi "chown -R" utk menerapkan ke dalam folder dan semua file yang ada pada folder
+```
+chown -R nama_user:nama_group nama_folder
+```
+
 ## Mengelola dan Memformat Disk 
 Melihat list disk & mounting point
 ```
