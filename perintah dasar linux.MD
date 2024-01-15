@@ -499,6 +499,14 @@ sudo mkdir /etc/prometheus
 ```
 sudo mv consoles/ console_libraries/ prometheus.yml /etc/prometheussudo mv consoles/ console_libraries/ prometheus.yml /etc/prometheus
 ```
+5. Membuat akses permission
+```
+sudo chown -R prometheus:prometheus /var/lib/prometheus/
+```
+6. Aktifkan Service
+```
+sudo systemctl enable --now prometheus.service
+```
 
 ## Setting firewall dasar
 Pastikan OpenSSH sudah diijinkan terlebih dahulu sebelum enable firewall agar dapat diremot
