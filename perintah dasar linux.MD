@@ -451,17 +451,17 @@ Mengelola service snap
 ```
 
 
-Melihat service
+## Melihat service
 ```
   systemctl --type=service --state=running
 ```
 
-Me-restart service linux
+## Me-restart service linux
 ```
 sudo systemctl daemon-reload
 ```
 
-Start, stop, restart dan status service
+## Start, stop, restart dan status service
 ```
   systemctl start <nama-service>
   systemctl stop <nama-service>
@@ -469,10 +469,35 @@ Start, stop, restart dan status service
   systemctl status <nama-service>
 ```
 
-Aktifkan atau non aktifkan service saat boot
+## Aktifkan atau non aktifkan service saat boot
 ```
   systemctl enable <nama-service>
   systemctl disable <nama-service>
+```
+
+## Membuat service dari file binari linux
+contoh membuat service prometheus.
+1. Lihat list file binary biasanya yang berwarna hijau
+```
+ls -l
+```
+2. copy file prometheus & promtool ke folder binary linux
+```
+sudo mv prometheus promtool /usr/local/bin/
+```
+3. membuat usergroup dan username khusus utk service prometheus agar aplikasi dapat mengakses tanpa sudo
+```
+sudo groupadd --system prometheus
+```
+```
+sudo useradd --system -s /sbin/nologin -g prometheus prometheus
+```
+4. pindahkan folder konfigurasi & membuat folder konfigurasi prometheus
+```
+sudo mkdir /etc/prometheus
+```
+```
+sudo mv consoles/ console_libraries/ prometheus.yml /etc/prometheussudo mv consoles/ console_libraries/ prometheus.yml /etc/prometheus
 ```
 
 ## Setting firewall dasar
