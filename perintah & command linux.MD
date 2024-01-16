@@ -925,6 +925,16 @@ mematikan proses berdasarkan nama proses
 pkill nama_proses
 ```
 
+## Menjalankan proses dibalik layar
+```
+nohup bash sample.sh &
+```
+
+contoh monitoring dari hasil output file sample.sh
+```
+tail -f filelog,txt
+```
+
 ## melihat informasi file  yang dibuka oleh sebuag proses
 contoh proses ssh
 ```
