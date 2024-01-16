@@ -849,6 +849,11 @@ Lihat properties pc
 tar xvf nama_file.tar.gz
 ```
 
+## Mendownload file
+```
+wget alamatdomain.com/nama_file.extensi
+```
+
 ## Melihat history perintah
 ```
 history
