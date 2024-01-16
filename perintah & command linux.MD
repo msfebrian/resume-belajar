@@ -31,6 +31,11 @@ Contoh Panduan ringkas perintah copy
 cp --help
 ```
 
+## Melihat user saat ini yang digunakan
+```
+whoami
+```
+
 ## Menambahkan user dan merubah password
 Merubah password
 ```
