@@ -273,9 +273,24 @@ menampilkan semua file atau direktori tanpa proses shorting
 ls -f 
 ```
 
-melihat semua file lengkap
+melihat semua file lengkap & sorting dari A-Z
 ```
 ls –l 
+```
+
+melihat semua file lengkap & sorting dari Z-A
+```
+ls –lr 
+```
+
+melihat semua file lengkap & sorting berdasarkan waktu
+```
+ls –lrt 
+```
+
+melihat semua file dengan informasi ukuran simple dengan menambahkan "h" dibelakang
+```
+ls -lh
 ```
 
 buat folder
