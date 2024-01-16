@@ -378,6 +378,11 @@ Contoh :
     ctrl+c (utk mengakhiri dan simpan)
 ```
 
+## melihat isi file perhalaman
+```
+more /etc/log_sys.txt
+```
+
 ## Membuka file dan edit dengan vim 
 ```
    contoh configurasi batasan file nextcloud
