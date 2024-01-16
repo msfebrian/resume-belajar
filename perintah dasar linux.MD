@@ -305,7 +305,11 @@ Buat, Buka dan edit file dengan nano
 ```
 
 Membuat file
+```
+touch /home/nama_file.txt
+```
 
+atau
 ```
     cat > nama_file
 ```
