@@ -371,7 +371,7 @@ permission untuk group
 permission untuk other
 6 = rw- (dari perhitungan 4+2 = 6)
 ```
-## Permission folder dengan CHOWN
+## Config kepemilikan / Permission folder atau file dengan CHOWN
 format
 ```
 chown [owner/group owner] [nama file]
