@@ -212,6 +212,16 @@ contoh tampil
     Fri Dec  8 10:00:20 AM WIB 2023
 ```
 
+## Proses perintah secara interval dengan watch
+contoh menampilkan waktu secara interval 1 detik
+```
+watch -n 1 date
+```
+menampilkan proses
+```
+watch -n 1 ps
+```
+
 ## update dan upgrade repositories & os
 perintah satu-satu
 ```
