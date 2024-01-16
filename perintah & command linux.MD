@@ -347,6 +347,26 @@ ganti nama file
     cp /path/sumber /path/tujuan 
 ```
 
+## Mencopy dengn rsync (ada fitur sinkronisasi antara folder sumber dengan tujuan)
+## rsync hanya mencopy file2 yg belum ada ditujuan
+perintah standar
+```
+rsync /path/sumber /path/tujuan
+```
+perintah dengan fungsi tambahan copy hiden dan compres during transfer (informasi lainnya lihat rsync --help)
+```
+rsync -avzh /path/sumber /path/tujuan
+```
+
+## Copy antar server dengan scp
+```
+scp [sumber_file] [namauser@alamat_server]:~
+```
+contoh
+```
+scp file-saya.txt admin@192.168.2.2:~
+```
+
 ## text editor (notepad)
 ```
     sudo nano 
