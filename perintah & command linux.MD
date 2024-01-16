@@ -554,33 +554,40 @@ Format disk / Buat filesystem
         mkfs.ext4 -L DATA /dev/sdb1
 ```
 
-## Install dan Remove Aplikasi Native dan Snap
+# Install dan Remove Aplikasi Native dan Snap
 
-Install Aplikasi 
+## Install Aplikasi 
 ```
    sudo apt install nama_package
 ```
-List Aplikasi Terinstall
+
+## List Aplikasi Terinstall
 ```
    sudo apt list --installed
 ```
-Hapus Instalasi (remove package apt)
+
+## Hapus Instalasi (remove package apt)
 ```
    sudo apt remove nama_package
 ```
 
+## Menampilkan informasi lokasi package (binary) beserta lokasi file confignya
+contoh mencari package ssh
+```
+whereis ssh
+```
 
-List Aplikasi/package yang diinstal dengan snap
+## List Aplikasi/package yang diinstal dengan snap
 ```
   snap list
 ```
  
-Update package snap
+## Update package snap
 ```
   sudo snap refresh nama_package
 ```
 
-Mengelola service snap
+## Mengelola service snap
 ```
   sudo snap enable nama_package
   sudo snap start nama_package
