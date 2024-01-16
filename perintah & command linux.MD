@@ -409,6 +409,11 @@ contoh memfilter kata error dan menjumlah kata error pada file dgn word count (w
 sudo cat /var/log/syslog | grep error | wc -l
 ```
 
+# melihat file secara realtime
+```
+tail -f filelog.txt
+```
+
 # mencari file atau folder
 contoh mencari file dgn nama cloud-init.log
 ```
@@ -739,7 +744,7 @@ ssh-keygen -R 192.168.88.2
 ```
 
 ## Cara lainnya jika reset key tidak berhasil
-
+menggunakan package tail (tail berfungsi melihat file secara realtime)
 melihat log ssh (utk cek login atau error)
 ```
   tampilkan log 100 baris saja
