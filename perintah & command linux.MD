@@ -899,6 +899,12 @@ task manager bawaan system
 htop
 ```
 
+## Filter list proses
+contoh filter proses ssh
+```
+ps -aef | grep ssh
+```
+
 menggunakan glances
 ```
     sudo apt install glances
