@@ -37,6 +37,7 @@ Contoh Panduan ringkas perintah copy
 cp --help
 ```
 
+# User Management
 ## Melihat user saat ini yang digunakan
 ```
 whoami
@@ -59,7 +60,7 @@ Merubah password
 ```
 Tekan enter masukkan password lama kemudian password baru 2 kali
 
-Menambah user
+## Menambah user
 ```
 sudo adduser nama_user
 ```   
@@ -100,35 +101,30 @@ Lihat direktori pengguna
    ls /home
 ```
 
-## Lihat task manager
-```
-  sudo htop
-```
-
-## Update dan upgrade
-Update
+# Update dan upgrade
+## Update
 ```
 sudo apt update
 ```
 
-Lihat berapa banyak paket yang dapat diupgrade
+## Lihat berapa banyak paket yang dapat diupgrade
 ```
 apt list --upgradable
 ```
 
-Upgrade
+## Upgrade
 ```
 sudo apt upgrade
 atau 
 sudo apt upgrade -y
 ```
 
-mengupgrade semua paket yang tersedia,
+## mengupgrade semua paket yang tersedia,
 ```
 sudo apt full-upgrade
 ```
 
-remove package yg sudah tidak digunakan setelah update / upgrade
+## remove package yg sudah tidak digunakan setelah update / upgrade
 ```
 sudo apt auto remove
 ```
@@ -153,8 +149,8 @@ sudo do-release-upgrade -d
 sudo lsb_release -a
 ```
 
-## Konfigurasi Date Timezone
-Set Default timezone cara mudah (rekomeded)
+# Konfigurasi Date Timezone
+## Set Default timezone cara mudah (rekomeded)
 ```
    sudo dpkg-reconfigure tzdata
       pilih asia
@@ -163,7 +159,7 @@ Set Default timezone cara mudah (rekomeded)
                ..... timezone 'Asia/Jakarta'
 ```
 
-Cara lainnya :
+## Cara lainnya :
 
 untuk lihat list timezone (cara aga pusing bnyak)
 ```
@@ -434,7 +430,7 @@ find /var/log/ | grep cloud-init.log
     :wq berfungsi untuk keluar dari editor sekaligus menyimpan file
 ```
 
-## Permission Folder & File dengan CHMOD
+# Permission Folder & File dengan CHMOD
 ```
 - owner	Pengguna yang membuat dan memiliki file / direktori.
 - group	Semua pengguna yang merupakan anggota dalam grup yang sama.
@@ -495,41 +491,42 @@ tambahkan opsi "chown -R" utk menerapkan ke dalam folder dan semua file yang ada
 chown -R nama_user:nama_group nama_folder
 ```
 
-## Mengelola dan Memformat Disk 
-Melihat list disk & mounting point
+# Mengelola dan Memformat Disk 
+## Melihat list disk & mounting point
 ```
   lsblk
 ```
-tampil kan jg UUID
+
+## tampil kan jg UUID
 ```
   lsblk -f
 ``` 
 
-Tampil disk
+## Tampil disk
 ```
     fdisk -l | grep /dev/sd
     Atau
     fdisk /dev/sd
 ```
 
-Melihat list disk & partisi
+## Melihat list disk & partisi
 ```
   sudo parted -l
 ```
 
-Cara mount
+## Cara mount
 ```
     mkdir /mnt/disk2
     mount /dev/sdb1 /mnt/disk2
 ```
 
 
-Tampil disk file system list
+## Tampil disk file system list
 ```
   df -h atau df -Th
 ```
 
-Tampil disk usage / usage file atau disk
+## Tampil disk usage / usage file atau disk
 ```
    du -h
    du -h /mnt/disk2
@@ -539,8 +536,6 @@ Tampil disk usage / usage file atau disk
    du -m /mnt/disk2
    atau lainnya du --help
 ```
-
-
 
 ## Buat partisi dan Format disk 
 Jika ingin dipartisi unmount dahulu
@@ -645,8 +640,8 @@ sudo systemctl daemon-reload
   systemctl disable <nama-service>
 ```
 
-## Membuat service dari file binari linux
-contoh membuat service prometheus.
+# Membuat service dari file binari linux
+## contoh membuat service prometheus.
 1. Lihat list file binary biasanya yang berwarna hijau
 ```
 ls -l
@@ -678,7 +673,7 @@ sudo chown -R prometheus:prometheus /var/lib/prometheus/
 sudo systemctl enable --now prometheus.service
 ```
 
-## Setting firewall dasar
+# Setting firewall dasar
 Pastikan OpenSSH sudah diijinkan terlebih dahulu sebelum enable firewall agar dapat diremot
 ```
   sudo ufw app list
@@ -719,7 +714,7 @@ hapus firewall
    sudo ufw delete allow 8291
 ```
 
-## Mengatasi error remote SSH
+# Mengatasi error remote SSH
 ## Reset key ssh client di windows
 ```
   contoh di windows hapus line ip dan key yg error
@@ -809,7 +804,7 @@ Jika opsi ini diatur menjadi forced-commands-only, maka user root dapat login me
 Jika opsi ini diatur menjadi no, maka user root tidak dapat login menggunakan ssh sama sekali
 ```
 
-## Melihat list port dan service yang berjalan
+# Melihat list port dan service yang berjalan
 ```
 sudo netstat -tlnp
 ```
@@ -832,17 +827,18 @@ atau
   sudo lsof -n -i | grep openssh
 ```
 
-## Lihat ip address 
-Melihat detil semua alamat ip & network name pada system
+# Lihat ip address 
+## Melihat detil semua alamat ip & network name pada system
 ```
   sudo ip add
 ```
-Melihat ip saja
+
+## Melihat ip saja
 ```
 hostname -I
 ```
 
-Konfigurasi ip address
+## Konfigurasi ip address
 ```
 sudo  nano /etc/netplan/00-installer-config.yaml
 ```
@@ -872,22 +868,22 @@ network:
   version: 2
 ```
 
-## Perintah service docker
-Perintah service pada docker contoh
+# Perintah service docker
+## Perintah service pada docker contoh
 ```
   sudo service docker stop
   sudo service docker start
   sudo service docker status
 ```
 
-## Aplikasi-aplikasi yang sering digunakan
+# Aplikasi-aplikasi yang sering digunakan
 
-Zerotier install
+## Zerotier install
 ```
  curl -s https://install.zerotier.com | sudo bash
 ```
 
-Join zerotier network
+## Join zerotier network
 ```
  sudo zerotier-cli join <network-id>
 ```
@@ -905,7 +901,7 @@ contoh filter proses ssh
 ps -aef | grep ssh
 ```
 
-menggunakan glances
+## menggunakan glances
 ```
     sudo apt install glances
 ```
@@ -913,13 +909,14 @@ menggunakan glances
     sudo glances
 ```
 
-Lihat properties pc
+## Lihat properties pc
 ```
    sudo apt install neofetch 
 ```
 ```
    sudo neofetch 
 ```
+
 ## mematikan service
 mematikan proses berdasarkan proses ID
 ```
