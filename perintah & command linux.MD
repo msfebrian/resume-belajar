@@ -20,6 +20,12 @@ Atau
 Timing 10 detik
   sudo shutdown -r 10
 ```
+
+## Keluar dari proses diterminal
+```
+ctrl + c
+```
+
 ## Melihat panduan perintah linux
 Contoh Panduan detail perintah copy
 ```
@@ -763,8 +769,13 @@ atau
 ```
 
 ## Lihat ip address 
+Melihat detil semua alamat ip & network name pada system
 ```
   sudo ip add
+```
+Melihat ip saja
+```
+hostname -I
 ```
 
 Konfigurasi ip address
