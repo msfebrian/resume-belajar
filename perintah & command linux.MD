@@ -931,9 +931,22 @@ melihat printer yang telah disetup
 cat /etc/printcap 
 ```
 
-melihat file pada /proc directori yang bukan merupakan file nyata
+melihat informasi cpu
+```
+lscpu
+```
+atau
 ```
 cat /proc/cpuinfo 
+```
+
+melihat penggunaan ram
+```
+free -h
+```
+atau lihat secara kontinu per 1 detik
+```
+watch -n 1 free -h
 ```
 
 melihat filesystem yang digunakan
