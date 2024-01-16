@@ -101,7 +101,7 @@ Lihat direktori pengguna
    ls /home
 ```
 
-# Update dan upgrade
+# Update dan upgrade package
 ## Update
 ```
 sudo apt update
@@ -117,6 +117,11 @@ apt list --upgradable
 sudo apt upgrade
 atau 
 sudo apt upgrade -y
+```
+
+bisa juga digabung
+```
+sudo apt update && upgrade -y
 ```
 
 ## mengupgrade semua paket yang tersedia,
@@ -148,6 +153,7 @@ sudo do-release-upgrade -d
 ```
 sudo lsb_release -a
 ```
+
 
 # Konfigurasi Date Timezone
 ## Set Default timezone cara mudah (rekomeded)
@@ -575,6 +581,11 @@ Format disk / Buat filesystem
 ```
 
 # Install dan Remove Aplikasi Native dan Snap
+## Mencari aplikasi
+contoh mencari aplikasi yg berkaitan dengan php
+```
+apt search php
+```
 
 ## Install Aplikasi 
 ```
@@ -589,6 +600,11 @@ Format disk / Buat filesystem
 ## Hapus Instalasi (remove package apt)
 ```
    sudo apt remove nama_package
+```
+
+## install package deb
+```
+dpkg -i nama-package.deb
 ```
 
 ## Menampilkan informasi lokasi package (binary) beserta lokasi file confignya
