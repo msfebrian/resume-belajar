@@ -869,6 +869,15 @@ melihat hardware yang sedang beraktifitas
 Dmesg 
 ```
 
+melihat informasi ip domain
+```
+nslookup [domain]
+```
+melihat informasi dns domain
+```
+dig [domain]
+```
+
 Mencari perintah – perintah atau file yang mengandung huruf yang dimaksud
 ```
 apropos 
