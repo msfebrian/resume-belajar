@@ -887,7 +887,14 @@ Join zerotier network
  sudo zerotier-cli join <network-id>
 ```
 
-Monitoring penggunaan hardware prosesor, ram, disk network dll 
+# Process Management
+## Monitoring penggunaan hardware prosesor, ram, disk network dll 
+task manager bawaan system
+```
+htop
+```
+
+menggunakan glances
 ```
     sudo apt install glances
 ```
@@ -901,6 +908,22 @@ Lihat properties pc
 ```
 ```
    sudo neofetch 
+```
+## mematikan service
+mematikan proses berdasarkan proses ID
+```
+kill nomor_id
+```
+
+mematikan proses berdasarkan nama proses
+```
+pkill nama_proses
+```
+
+## melihat informasi file  yang dibuka oleh sebuag proses
+contoh proses ssh
+```
+sudo lsof | grep ssh
 ```
 
 # Compress dan Extract file
@@ -949,7 +972,7 @@ history
 history -c
 ```
 
-## Perintah Lainnya
+# Perintah Lainnya
 Melihat uptime system
 ```
 uptime -p
