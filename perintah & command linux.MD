@@ -823,9 +823,20 @@ Lihat properties pc
 tar xvf nama_file.tar.gz
 ```
 
+## Melihat history perintah
+```
+history
+```
+## Menghapus history perintah
+```
+history -c
+```
 
 ## Perintah Lainnya
-
+Melihat uptime system
+```
+uptime -p
+```
 
 melihat hardware yang sedang beraktifitas 
 ```
