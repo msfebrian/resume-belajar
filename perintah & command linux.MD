@@ -903,9 +903,31 @@ Lihat properties pc
    sudo neofetch 
 ```
 
+# Compress dan Extract file
+## Compress file tar.gz
+saat eksekusi perintah hilangkan "[" & "]"
+```
+tar cvf [filename.tar.gz] [lokasi_directory]
+```
+
 ## Extract file tar.gz
 ```
 tar xvf nama_file.tar.gz
+```
+
+## Cara lainnya
+meng-uncompress sebuah file zip (*.gz” or *.z). 
+```
+gunzip 
+```
+mengompress file (zip)
+```
+gzip
+```
+
+meng-uncompress file dengan format (*.bz2) dengan utiliti “bzip2”, digunakan pada file yang besar
+```
+bunzip2 
 ```
 
 ## Mengakses atau request URL
@@ -964,20 +986,6 @@ apropos topic
 menampilkan calculator
 ```
 bc 
-```
-
-meng-uncompress sebuah file zip (*.gz” or *.z). 
-```
-gunzip 
-```
-mengompress file (zip)
-```
-gzip
-```
-
-meng-uncompress file dengan format (*.bz2) dengan utiliti “bzip2”, digunakan pada file yang besar
-```
-bunzip2 
 ```
 
 menampilkan/melihat kalender
