@@ -383,6 +383,18 @@ Contoh :
 more /etc/log_sys.txt
 ```
 
+## memfilter dgn fungsi grep
+contoh memfilter kata error dan menjumlah kata error pada file dgn word count (wc)
+```
+sudo cat /var/log/syslog | grep error | wc -l
+```
+
+# mencari file atau folder
+contoh mencari file dgn nama cloud-init.log
+```
+find /var/log/ | grep cloud-init.log
+```
+
 ## Membuka file dan edit dengan vim 
 ```
    contoh configurasi batasan file nextcloud
