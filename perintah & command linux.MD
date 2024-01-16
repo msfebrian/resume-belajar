@@ -36,6 +36,16 @@ cp --help
 whoami
 ```
 
+## Masuk ke dalam user di terminal
+masuk ke root user
+```
+sudo su
+```
+masuk ke user tertentu
+```
+sudo su - nama_user
+```
+
 ## Menambahkan user dan merubah password
 Merubah password
 ```
