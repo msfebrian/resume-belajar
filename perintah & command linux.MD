@@ -877,6 +877,10 @@ melihat informasi dns domain
 ```
 dig [domain]
 ```
+atau
+```
+host [domain]
+```
 
 Mencari perintah – perintah atau file yang mengandung huruf yang dimaksud
 ```
