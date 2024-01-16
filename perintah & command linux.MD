@@ -255,7 +255,7 @@ perintah sekaligus
   sudo update && sudo upgrade -y
 ```
 
-## Mengelola File & Folder
+# Mengelola File & Folder
 
 Melihat dan mengelola file  dengan Midnight Commander (mc)
 ```
@@ -293,7 +293,7 @@ melihat semua file dengan informasi ukuran simple dengan menambahkan "h" dibelak
 ls -lh
 ```
 
-buat folder
+## buat folder
 ```
     mkdir nama-folder
     
@@ -301,7 +301,7 @@ buat folder
     mkdir /path_directorinya/nama_foldernya
 ```
 
-Hapus folder
+## Hapus folder
 ```
     rmdir nama_folder
     
@@ -309,12 +309,12 @@ Hapus folder
     rmdir /path_directorinya/nama_foldernya
 ```
 
-Hapus file
+## Hapus file
 ```
   rm nama_file
 ```
 
-menghapus semua file nya saja, tanpa direktori dan subdirektorinya
+## menghapus semua file nya saja, tanpa direktori dan subdirektorinya
 ```
     rm –f
     
@@ -322,14 +322,14 @@ menghapus semua file nya saja, tanpa direktori dan subdirektorinya
     rm -f /path_directorinya/..
 ```
 
-menghapus file, direktori dan subdirektorinya (recursive remove)
+## menghapus file, direktori dan subdirektorinya (recursive remove)
 ```
     rm –r  
     bisa juga tambahkan path
     rm -r /path_directorinya/..
 ```
 
-Memindahkan file, bisa juga untuk merubah nama sebuah file
+## Memindahkan file, bisa juga untuk merubah nama sebuah file
 ```
 pindah folder
     mv /lokasi_folder /path_tujuan_atau_nama_folder_yg _diinginkan
@@ -342,17 +342,17 @@ ganti nama file
     mv /home/datapribadi /mnt/disk2
 ```
 
-Copy file
+## Copy file
 ```
     cp /path/sumber /path/tujuan 
 ```
 
-text editor (notepad)
+## text editor (notepad)
 ```
     sudo nano 
 ```
 
-Buat, Buka dan edit file dengan nano
+## Buat, Buka dan edit file dengan nano
 ```
   sudo nano nama_file
 
@@ -360,7 +360,7 @@ Buat, Buka dan edit file dengan nano
     untuk keluar ctr + x
 ```
 
-Membuat file
+## Membuat file
 ```
 touch /home/nama_file.txt
 ```
@@ -378,7 +378,7 @@ Contoh :
     ctrl+c (utk mengakhiri dan simpan)
 ```
 
-Membuka file dan edit dengan vim 
+## Membuka file dan edit dengan vim 
 ```
    contoh configurasi batasan file nextcloud
    sudo vim ~/.nextcloud/proxy/conf.d/custom.conf
