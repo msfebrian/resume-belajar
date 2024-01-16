@@ -849,9 +849,14 @@ Lihat properties pc
 tar xvf nama_file.tar.gz
 ```
 
-## Mendownload file
+## Mengakses atau request URL
 ```
-wget alamatdomain.com/nama_file.extensi
+curl URL/bash_perintah.sh
+```
+
+## Mendownload file dari URL
+```
+wget URL/nama_file.extensi
 ```
 
 ## Melihat history perintah
