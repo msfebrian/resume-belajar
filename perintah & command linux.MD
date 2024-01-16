@@ -623,6 +623,7 @@ whereis ssh
   sudo snap refresh nama_package
 ```
 
+# Service pada linux
 ## Mengelola service snap
 ```
   sudo snap enable nama_package
