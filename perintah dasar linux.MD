@@ -20,6 +20,16 @@ Atau
 Timing 10 detik
   sudo shutdown -r 10
 ```
+## Melihat panduan perintah linux
+Contoh Panduan detail perintah copy
+```
+man cp
+```
+
+Contoh Panduan ringkas perintah copy
+```
+cp --help
+```
 
 ## Menambahkan user dan merubah password
 Merubah password
