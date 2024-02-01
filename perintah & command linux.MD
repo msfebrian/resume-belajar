@@ -551,6 +551,18 @@ Select disk yg diinginkan contoh :
     unmount /mnt/disk2
 ```
 
+Pilih MBR atau GPT
+```
+  untuk MBR menggunakan fdisk
+  untuk GPT menggunakan gdisk
+```
+```
+  jika fdisk / gdisk belum ada install package
+  sudo apt install fdisk
+  atau
+  sudo apt install gdisk
+```
+
 Tampil disk
 ```
     fdisk -l | grep /dev/sd
