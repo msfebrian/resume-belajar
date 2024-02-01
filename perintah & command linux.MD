@@ -551,7 +551,7 @@ Select disk yg diinginkan contoh :
     unmount /mnt/disk2
 ```
 
-Pilih MBR atau GPT
+## Pilih MBR atau GPT
 ```
   untuk MBR menggunakan fdisk
   untuk GPT menggunakan gdisk
@@ -563,6 +563,7 @@ Pilih MBR atau GPT
   sudo apt install gdisk
 ```
 
+## Contoh penggunaan fdisk
 Tampil disk
 ```
     fdisk -l | grep /dev/sd
@@ -576,6 +577,24 @@ Kemudian pilih disk yg diinginkan misalkan sdb1
     
     Tekan p utk tampilkan
     tekan m untuk help
+```
+
+## Contoh penggunaan gdisk
+secara umum perintah gdisk hampir sama dengan fdisk.
+
+Tampil disk
+```
+    gdisk -l | grep /dev/sd
+    Atau melihat disk dgn awalan nama sd**
+    gdisk /dev/sd
+```
+
+Kemudian pilih disk yg diinginkan misalkan sdb1
+```
+    gdisk /dev/sdb1
+    
+    Tekan p utk tampilkan
+    tekan ? untuk help
 ```
 
 Melihat list disk & partisi
