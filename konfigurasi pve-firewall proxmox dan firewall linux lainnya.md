@@ -108,7 +108,32 @@ sebelum enable firewall pastikan juga user telah diijinkan akses ssh agar dapat 
    sudo ufw delete allow 8291
 ```
 
-## Mengatasi error remote SSH
+# Mengatasi error remote SSH
+## Reset key ssh client di windows
+```
+  contoh di windows hapus line ip dan key yg error
+  C:\Users\User\.ssh\known_hosts
+```
+
+## Reset key ssh client di linux
+```
+cat ~/.ssh/known_hosts
+```
+atau
+```
+nano ~/.ssh/known_hosts
+```
+atau dengan perintah -R (remove)
+```
+ssh-keygen -R hostname/ip
+```
+contoh
+```
+ssh-keygen -R 192.168.88.2
+```
+
+## Cara lainnya jika reset key tidak berhasil
+menggunakan package tail (tail berfungsi melihat file secara realtime)
 melihat log ssh (utk cek login atau error)
 ```
   tampilkan log 100 baris saja
@@ -124,6 +149,12 @@ jika remote ssh masih error install ulang openssh dan config ulang
   sudo apt update
   sudo apt-get --reinstall install openssh-server
   sudo systemctl status ssh
+```
+atau
+```
+sudo apt-get remove openssh-server
+sudo apt-get install openssh-server
+sudo systemctl status ssh
 ```
 
 Konfigurasi /etc/ssh/sshd_config
