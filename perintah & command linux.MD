@@ -595,6 +595,10 @@ Kemudian pilih disk yg diinginkan misalkan sdb1
     
     Tekan p utk tampilkan
     tekan ? untuk help
+
+    contoh new partition
+    saat first sector di enter saja
+    last sector baru diisikan misalkan +200GB
 ```
 
 Melihat list disk & partisi
