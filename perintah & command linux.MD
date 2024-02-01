@@ -608,11 +608,14 @@ Melihat list disk & partisi
 
 Format disk / Buat filesystem
 ```
-  mkfs -t ext4 /dev/namadisk
-     Contoh 
-        mkfs -t ext4 /dev/sdb1
-     Contoh format langsung diberi label disk
-        mkfs.ext4 -L DATA /dev/sdb1
+  mkfs -t tipeFileSystem /dev/namadisk
+  atau
+     mkfs.tipeFileSystem /dev/namadisk
+
+  Contoh 
+    mkfs -t ext4 /dev/sdb1
+  Contoh format langsung diberi label disk
+    mkfs.ext4 -L DATA /dev/sdb1
 ```
 
 # Install dan Remove Aplikasi Native dan Snap
