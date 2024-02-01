@@ -618,6 +618,18 @@ Format disk / Buat filesystem
     mkfs.ext4 -L DATA /dev/sdb1
 ```
 
+# Tentang LVM
+## Konsep NVM
+1. buat dulu Physical Volume (PV) nya. dengan cara buat partisi misalkan dengan fdisk
+```
+  jika sudah ada partisinya type partisi bisa dirubah.
+  pilih t di fdisk
+    dan lihat list Type Partisi dengan L
+  LVM id nya 83
+```
+2. buat Volume Group (VG)
+3. buat Logical Volume (LV) - (data dapat disimpan hanya di LV)
+
 # Install dan Remove Aplikasi Native dan Snap
 ## Mencari aplikasi
 contoh mencari aplikasi yg berkaitan dengan php
