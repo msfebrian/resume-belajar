@@ -619,6 +619,10 @@ Format disk / Buat filesystem
 ```
 
 # Tentang LVM
+- LVM dapat menggabungkan beberapa fisik disk/penyimpanan menjadi satu partisi/volume.
+- Partisi LVM lebih fleksibel dari partisi konvensional
+- fitur lainnya pada LVM ada raid, LVM Thin (kapasitas volume bisa melebihi fisik disk)
+
 ## Konsep NVM
 1. buat dulu Physical Volume (PV) nya. dengan cara buat partisi misalkan dengan fdisk
 ```
