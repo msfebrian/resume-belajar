@@ -706,6 +706,11 @@ contoh format partisi lvm
 mkfs.ext4 /dev/namaVG/namaLV
 ```
 
+bisa juga menggunakan mapper
+```
+mkfs.ext4 /dev/mapper/namVG-namaLV
+```
+
 ## Mounting LVM di fstab
 buka fstab
 ```
