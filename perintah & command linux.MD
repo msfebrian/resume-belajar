@@ -699,8 +699,27 @@ lsblk
 - Contoh struktur lvm
 sdb                   <- disk
 --sdb1                <- Partisi LVM
-  |--namaVG-namaLV    <- VG dan LV (ini path yang utk formaT LVM)
+  |--namaVG-namaLV    <- namaVG dan namaLV (ini path yang utk diformat LVM)
 
+contoh format partisi lvm
+```
+mkfs.ext4 /dev/namaVG/namaLV
+```
+
+## Mounting LVM di fstab
+buka fstab
+```
+  nano /etc/fstab
+```
+tambah baris di fstab untuk automount lvm
+```
+  /dev/namaVG/namaLV /lokasi/mount ext4 defaults 0 0
+```
+
+mount dan verifikasi
+```
+  mount -av
+```
 
 # Install dan Remove Aplikasi Native dan Snap
 ## Mencari aplikasi
