@@ -697,9 +697,11 @@ lsblk
 
 - hati2 jangan sampai salah format physical groupnya
 - Contoh struktur lvm
+```
 sdb                   <- disk
 --sdb1                <- Partisi LVM
   |--namaVG-namaLV    <- namaVG dan namaLV (ini path yang utk diformat LVM)
+```
 
 contoh format partisi lvm
 ```
