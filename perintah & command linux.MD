@@ -577,6 +577,7 @@ Kemudian pilih disk yg diinginkan misalkan sdb1
     
     Tekan p utk tampilkan
     tekan m untuk help
+    tekan t untuk change partition type dan pilih L untuk lihat code
 ```
 
 ## Contoh penggunaan gdisk
@@ -595,6 +596,7 @@ Kemudian pilih disk yg diinginkan misalkan sdb1
     
     Tekan p utk tampilkan
     tekan ? untuk help
+    tekan t untuk change partition type dan pilih L untuk lihat code
 
     contoh new partition
     saat first sector di enter saja
