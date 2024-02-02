@@ -624,15 +624,50 @@ Format disk / Buat filesystem
 - fitur lainnya pada LVM ada raid, LVM Thin (kapasitas volume bisa melebihi fisik disk)
 
 ## Konsep NVM
-1. buat dulu Physical Volume (PV) nya. dengan cara buat partisi misalkan dengan fdisk
+1.  buat partisi misalkan dengan fdisk/gdisk untuk Physical Volume LVM
 ```
   jika sudah ada partisinya type partisi bisa dirubah.
   pilih t di fdisk
     dan lihat list Type Partisi dengan L
   LVM id nya 83
 ```
-2. buat Volume Group (VG)
-3. buat Logical Volume (LV) - (data dapat disimpan hanya di LV)
+2. buat Physical Volume (PV) nya.
+Perintah Physical Volme Create.
+```
+lihat daftar partisi
+  lsblk
+
+buat PV pvcreate /nama/partisi
+  contoh
+  pvcreate /dev/sdb1
+```
+
+lihat list Physical Volume LVM
+```
+pvs
+```
+
+3. buat Volume Group (VG)
+```
+vgcreate namaVG /PhysicalVolume/ygSudahDibuat
+```
+
+contoh
+```
+vgcreate vg-data /dev/sdb1
+```
+
+cara lihat list VG
+```
+vgs
+```
+
+melihat informasi Volume Group yang sudah dibuat
+```
+vgdisplay nama_volume_group
+```
+
+4. buat Logical Volume (LV) - (data dapat disimpan hanya di LV)
 
 # Install dan Remove Aplikasi Native dan Snap
 ## Mencari aplikasi
