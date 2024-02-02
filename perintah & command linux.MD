@@ -624,14 +624,14 @@ Format disk / Buat filesystem
 - fitur lainnya pada LVM ada raid, LVM Thin (kapasitas volume bisa melebihi fisik disk)
 
 ## Konsep/Tahapan buat LVM
-1.  buat partisi misalkan dengan fdisk/gdisk untuk Physical Volume LVM
+## 1.  buat partisi misalkan dengan fdisk/gdisk untuk Physical Volume LVM
 ```
   jika sudah ada partisinya type partisi bisa dirubah.
   pilih t di fdisk
     dan lihat list Type Partisi dengan L
   LVM id nya 83
 ```
-2. buat Physical Volume (PV) nya.
+## 2. buat Physical Volume (PV) nya.
 Perintah Physical Volme Create.
 ```
 lihat daftar partisi
@@ -647,7 +647,7 @@ lihat list Physical Volume LVM
 pvs
 ```
 
-3. buat Volume Group (VG)
+## 3. buat Volume Group (VG)
 ```
 vgcreate namaVG /PhysicalVolume/ygSudahDibuat
 ```
@@ -666,11 +666,13 @@ melihat informasi Volume Group yang sudah dibuat
 ```
 vgdisplay nama_volume_group
 ```
+
 keterangan informasi VG Size dan Physical Extend (PE)
 ```
 PE Size x Total PE = Nilainya Sama dengan VG Size
 ```
-4. buat Logical Volume (LV) - (data dapat disimpan hanya di LV)
+
+## 4. buat Logical Volume (LV) - (data dapat disimpan hanya di LV)
 lv create dengan VG Size gunakan parameter -L ("L" Besar)
 ```
 lvcreate -L 200MiB namaVG -n namaLV 
@@ -686,6 +688,19 @@ cara lihat list LV
 ```
 lvs
 ```
+
+## 5. Format Logical Volume (LV)
+lihat dulu listnya
+```
+lsblk
+```
+
+- hati2 jangan sampai salah format physical groupnya
+- Contoh struktur lvm
+sdb                   <- disk
+--sdb1                <- Partisi LVM
+  |--namaVG-namaLV    <- VG dan LV (ini path yang utk formaT LVM)
+
 
 # Install dan Remove Aplikasi Native dan Snap
 ## Mencari aplikasi
