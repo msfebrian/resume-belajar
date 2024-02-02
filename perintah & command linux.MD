@@ -730,7 +730,8 @@ mount dan verifikasi
   mount -av
 ```
 
-## Volume Group Extend (VG Extend)
+# Extend LVM
+## 1. Volume Group Extend (VG Extend)
 VG Extend berfungsi menambah size VG dari disk lain. perintahnya
 ```
 vgextend namaVG_yg_ingin_ditambah /dev/sumberDisk
@@ -742,6 +743,34 @@ lihat dulu list partisi PV
 
 kemudian pilih. contoh
   vgextend vg1 /dev/vdc1
+```
+
+## 2. Logical Volume Extend (PV Extend) Menambah size
+## HATI-HATI JGN GUNAKAN mkfs (karna itu berfungsi format, data bisa hilang)
+cara buatlv extend
+```
+lvextend -l +jumlahPE /namaDevice/nama_VG_Existing/nama_LV_Existing
+```
+contoh
+```
+lvextend -l +50 dev/vg1/lv-1
+```
+```
+jika ingin satuan dalam Bit
+"-l" gunakan L besar "-L"
+```
+contoh 
+```
+lvextend -L +200MiB dev/vg1/lv-2
+```
+
+## 3. set akumulasi jumlah file system khusus tipe ext
+```
+resize2fs /dev/namaVG/namaLV
+```
+cek 
+```
+df -h
 ```
 
 # Install dan Remove Aplikasi Native dan Snap
