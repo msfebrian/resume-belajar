@@ -730,6 +730,20 @@ mount dan verifikasi
   mount -av
 ```
 
+## Volume Group Extend (VG Extend)
+VG Extend berfungsi menambah size VG dari disk lain. perintahnya
+```
+vgextend namaVG_yg_ingin_ditambah /dev/sumberDisk
+```
+contoh
+```
+lihat dulu list partisi PV
+  pvs
+
+kemudian pilih. contoh
+  vgextend vg1 /dev/vdc1
+```
+
 # Install dan Remove Aplikasi Native dan Snap
 ## Mencari aplikasi
 contoh mencari aplikasi yg berkaitan dengan php
