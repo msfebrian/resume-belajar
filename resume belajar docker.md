@@ -91,7 +91,7 @@ Untuk menguji apakah Docker terinstal dengan baik, jalankan perintah:
    docker run hello-world
 ```
 
-##  Menyimpan volume docker di partisi D dalam system operasi windows
+##  default penyimpanan volume docker di partisi D dalam system operasi windows
 
 Untuk menyimpan volume docker di partisi D dalam sistem operasi Windows, Anda perlu mengubah lokasi default dari direktori 
 ```
@@ -127,7 +127,7 @@ Anda juga bisa melihat informasi lebih detail tentang volume docker dengan perin
     docker volume inspect
 ```
 
-##  Menyimpan volume docker di partisi lain dalam system operasi linux
+##  default penyimpanan volume docker di partisi lain dalam system operasi linux
 
 Untuk menyimpan volume docker di partisi lain, perlu mengubah lokasi default dari direktori
 
@@ -179,18 +179,18 @@ Kemudian juga bisa melihat informasi lebih detail tentang volume docker dengan p
     volume inspect
 ```
 
-## Perintah-perintah docker
+# Perintah-perintah docker
 running docker desktop kemudian cek via powershell
 ```
 docker info
 ```
 
-memastikan docker sudah terintah dengan baik
+## memastikan docker sudah terinstall dengan baik
 ```
 docker run hello-world
 ```
 
-melihat image docker yang sudah di download atau yang tersedia
+## melihat image docker yang sudah di download atau yang tersedia
 ```
 docker image ls
 ```
@@ -198,42 +198,44 @@ atau
 ```
 docker images
 ```
-melihat image docker yang sedang berjalan
+
+## melihat image docker yang sedang berjalan
 ```
 docker ps
 ```
 untuk keluar dari terminal docker image tekan ctrl+c
 
 
-melihat history image yang pernah berjalan
+## melihat history image yang pernah berjalan
 ```
 docker ps -a
 ```
 
 
-untuk lihat list container
+## lihat list container
 ```
 docker container ls
 ```
 
-## List Perintah dasar docker
+## pull image
 Mendowload image dari repository hub docker
 silahkan copy nama image yg akan didownload dari hub docker contoh format
 ```
    docker pull namaimage
 ```
-menjalankan image docker
+
+## menjalankan image docker
 nama image sesuaikan dari docker images
 ```
    docker run namaimage
 ```
 perintah menjalankan lainnya 
-contoh untuk mode lepas yg hanya menampilkan id nya saja
+contoh untuk mode lepas yg hanya menampilkan id nya saja (tanpa menampilkan log error atau sukses)
 ```
 docker run -d namaimage
 ```
 
-untuk menjalankan image dengan versi lainnya
+## untuk menjalankan image dengan versi lainnya
 ```
 docker run -d namaimage:versi
 ```
@@ -241,15 +243,18 @@ docker run -d namaimage:versi
 ```
 docker run --option
 ```
-untuk menjalankan container image dari list docker images
+
+## untuk menjalankan container image dari list docker images
 ```
     docker start IdImage
 ```
-Menghentikan image yang sedang berjalan
+
+## Menghentikan image yang sedang berjalan
 ```   
     docker stop IdImage
 ```
 
+## mengakses docker container
 ```
     docker exec -it
     docker logs
@@ -257,7 +262,7 @@ Menghentikan image yang sedang berjalan
 
 Masuk ke terminal container misalkan postgresql
 ```
-    docker exec -it nama_container bash
+    docker exec -it nama_container/id bash
     contoh
     docker exec -it postgresql bash
     
@@ -293,6 +298,23 @@ Hapus Container yang Tidak Digunakan
    docker container prune -f
 ```
 
+# docker volume
+## buat volume docker
+```
+docker volume create nama_volume
+```
+volume akan disimpan di default penyimpanan docker
+
+## menyimpan volume docker pada folder host
+pada docker run di bagian volume masukkan path folder di host dan kontainer 
+```
+-v /lokasi/host/utkSimpanVolume:/lokasi/path/kontainer
+```
+contoh utk os windows slash path gunakan back slash 
+```
+-v c:/lokasi/host/utkSimpanVolume:/lokasi/path/kontainer
+```
+
 
 ## cara binding port
 dalam satu host beberapa container dapat memiliki port yang sama
@@ -319,6 +341,7 @@ contoh install package nano ke container utk edit conf
 docker exec -it [container name or ID] bash -c 'apt-get -y update && apt -y install nano'
 ```
 jika stuck tengah jalan coba lagi, atau hapus perintah update jika tidak bisa
+
 
 
 ## Install Portainer
