@@ -1,4 +1,64 @@
 # Cara Install GUI di Ubuntu Server 22.04 dan Remote VNC Server
+# Install Desktop Environment dengan Tasksel
+## Install Tasksel
+Update dan update dahulu
+```
+sudo apt update
+sudo apt upgrade
+```
+
+Install Tasksel
+```
+sudo apt tasksel
+```
+
+running tasksel untuk menginstall DE
+```
+sudo tasksel
+```
+
+```
+Pilih "Ubuntu Desktop" atau DE lain yang Anda inginkan menggunakan tombol
+panah, lalu tekan 'Space' untuk memilihnya. Setelah dipilih, tekan 'Enter'.
+```
+
+## Mulai Desktop Environment
+```
+sudo systemctl isolate graphical.target
+sudo reboot now
+```
+
+## Hapus DE Melalui Tasksel
+```
+sudo tasksel remove nama_desktop_environment
+```
+contoh
+```
+sudo tasksel remove ubuntu-desktop
+```
+
+## Cara hapus melalui terminal
+```
+sudo apt autoremove --purge <narna-desktop-package>
+```
+
+contoh
+```
+sudo apt autoremove --purge ubuntu-desktop
+```
+
+Hapus Paket Tersisa
+```
+sudo apt-get purge $(dpkg -l | grep '^rc' | awk '{print $2}')
+```
+
+```
+sudo apt update
+sudo apt upgrade
+sudo reboot now
+```
+
+# Manual Install Desktop Environment tanpa Tasksel
 ## Install xfce desktop
 ```
 sudo apt install -y xfce4 xfce4-goodies
