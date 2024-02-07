@@ -38,6 +38,7 @@ lvs -a -o name,copy_percent,devices myvg
 perintah ini digunakan untuk melihat informasi rinci tentang Logical Volume (LV) dalam Volume Group (VG) yang disebut myvg. Mari kita jelaskan setiap bagian dari output perintah ini:
 
 1. my_lv_rimage_0(0), my_lv_rimage_1(0), my_lv_rimage_2(0):
+
 - Ini adalah segmen data dari LV yang menggunakan RAID 1 (mirror).
 - Angka dalam tanda kurung menunjukkan persentase salinan data di antara segmen LV. Dalam hal ini, persentase salinan adalah 0%, yang berarti segmen data ini belum disalin ke segmen lainnya.
 
@@ -64,11 +65,17 @@ Gunakan perintah mkdir untuk membuat titik mount (direktori) di mana Anda ingin 
 
 3. Mount Logical Volume:
 Gunakan perintah mount untuk me-mount LV ke dalam titik mount yang telah Anda buat. Gantilah DEVICE dengan path LV yang sesuai.
-Contoh: sudo mount /dev/mapper/myvg-mymirror /mnt/mymirror
+Contoh: 
+```
+sudo mount /dev/mapper/myvg-mymirror /mnt/mymirror
+```
 
 4. Verifikasi Mounting:
 Jalankan perintah mount tanpa argumen untuk memeriksa status mounting. Anda akan melihat LV dan titik mount yang terkait.
-Contoh output: /dev/mapper/myvg-mymirror on /mnt/mymirror type ext4 (rw,relatime)
+```
+Contoh output: 
+/dev/mapper/myvg-mymirror on /mnt/mymirror type ext4 (rw,relatime)
+```
 
 5. Jika ingin auto mount konfigurasi pada /etc/fstab
 
@@ -77,25 +84,46 @@ Contoh output: /dev/mapper/myvg-mymirror on /mnt/mymirror type ext4 (rw,relatime
 1. Mengganti Disk Rusak:
 - Identifikasi disk yang rusak dengan menjalankan perintah lvs atau pvs. Perhatikan nama Logical Volume (LV) yang terkait dengan disk rusak.
 
-2. Hapus disk rusak dari Volume Group (VG) dengan perintah vgreduce --removemissing VG_NAME.
+2. Hapus disk rusak dari Volume Group (VG) dengan perintah 
+```
+vgreduce --removemissing VG_NAME.
+```
 
-3. Matikan sistem dengan perintah shutdown -h now.
+3. Matikan sistem dengan perintah
+```
+shutdown -h now
+```
 
 4. Ganti disk lama yang rusak dengan disk baru.
 Nyalakan sistem kembali.
 
 5. Menambahkan Disk Baru:
-- Inisialisasi disk baru dengan perintah pvcreate /dev/sdX.
+- Inisialisasi disk baru dengan perintah 
+```
+pvcreate /dev/sdX.
+```
 
-- Tambahkan Physical Volume (PV) baru ke Volume Group (VG) dengan perintah vgextend VG_NAME /dev/sdX.
+- Tambahkan Physical Volume (PV) baru ke Volume Group (VG) dengan perintah 
+```
+vgextend VG_NAME /dev/sdX
+```
 
 - Buat Logical Volume (LV) baru atau perluas LV yang ada dengan perintah lvcreate atau lvextend.
 
-- Buat sistem file pada LV dengan perintah mkfs.ext4 /dev/VG_NAME/LV_NAME.
+- Buat sistem file pada LV dengan perintah 
+``` 
+mkfs.ext4 /dev/VG_NAME/LV_NAME
+```
 
-- Buat titik mount (direktori) untuk LV dengan perintah mkdir /mnt/MOUNT_POINT.
+- Buat titik mount (direktori) untuk LV dengan perintah 
+```
+mkdir /mnt/MOUNT_POINT
+```
 
-- Mount LV ke titik mount dengan perintah mount /dev/VG_NAME/LV_NAME /mnt/MOUNT_POINT.
+- Mount LV ke titik mount dengan perintah 
+```
+mount /dev/VG_NAME/LV_NAME /mnt/MOUNT_POINT.
+```
 
 - Tambahkan entri ke /etc/fstab agar LV otomatis ter-mount saat sistem boot.
 
