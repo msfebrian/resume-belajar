@@ -1,5 +1,159 @@
 # Logical Volume Manager LVM
 
+# Tentang LVM
+- LVM dapat menggabungkan beberapa fisik disk/penyimpanan menjadi satu partisi/volume.
+- Partisi LVM lebih fleksibel dari partisi konvensional
+- fitur lainnya pada LVM ada raid, LVM Thin (kapasitas volume bisa melebihi fisik disk)
+
+## Konsep/Tahapan buat LVM
+## 1.  buat partisi misalkan dengan fdisk/gdisk untuk Physical Volume LVM
+```
+  jika sudah ada partisinya type partisi bisa dirubah.
+  pilih t di fdisk
+    dan lihat list Type Partisi dengan L
+  LVM id nya 83
+```
+## 2. buat Physical Volume (PV) nya.
+Perintah Physical Volme Create.
+```
+lihat daftar partisi
+  lsblk
+
+buat PV pvcreate /nama/partisi
+  contoh
+  pvcreate /dev/sdb1
+```
+
+lihat list Physical Volume LVM
+```
+pvs
+```
+
+## 3. buat Volume Group (VG)
+```
+vgcreate namaVG /PhysicalVolume/ygSudahDibuat
+```
+
+contoh
+```
+vgcreate vg-data /dev/sdb1
+```
+
+cara lihat list VG
+```
+vgs
+```
+
+melihat informasi Volume Group yang sudah dibuat
+```
+vgdisplay nama_volume_group
+```
+
+keterangan informasi VG Size dan Physical Extend (PE)
+```
+PE Size x Total PE = Nilainya Sama dengan VG Size
+```
+
+## 4. buat Logical Volume (LV) - (data dapat disimpan hanya di LV)
+lv create dengan VG Size gunakan parameter -L ("L" Besar)
+```
+lvcreate -L 200MiB namaVG -n namaLV 
+```
+
+untuk lv create dengan PE Size gunakan parameter -l ("l" Kecil).
+- contoh untuk buat size 200MB dengan informasi di vgdisplay PE Size 4MB. maka PE size kalikan 50
+```
+lvcreate -l 50 namaVG -n namaLV 
+```
+
+cara lihat list LV
+```
+lvs
+```
+
+## 5. Format Logical Volume (LV)
+lihat dulu listnya
+```
+lsblk
+```
+
+- hati2 jangan sampai salah format physical groupnya
+- Contoh struktur lvm
+```
+sdb                   <- disk
+--sdb1                <- Partisi LVM
+  |--namaVG-namaLV    <- namaVG dan namaLV (ini path yang utk diformat LVM)
+```
+
+contoh format partisi lvm
+```
+mkfs.ext4 /dev/namaVG/namaLV
+```
+
+bisa juga menggunakan mapper
+```
+mkfs.ext4 /dev/mapper/namVG-namaLV
+```
+
+## Mounting LVM di fstab
+buka fstab
+```
+  nano /etc/fstab
+```
+tambah baris di fstab untuk automount lvm
+```
+  /dev/namaVG/namaLV /lokasi/mount ext4 defaults 0 0
+```
+
+mount dan verifikasi
+```
+  mount -av
+```
+
+# Extend LVM
+## 1. Volume Group Extend (VG Extend)
+VG Extend berfungsi menambah size VG dari disk lain. perintahnya
+```
+vgextend namaVG_yg_ingin_ditambah /dev/sumberDisk
+```
+contoh
+```
+lihat dulu list partisi PV
+  pvs
+
+kemudian pilih. contoh
+  vgextend vg1 /dev/vdc1
+```
+
+## 2. Logical Volume Extend (PV Extend) Menambah size
+## HATI-HATI JGN GUNAKAN mkfs (karna itu berfungsi format, data bisa hilang)
+cara buatlv extend
+```
+lvextend -l +jumlahPE /namaDevice/nama_VG_Existing/nama_LV_Existing
+```
+contoh
+```
+lvextend -l +50 dev/vg1/lv-1
+```
+```
+jika ingin satuan dalam Bit
+"-l" gunakan L besar "-L"
+```
+contoh 
+```
+lvextend -L +200MiB dev/vg1/lv-2
+```
+
+## 3. set akumulasi jumlah file system khusus tipe ext
+```
+resize2fs /dev/namaVG/namaLV
+```
+cek 
+```
+df -h
+```
+
+
 # Perintah membuat raid mirror LVM
 
 ## Buat PV pada setiap partisi disk
