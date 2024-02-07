@@ -72,3 +72,31 @@ Contoh output: /dev/mapper/myvg-mymirror on /mnt/mymirror type ext4 (rw,relatime
 
 5. Jika ingin auto mount konfigurasi pada /etc/fstab
 
+# mengganti disk rusak dan menambahkan disk baru pada Logical Volume Manager (LVM):
+
+1. Mengganti Disk Rusak:
+- Identifikasi disk yang rusak dengan menjalankan perintah lvs atau pvs. Perhatikan nama Logical Volume (LV) yang terkait dengan disk rusak.
+
+2. Hapus disk rusak dari Volume Group (VG) dengan perintah vgreduce --removemissing VG_NAME.
+
+3. Matikan sistem dengan perintah shutdown -h now.
+
+4. Ganti disk lama yang rusak dengan disk baru.
+Nyalakan sistem kembali.
+
+5. Menambahkan Disk Baru:
+- Inisialisasi disk baru dengan perintah pvcreate /dev/sdX.
+
+- Tambahkan Physical Volume (PV) baru ke Volume Group (VG) dengan perintah vgextend VG_NAME /dev/sdX.
+
+- Buat Logical Volume (LV) baru atau perluas LV yang ada dengan perintah lvcreate atau lvextend.
+
+- Buat sistem file pada LV dengan perintah mkfs.ext4 /dev/VG_NAME/LV_NAME.
+
+- Buat titik mount (direktori) untuk LV dengan perintah mkdir /mnt/MOUNT_POINT.
+
+- Mount LV ke titik mount dengan perintah mount /dev/VG_NAME/LV_NAME /mnt/MOUNT_POINT.
+
+- Tambahkan entri ke /etc/fstab agar LV otomatis ter-mount saat sistem boot.
+
+- Pastikan untuk mengganti VG_NAME, LV_NAME, /dev/sdX, dan MOUNT_POINT sesuai dengan konfigurasi Anda.
