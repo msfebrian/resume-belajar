@@ -31,6 +31,23 @@ Dengan perintah di atas, kita membuat LV mymirror dengan konfigurasi RAID 1 pada
 ```
 lvs -a -o name,copy_percent,devices myvg
 ```
+perintah ini digunakan untuk melihat informasi rinci tentang Logical Volume (LV) dalam Volume Group (VG) yang disebut myvg. Mari kita jelaskan setiap bagian dari output perintah ini:
+
+1. my_lv_rimage_0(0), my_lv_rimage_1(0), my_lv_rimage_2(0):
+- Ini adalah segmen data dari LV yang menggunakan RAID 1 (mirror).
+- Angka dalam tanda kurung menunjukkan persentase salinan data di antara segmen LV. Dalam hal ini, persentase salinan adalah 0%, yang berarti segmen data ini belum disalin ke segmen lainnya.
+
+2. [my_lv_rimage_0] /dev/sde1(1), [my_lv_rimage_1] /dev/sdb1(1), [my_lv_rimage_2] /dev/sdd1(1):
+- Ini menunjukkan perangkat fisik yang terlibat dalam segmen data LV.
+- /dev/sde1, /dev/sdb1, dan /dev/sdd1 adalah partisi pada disk fisik yang digunakan untuk menyimpan data LV.
+
+3. [my_lv_rmeta_0] /dev/sde1(0), [my_lv_rmeta_1] /dev/sdb1(0), [my_lv_rmeta_2] /dev/sdd1(0):
+- Ini adalah segmen metadata dari LV RAID 1.
+Segmen metadata menyimpan informasi konfigurasi RAID dan digunakan untuk mengelola LV.
+- Angka dalam tanda kurung menunjukkan persentase salinan metadata di antara segmen LV. Dalam hal ini, persentase salinan adalah 0%, yang berarti segmen metadata ini belum disalin ke segmen lainnya.
+
+Jadi, perintah tersebut memberikan informasi tentang segmen data dan metadata LV RAID 1 dalam VG myvg.
+
 
 ## Mount Logical Volume
 mount Logical Volume (LV) yang telah Anda buat sebelumnya:
