@@ -10,8 +10,8 @@
 ```
   jika sudah ada partisinya type partisi bisa dirubah.
   pilih t di fdisk
-    dan lihat list Type Partisi dengan L
-  LVM id nya 83
+    dan lihat list Type Partisi dengan pilih L.
+  contoh untuk type LVM id nya 83
 ```
 ## 2. buat Physical Volume (PV) nya.
 Perintah Physical Volme Create.
