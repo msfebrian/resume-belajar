@@ -1,4 +1,4 @@
-# Logical Volume Manager LVM
+oo# Logical Volume Manager LVM
 
 # Perintah membuat raid mirror LVM
 
@@ -31,4 +31,23 @@ Dengan perintah di atas, kita membuat LV mymirror dengan konfigurasi RAID 1 pada
 ```
 lvs -a -o name,copy_percent,devices myvg
 ```
+
+## Mount Logical Volume
+mount Logical Volume (LV) yang telah Anda buat sebelumnya:
+
+1. Periksa Nama Logical Volume (LV):
+Jalankan perintah lvs untuk mendapatkan informasi tentang logical volume yang telah dibuat. Anda akan melihat daftar LV beserta nama dan path-nya.
+
+2. Buat Titik Mount (Mount Point):
+Gunakan perintah mkdir untuk membuat titik mount (direktori) di mana Anda ingin me-mount LV tersebut. Misalnya, Anda dapat membuat direktori /mnt/mymirror sebagai titik mount.
+
+3. Mount Logical Volume:
+Gunakan perintah mount untuk me-mount LV ke dalam titik mount yang telah Anda buat. Gantilah DEVICE dengan path LV yang sesuai.
+Contoh: sudo mount /dev/mapper/myvg-mymirror /mnt/mymirror
+
+4. Verifikasi Mounting:
+Jalankan perintah mount tanpa argumen untuk memeriksa status mounting. Anda akan melihat LV dan titik mount yang terkait.
+Contoh output: /dev/mapper/myvg-mymirror on /mnt/mymirror type ext4 (rw,relatime)
+
+5. Jika ingin auto mount konfigurasi pada /etc/fstab
 
