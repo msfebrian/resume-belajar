@@ -57,3 +57,23 @@ Simpan dan tutup file, lalu jalankan perintah
  mount -a 
 ```
 untuk memasang semua partisi yang dikonfigurasi dalam /etc/fstab.
+
+# Mount fat32 disk
+Verifikasi izin mount dengan menjalankan perintah berikut:
+```
+mount | grep fat32
+```
+
+Jika Anda melihat rw dalam output, itu berarti izin baca-tulis berhasil.
+
+## Opsional: Agar partisi FAT32 otomatis ter-mount saat sistem boot, 
+tambahkan entri berikut ke file /etc/fstab:
+```
+/dev/sda1 /mnt/fat32 vfat rw,user,exec,umask=000 0 0
+```
+
+Simpan dan tutup file, lalu jalankan perintah ```
+mount -a 
+```
+
+untuk memasang semua partisi yang dikonfigurasi dalam /etc/fstab.
