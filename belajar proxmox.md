@@ -168,3 +168,54 @@ cara buat direktori pada disk ext4 sama dengan ZFS pastikan terlebih dahulu disk
   zerotier-cli join d3ecf572698u91cd
 ```
 
+# Qemu Guest Agent
+QEMU Guest Agent adalah sebuah agen perangkat lunak yang digunakan untuk berkomunikasi antara host (mesin fisik) dan tamu (mesin virtual) dalam lingkungan virtualisasi yang menggunakan QEMU sebagai hypervisor1. Berikut adalah beberapa fungsi utama dari QEMU Guest Agent:
+
+1. Shutdown yang Tepat: Agen ini memungkinkan penghentian yang benar pada mesin tamu, bukan hanya mengandalkan perintah ACPI atau kebijakan Windows.
+2. Pembekuan Sistem File Tamu: Saat membuat salinan cadangan atau snapshot, agen ini membekukan sistem file tamu (pada Windows, menggunakan layanan Volume Shadow Copy Service (VSS)). Ini membantu memastikan konsistensi data.
+3. Sinkronisasi Waktu: Setelah mesin tamu dijeda (misalnya setelah snapshot), agen ini langsung menyelaraskan waktu mesin tamu dengan hypervisor menggunakan QEMU Guest Agent sebagai langkah pertama
+
+## Install Package Qemu Guest Agent Linux
+Ubuntu / Debian
+```
+apt-get install qemu-guest-agent
+```
+
+Redhat / RPM / RHEL
+```
+yum install qemu-guest-agent
+```
+
+## Aktifkan Service
+Aktifkan layanan agar berjalan secara otomatis saat boot:
+```
+sudo systemctl enable qemu-guest-agent
+```
+
+Mulai QEMU Guest Agent:
+```
+sudo systemctl start qemu-guest-agent
+```
+
+Verifikasi bahwa QEMU Guest Agent berjalan dengan baik:
+Anda dapat memeriksa status layanan dengan perintah berikut:
+systemctl status qemu-guest-agent
+
+Jika layanan belum berjalan, Anda dapat menggunakan Services control panel untuk memulainya dan memastikan agar berjalan otomatis pada boot berikutnya
+
+## Install Package Qemu Guest Agent Windows
+1. unduh driver virtio-win (lihat Windows VirtIO Drivers). Kemudian, instal driver virtio-serial:
+2. Pasang ISO ke VM Windows Anda (virtio-*.iso).
+3. Buka Device Manager di Windows.
+- Cari “PCI Simple Communications Controller”.
+- Klik kanan -> Update Driver dan pilih direktori yang terpasang di DRIVE:\vioserial\<OSVERSION>\ (di mana <OSVERSION> adalah versi Windows, misalnya 2k12R2 untuk Windows 2012 R2).
+- Setelah itu, instal QEMU Guest Agent:
+- Buka ISO yang terpasang di explorer.
+- Installer agen tamu ada di direktori guest-agent.
+- Jalankan installer dengan mengklik dua kali (gunakan qemu-ga-x86_64.msi untuk 64-bit atau qemu-ga-i386.msi untuk 32-bit).
+- Pastikan QEMU Guest Agent berjalan dengan memeriksa daftar Windows Services atau melalui PowerShell:
+```
+Get-Service QEMU-GA
+```
+- Jika belum berjalan, gunakan Services control panel untuk memulai dan mengatur agar berjalan otomatis saat boot berikutnya
+
