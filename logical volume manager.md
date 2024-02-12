@@ -71,6 +71,11 @@ cara lihat list LV
 lvs
 ```
 
+cara lihat informasi LV seperti path dll
+```
+lvdisplay
+```
+
 ## 5. Format Logical Volume (LV)
 lihat dulu listnya
 ```
