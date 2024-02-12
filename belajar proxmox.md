@@ -47,7 +47,8 @@ dibawah node keterangan penyimpanan default sebagai berikut
     local-lvm : adalah default menyimpanan virtual machine
 ```
 
-## Konfigurasi Disk Setelah Install
+# Konfigurasi Disk Setelah Install
+## Create Partition
 ```
   lihat list disk
     lsblk
@@ -62,7 +63,17 @@ dibawah node keterangan penyimpanan default sebagai berikut
 
 ```
 
-Format Disk ke ZFS
+## Menggunakan ext4
+1. dari posisi node proxmox pilih menu Disks -> pilih disk partition yang belum digunakan kemudian Wipe Disk
+2. ke menu Disk -> Directory -> Create:Directory
+3. Isian Disk : pilih disk partition yang belum digunakan
+4. Filesystem : ext4
+5. Name : Isi_Nama(misalkan second-partition)
+6. ceklis Add Storage 
+
+# Menggunakan ZFS (RAM minimal diatas 8gb)
+ZFS menggunakan RAM untuk cache dilihat dari dokumentasi per 1 TB memakan 1 GB RAM. dan diharuskan menggunakan UPS untuk menghindari kegagalan penyimpanan data dari RAM ke Disk
+## Format Disk ke ZFS
 
 ```
   dari menu node kemudian pilih Disks
