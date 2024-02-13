@@ -1,4 +1,6 @@
-# Cara Install dan Konfigurasi MySQL di Linux Ubuntu
+# Cara Install dan Konfigurasi MySQL / Mariadb di Linux Ubuntu
+Secara umum perintah hampir sama tinggal ganti saya mysql ke mariadb
+
 Installasi
 ```
   sudo apt install mysql-server
@@ -53,10 +55,21 @@ Utk rubah port jg dsni
   sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
 ```
 
-Untuk mematikan casesensitive 
+## Untuk mematikan casesensitive MySQL
 ```
   sudo nano /etc/mysql/my.cnf
-  Dibawah [mysql] tambah baris ini
+
+Dibawah [mysql] tambah baris ini
+    lower_case_table_names=1
+  Cek variabel
+    show variables where Variable_name='lower_case_table_names';
+```
+
+## Untuk mematikan casesensitive Mariadb
+```
+  sudo nano /etc/mysql/mariadb.cnf
+
+Dibawah [mariadb] tambah baris ini
     lower_case_table_names=1
   Cek variabel
     show variables where Variable_name='lower_case_table_names';
