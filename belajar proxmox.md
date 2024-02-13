@@ -120,6 +120,17 @@ dengan LVM partition dan size disk lebih fleksibel dan dapat dibuat raid.
    mount -a
    reboot now
    ```
+
+8. Buat Directory utk penyimpanan
+```
+  dari menu Datacenter
+    pilih Storage
+    pilih Add Directory
+    contoh pengisian
+      ID : pve-storage
+      Directory : /mnt/pve/second-partition (isi sesuai mount lvm yang sudah di set)
+      Content : sesuaikan dengan peruntukan 
+```
    
 
 ## Menggunakan ext4
