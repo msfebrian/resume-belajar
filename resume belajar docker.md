@@ -62,15 +62,15 @@ atau untuk Ubuntu 20.04 (Focal Fossa): sesuaikan dengan versi ubuntu
 ## 7. Instal Docker Engine:
 rekomendasi pakai ini
 ```
-sudo apt update | sudo apt-cache policy docker-ce
-```
-```
-sudo apt install docker-ce
+   sudo apt install docker-ce docker-ce-cli containerd.io
 ```
 
 atau gunakan ini jika diatas tidak bisa
 ```
-   sudo apt install docker-ce docker-ce-cli containerd.io
+sudo apt update | sudo apt-cache policy docker-ce
+```
+```
+sudo apt install docker-ce
 ```
 
 ## 8. Verifikasi Instalasi:
