@@ -171,7 +171,7 @@ Anda juga bisa melihat informasi lebih detail tentang volume docker dengan perin
     docker volume inspect
 ```
 
-# Tahapan Pindah Default Lokasi Penyimpanan Dokcer
+# Tahapan Pindah Default Lokasi Penyimpanan Docker di linux
 1. Stop Service
    ```
    sudo systemctl disable docker
