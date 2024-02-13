@@ -171,13 +171,32 @@ Menggunakan opsi -g atau --data-root saat menjalankan perintah dockerd. Misalnya
     $ dockerd -g /mnt/second-partition
 ```
 
-Menggunakan file konfigurasi daemon.json yang berada di /etc/docker/. Anda bisa menambahkan baris berikut di file tersebut:
+# Tahapan Pindah Default Lokasi Penyimpanan Dokcer
+1. Stop Service
+   ```
+   sudo systemctl disable docker
+   ```
+   
+3. Copy Library Docker ke lokasi yang diinginkan
+   ```
+   sudo rsync -aP /var/lib/docker /mnt/storage/
+   ```
+   
+4. Buat file konfigurasi daemon.json di /etc/docker/. jika sudah ada tambahkan baris berikut di file daemon.json:
 ```
     {
         "data-root": "/mnt/second-partition/docker"
     }
 ```
 
+5. restart dan cek service docker
+```
+   sudo systemctl enable docker
+   sudo systemctl start docker
+   sudo systemctl status docker
+```
+
+## Cara lain menggunakan link
 Menggunakan symbolic link untuk menghubungkan direktori /var/lib/docker/volumes ke partisi yang diinginkan. Misalnya, jika ingin menyimpan volume docker di partisi /mnt/data, bisa mengetikkan:
 
 ```
