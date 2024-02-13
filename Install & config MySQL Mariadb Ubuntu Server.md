@@ -1,5 +1,5 @@
 # Cara Install dan Konfigurasi MySQL / Mariadb di Linux Ubuntu
-Secara umum perintah hampir sama tinggal ganti saya mysql ke mariadb
+## Secara umum perintah hampir sama tinggal ganti saja mysql jadi mariadb
 
 Installasi
 ```
