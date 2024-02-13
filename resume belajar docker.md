@@ -196,6 +196,8 @@ Anda juga bisa melihat informasi lebih detail tentang volume docker dengan perin
    sudo systemctl status docker
 ```
 
+6. Uji dan test create volume apakah sudah masuk di lokasi yang diinginkan
+
 ## Cara lain menggunakan link
 Menggunakan symbolic link untuk menghubungkan direktori /var/lib/docker/volumes ke partisi yang diinginkan. Misalnya, jika ingin menyimpan volume docker di partisi /mnt/data, bisa mengetikkan:
 
