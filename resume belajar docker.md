@@ -119,7 +119,23 @@ Untuk menguji apakah Docker terinstal dengan baik, jalankan perintah:
    docker run hello-world
 ```
 
-##  default penyimpanan volume docker di partisi D dalam system operasi windows
+##  menentukan penyimpanan volume docker di partisi lain saat run image
+
+Untuk menyimpan volume docker di partisi lain, perlu mengubah lokasi default dari direktori
+
+```
+    /var/lib/docker/volumes
+```
+
+ke partisi yang Anda inginkan. Ada beberapa cara untuk melakukannya, antara lain:
+
+Menggunakan opsi -g atau --data-root saat menjalankan perintah dockerd. Misalnya, jika Anda ingin menyimpan volume docker di partisi /mnt/data, bisa mengetikkan:
+
+```
+    $ dockerd -g /mnt/second-partition
+```
+
+##  setting default penyimpanan volume docker di partisi D dalam system operasi windows
 
 Untuk menyimpan volume docker di partisi D dalam sistem operasi Windows, Anda perlu mengubah lokasi default dari direktori 
 ```
@@ -153,22 +169,6 @@ Anda juga bisa melihat informasi lebih detail tentang volume docker dengan perin
 
 ```
     docker volume inspect
-```
-
-##  default penyimpanan volume docker di partisi lain dalam system operasi linux
-
-Untuk menyimpan volume docker di partisi lain, perlu mengubah lokasi default dari direktori
-
-```
-    /var/lib/docker/volumes
-```
-
-ke partisi yang Anda inginkan. Ada beberapa cara untuk melakukannya, antara lain:
-
-Menggunakan opsi -g atau --data-root saat menjalankan perintah dockerd. Misalnya, jika Anda ingin menyimpan volume docker di partisi /mnt/data, bisa mengetikkan:
-
-```
-    $ dockerd -g /mnt/second-partition
 ```
 
 # Tahapan Pindah Default Lokasi Penyimpanan Dokcer
