@@ -63,6 +63,65 @@ dibawah node keterangan penyimpanan default sebagai berikut
 
 ```
 
+## Menggunakan LVM (Rekomended)
+dengan LVM partition dan size disk lebih fleksibel dan dapat dibuat raid.
+
+1. dari Menu Disk pilih partition yg belum digunakan kemudian pilih Wipe Disk
+2. Pilih Menu LVM buat Volume Gruop.
+   - Create:Volume Group & Pilih disk yang belum digunakan
+   - Isi Nama VG Contoh Name : pve-data
+   - Jangan Ceklis Add Storage (agar dapat disetting untuk penyimpan semua data)
+4. Masuk ke terminal buat LVM
+   ```
+   lsblk
+   untuk lihat list VG atau dengan
+   vgdisplay
+   ```
+   buat LVM
+   ```
+   lvcreate -L ukuran namaVG -n namaLV
+   contoh
+   lvcreate -L 200G pve-data -n pve-storage  
+   ```
+
+   cek hasil
+   ```
+   lvs
+   atau
+   lvdisplay
+   ```
+
+5. Format LVM
+   untuk path lihat di lvdisplay
+   ```
+   mkfs.ext4 /dev/namaVG/namaLV
+   ```
+   
+7. buat auto mount di /etc/fstab
+   lihat path LV
+   ```
+   lvdisplay
+   ```
+
+   mount ke fstab
+   ```
+   nano /etc/fstab
+   ```
+
+   contoh penambahan kode di fstab
+   ```
+   # Mount LVM dari partisi 2
+   /dev/pve-data/pve-storage /mnt/pve/second-partition ext4 defaults 0 0
+   ```
+
+   cek dan pastikan berhasil termount
+   ```
+   findmnt --verify
+   mount -a
+   reboot now
+   ```
+   
+
 ## Menggunakan ext4
 1. dari posisi node proxmox pilih menu Disks -> pilih disk partition yang belum digunakan kemudian Wipe Disk
 2. ke menu Disk -> Directory -> Create:Directory
