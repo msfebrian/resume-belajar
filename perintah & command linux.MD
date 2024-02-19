@@ -154,6 +154,11 @@ sudo do-release-upgrade -d
 sudo lsb_release -a
 ```
 
+## Melihat versi linux dan nama host
+```
+hostnamectl
+```
+
 
 # Konfigurasi Date Timezone
 ## Set Default timezone cara mudah (rekomeded)
