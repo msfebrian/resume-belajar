@@ -1002,7 +1002,7 @@ contoh monitoring dari hasil output file sample.sh
 tail -f filelog,txt
 ```
 
-## melihat informasi file  yang dibuka oleh sebuag proses
+## melihat informasi file  yang dibuka oleh sebuah proses
 contoh proses ssh
 ```
 sudo lsof | grep ssh
