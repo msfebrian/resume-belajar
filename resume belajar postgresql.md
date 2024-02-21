@@ -48,3 +48,23 @@ docker run -p 443:443 \
 ```
 psql -U nama_user --password --db nama_db
 ```
+
+## Melihat list database
+```
+\l
+```
+## Melihat list relation
+```
+\dt
+```
+
+# Backup dan Restore
+## Backup melalui docker
+```
+docker containerId/containerName pg_dump -U namaUser namaDatabase > path\tujuan\backup\nama-backup.sql
+```
+
+## Restore ke docker
+```
+cat \path\lokasi\backup\nama-backup.sql | docker exec containerId/containerName psql -U namaUser namaDbDiPostgreSQL
+```
