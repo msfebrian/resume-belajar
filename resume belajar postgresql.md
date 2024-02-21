@@ -34,7 +34,7 @@ docker run -p 80:80 \
 Run container pgadmin TLS
 ```
 docker run -p 443:443 \
-  -v /private/var/lib/pgadmin:/var/lib/pgadmin \
+  -v pgadmin-data:/var/lib/pgadmin \
   -v /path/to/certificate.cert:/certs/server.cert \
   -v /path/to/certificate.key:/certs/server.key \
   -v /tmp/servers.json:/pgadmin4/servers.json \
