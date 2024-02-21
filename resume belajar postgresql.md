@@ -11,17 +11,36 @@ docker run --name postgresql -e POSTGRES_USER=root -e POSTGRES_PASSWORD=isi_pass
 ```
 
 ## Menjalankan pgadmin
+download pgadmin
+```
+docker pull dpage/pgadmin4
+```
+
 buat volume untuk pgadmin
 ```
 docker volume create pgadmin-data
 ```
 
+Run container pgadmin non TLS
 ```
-docker pull dpage/pgadmin4
 docker run -p 80:80 \
   -p 443:443 \
   -e 'PGADMIN_DEFAULT_EMAIL=user@domain.com' \
   -e 'PGADMIN_DEFAULT_PASSWORD=SuperSecret' \
+  -v pgadmin-data=/var/lib/pgadmin \
+  -d dpage/pgadmin4
+```
+
+Run container pgadmin TLS
+```
+docker run -p 443:443 \
+  -v /private/var/lib/pgadmin:/var/lib/pgadmin \
+  -v /path/to/certificate.cert:/certs/server.cert \
+  -v /path/to/certificate.key:/certs/server.key \
+  -v /tmp/servers.json:/pgadmin4/servers.json \
+  -e 'PGADMIN_DEFAULT_EMAIL=user@domain.com' \
+  -e 'PGADMIN_DEFAULT_PASSWORD=SuperSecret' \
+  -e 'PGADMIN_ENABLE_TLS=True' \
   -v pgadmin-data=/var/lib/pgadmin \
   -d dpage/pgadmin4
 ```
