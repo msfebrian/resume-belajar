@@ -624,7 +624,8 @@ Format disk / Buat filesystem
   Contoh format langsung diberi label disk
     mkfs.ext4 -L DATA /dev/sdb1
 ```
-
+
+
 
 # Install dan Remove Aplikasi Native dan Snap
 ## Mencari aplikasi
