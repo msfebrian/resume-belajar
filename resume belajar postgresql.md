@@ -25,9 +25,9 @@ Run container pgadmin non TLS
 ```
 docker run -p 80:80 \
   -p 443:443 \
+  -v pgadmin-data=/var/lib/pgadmin \
   -e 'PGADMIN_DEFAULT_EMAIL=user@domain.com' \
   -e 'PGADMIN_DEFAULT_PASSWORD=SuperSecret' \
-  -v pgadmin-data=/var/lib/pgadmin \
   -d dpage/pgadmin4
 ```
 
@@ -41,7 +41,6 @@ docker run -p 443:443 \
   -e 'PGADMIN_DEFAULT_EMAIL=user@domain.com' \
   -e 'PGADMIN_DEFAULT_PASSWORD=SuperSecret' \
   -e 'PGADMIN_ENABLE_TLS=True' \
-  -v pgadmin-data=/var/lib/pgadmin \
   -d dpage/pgadmin4
 ```
 
