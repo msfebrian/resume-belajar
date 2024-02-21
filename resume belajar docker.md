@@ -384,6 +384,17 @@ kemudian lihat image yg berhasil run
     docker ps
 ```
 
+## Cara lihat ip docker dll
+untuk melihat id & nama container yg running
+```
+docker ps -a
+```
+
+melihat informasi container
+```
+docker inspect id_container
+```
+
 ## Install package ke dalam container docker
 contoh install package nano ke container utk edit conf
 ```
