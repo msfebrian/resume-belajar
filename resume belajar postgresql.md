@@ -61,7 +61,7 @@ psql -U nama_user --password --db nama_db
 # Backup dan Restore
 ## Backup melalui docker
 ```
-docker containerId/containerName pg_dump -U namaUser namaDatabase > path\tujuan\backup\nama-backup.sql
+docker containerId/containerName pg_dump -U namaUser namaDatabase > \path\tujuan\backup\nama-backup.sql
 ```
 
 ## Restore ke docker
