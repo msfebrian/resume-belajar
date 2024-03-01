@@ -32,3 +32,9 @@ sudo apt install
 sudo reboot now
 sudo snap install core
 ```
+
+## install font Microsoft windows
+```
+sudo apt update
+sudo apt install ttf-mscorefonts-installer
+```
