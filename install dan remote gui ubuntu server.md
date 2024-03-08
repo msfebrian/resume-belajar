@@ -178,7 +178,16 @@ dan rumah nama hostname
 kemudian reboot
 ```
 
-
+# xrdp on linux Mint for versions older than 20.2.
+Please find below the commands that need to be applied:
+```
+    sudo apt upgrade
+    sudo apt install xrdp xorgxrdp
+    sudo apt install xserver-xorg-input-all
+    sudo adduser xrdp ssl-cert
+    sudo ufw allow 3389/tcp
+    echo env -u SESSION_MANAGER -u DBUS_SESSION_BUS_ADDRESS cinnamon-session~/.xsession
+```
 
 
 
