@@ -153,7 +153,9 @@ sudo systemctl status xrdp
 
 ## Ijinkan port xrdp di port 3389
 ```
-sudo ufw allow 3389 
+sudo ufw allow 3389/tcp
+sudo ufw reload
+sudo ufw status 
 ```
 
 # Mengaktifkan RDP di ARMBIAN 21
