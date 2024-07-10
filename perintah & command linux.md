@@ -532,9 +532,20 @@ chown -R nama_user:nama_group nama_folder
 ```
 
 
-## Tampil disk file system list
+## Tampil penggunaan disk & file system list
+Perintah df di Linux digunakan untuk melihat penggunaan ruang disk.
 ```
-  df -h atau df -Th
+  df -h 
+```
+menampilkan tipe file system
+```
+  df -Th
+```
+keterangan
+```
+df: Perintah ini menampilkan informasi tentang ruang disk yang tersedia dan digunakan di perangkat Anda.
+-T: Opsi ini menampilkan jenis sistem berkas (file system) yang digunakan pada setiap partisi.
+-h: Opsi ini menghasilkan hasil dalam format yang mudah dibaca oleh manusia (dalam megabyte / gigabyte)
 ```
 
 ## Tampil disk usage / usage file atau disk
