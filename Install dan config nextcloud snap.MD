@@ -76,3 +76,15 @@ Contoh setting permission
    Atau 
    chmod -R 0770 /mnt/disk2 
 ```
+
+# Cara Akses MySQL Nextcloud
+## Menggunakan utilitas CLI yang disertakan dari Nextcloud Snap dengan perintah berikut
+```
+sudo nextcloud.mysql-client -S /tmp/sockets/mysql.sock -u nextcloud -p
+```
+## Dump dan Restore Database
+```
+sudo nextcloud.export -b
+```
+File dump akan disimpan di direktori tertentu.
+Kemudian, Anda dapat mengunggah file dump ini ke database uji (misalnya, database MySQL lokal) dan menggunakan alat grafis untuk melihat dan mengelola data.
