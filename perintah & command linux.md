@@ -789,6 +789,20 @@ hapus firewall
    sudo ufw delete allow 8291
 ```
 
+## Konfigurasi Trusted Domain OpenSSH
+```
+sudo nano /etc/ssh/sshd_config
+```
+Cari baris yang mengandung opsi ListenAddress atau Listen (jika ada). Anda dapat menambahkan alamat IP atau nama domain yang ingin Anda jadikan trusted domain. Misalnya:
+```
+ListenAddress 192.168.1.100
+ListenAddress mydomain.com
+```
+Restart OpenSSH Service
+```
+sudo systemctl restart ssh
+```
+
 # Mengatasi error remote SSH
 ## Reset key ssh client di windows
 ```
