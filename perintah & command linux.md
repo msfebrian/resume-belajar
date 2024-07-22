@@ -1080,8 +1080,8 @@ history -c
 ```
 
 # Konfigurasi Swapp
-Swappiness pada sistem Ubuntu mengontrol seberapa sering file swap digunakan. Nilai swappiness mengatur kecenderungan kernel untuk memindahkan proses dari memori fisik ke disk swap. Mari kita lihat cara mengubah nilai swappiness di Ubuntu:
-## 1. Swappiness pada sistem Ubuntu mengontrol seberapa sering file swap digunakan. Nilai swappiness mengatur kecenderungan kernel untuk memindahkan proses dari memori fisik ke disk swap. Mari kita lihat cara mengubah nilai swappiness di Ubuntu:
+Swappiness pada sistem Ubuntu mengontrol seberapa sering file swap digunakan. Nilai swappiness mengatur kecenderungan kernel untuk memindahkan proses dari memori fisik ke disk swap.
+## 1. Swappiness pada sistem Ubuntu mengontrol seberapa sering file swap digunakan. Nilai swappiness mengatur kecenderungan kernel untuk memindahkan proses dari memori fisik ke disk swap. 
 ```
 nano /etc/sysctl.conf
 ```
@@ -1108,6 +1108,8 @@ Anda dapat memeriksa nilai swappiness saat ini dengan menjalankan:
 cat /proc/sys/vm/swappiness
 ```
 Nilai default di Ubuntu adalah 60, tetapi menguranginya menjadi 10 akan meningkatkan performa secara keseluruhan untuk instalasi desktop Ubuntu yang umum.
+
+## 4. Sangat dianjurkan untuk reboot utk alokasi ulang RAM
 
 # Perintah Lainnya
 Melihat uptime system
