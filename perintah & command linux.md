@@ -44,11 +44,18 @@ whoami
 ```
 
 ## Masuk ke dalam user di terminal
-masuk ke root user
+mengaktifkan atau membuat user root
+```
+sudo passwd root
+```
+kemudian masukkan password yg diinginkan 2x utk verifikasi
+
+## masuk ke user dgn grup root
 ```
 sudo su
 ```
-masuk ke user tertentu
+
+## masuk ke user tertentu
 ```
 sudo su - nama_user
 ```
