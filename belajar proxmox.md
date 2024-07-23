@@ -64,7 +64,7 @@ vm.swappiness = 10
 sudo sysctl -p
 ```
 
-## 2. Mengubah Nilai Swappiness Secara Langsung
+## 2. Mengubah Nilai Swappiness Secara Langsung (DIREKOMENDASIKAN)
 Jika Anda ingin mengubah nilai swappiness tanpa harus me-reboot sistem, jalankan perintah berikut:
 ```
 sysctl vm.swappiness=10
