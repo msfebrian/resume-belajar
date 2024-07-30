@@ -5,11 +5,12 @@ jika RAM besar lebih baik tidak digunakan akan performa cepat dan mengurangi TBW
 ```
   contoh swap 4G
 ```
-boot disk
+contoh ukuran boot disk
 ```
-  boot disk 2G
+  boot disk 500mb
   lokasi mount /boot
 ```
+
 root disk ubuntu server
 ```
   root disk 20G
