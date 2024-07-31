@@ -502,7 +502,7 @@ docker network connect nextcloud-net mariadb
 docker network connect nextcloud-net nextcloud-app
 ```
 
-## melihat service container yang terkoneksi di docket network
+## melihat service container yang terkoneksi di docker network
 ```
 docker network inspect nama-network
 ```
