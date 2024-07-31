@@ -1,3 +1,12 @@
+# Install Openssh
+```
+apt install openssh-server
+```
+enable firewall
+```
+ufw allow openssh
+```
+
 # Sumber tutorial
 https://www.youtube.com/watch?v=hC3DCcmfrag
 
