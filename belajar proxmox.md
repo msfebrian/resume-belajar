@@ -278,6 +278,11 @@ QEMU Guest Agent adalah sebuah agen perangkat lunak yang digunakan untuk berkomu
 2. Pembekuan Sistem File Tamu: Saat membuat salinan cadangan atau snapshot, agen ini membekukan sistem file tamu (pada Windows, menggunakan layanan Volume Shadow Copy Service (VSS)). Ini membantu memastikan konsistensi data.
 3. Sinkronisasi Waktu: Setelah mesin tamu dijeda (misalnya setelah snapshot), agen ini langsung menyelaraskan waktu mesin tamu dengan hypervisor menggunakan QEMU Guest Agent sebagai langkah pertama
 
+## Aktifkan QEMU Guest Agent di Proxmox:
+1. Buka antarmuka web Proxmox.
+2. Pilih VM Anda, lalu pergi ke tab Options.
+3. Temukan opsi QEMU Guest Agent dan aktifkan.
+
 ## Install Package Qemu Guest Agent Linux
 Ubuntu / Debian
 ```
