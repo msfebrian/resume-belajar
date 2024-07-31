@@ -476,3 +476,28 @@ cara run dengan metode compose
    atau
       docker compose up -d
 ```
+
+# Network Docker
+## Membuat Network Docker
+```
+docker network create nama-network
+```
+
+## Melihat list Network
+```
+docker network ls
+```
+
+## Mengkoneksikan Service Docker ke Network
+format perintah
+```
+docker network connect nama-network nama-container-yg-ingin-dikoneksikan
+```
+
+contoh
+```
+docker network connect nextcloud-net mariadb
+```
+```
+docker network connect nextcloud-net nextcloud-app
+```
