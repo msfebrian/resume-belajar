@@ -494,7 +494,7 @@ format perintah
 docker network connect nama-network nama-container-yg-ingin-dikoneksikan
 ```
 
-contoh
+contoh mengkoneksikan service container mariadb dan nextcloud
 ```
 docker network connect nextcloud-net mariadb
 ```
