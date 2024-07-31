@@ -166,6 +166,28 @@ sudo lsb_release -a
 hostnamectl
 ```
 
+# Merubah Nama Hostname
+1. Cek Hostname Saat Ini :
+   ```
+   hostnamectl
+   ```
+2. Ubah Hostname: Gunakan perintah `hostnamectl` untuk mengubah hostname. Misalnya, untuk mengubah hostname menjadi `new-hostname`:
+   ```
+   sudo hostnamectl set-hostname new-hostname
+   ```
+3. Edit File `/etc/hosts`: Buka file `/etc/hosts` dan ganti nama `hostname` lama dengan yang baru:
+   ```
+   sudo nano /etc/hosts
+   ```
+   Ganti semua entri yang mengandung hostname lama dengan yang baru.
+4. Verifikasi Perubahan: Jalankan kembali perintah `hostnamectl` untuk memastikan perubahan telah diterapkan:
+   ```
+   hostnamectl
+   ```
+5. reboot
+   ```
+   sudo reboot
+   ```
 
 # Konfigurasi Date Timezone
 ## Set Default timezone cara mudah (rekomeded)
