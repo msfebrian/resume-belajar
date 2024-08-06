@@ -25,10 +25,10 @@ sisanya external storage
 1. pilih partition `vfat` untuk booting misalkan `500mb`
 2. partiion lainnya sama seperti versi ubuntu lama contoh.
    ```
-   `ext4` di mount ke root `/` dan sesuaikan ukuran yang diinginkan 
+   create `ext4` lalu pilih mount ke root `/` dan sesuaikan ukuran yang diinginkan 
    ```
    ```
-   jika masih ada sisa ingin dibuat partition terpisah dari os create `ext4` dan `mount` ke lokasi yg diinginkan contoh `/home`
+   jika masih ada sisa ingin dibuat partition terpisah dari os, create `ext4` dan `mount` ke lokasi yg diinginkan contoh `/home`
    ```
 
 ## penanganan error saat pembuatan partisi disk
