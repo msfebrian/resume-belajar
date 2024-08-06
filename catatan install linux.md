@@ -22,7 +22,7 @@ sisanya external storage
   pilih leave unmount
 ```
 ## alokasi partition di ubuntu lts 24
-1. pilik partition `vfat` untuk booting
+1. pilih partition `vfat` untuk booting misalkan `500mb`
 2. partiion lainnya sama seperti versi ubuntu lama contoh.
    ```
    `ext4` di mount ke root `/` dan sesuaikan ukuran yang diinginkan 
