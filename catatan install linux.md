@@ -77,6 +77,16 @@ sudo reboot now
 sudo snap install core
 ```
 
+# Setting Allow Locked Remote Desktop di Ubuntu Gnome Desktop
+1. Install Goole Chrome
+2. Install Extensi Gnome Shell Integration
+3. Install chrome-gnome-shell
+   ```
+   sudo apt install chrome-gnome-shell
+   ```
+5. Buka Extensi Gnome Shell Instegration di Google Chrome
+6. Cari Extensi `Allow Locked Remote Desktop` dan aktifkan nyalakan ke `on` 
+
 # install font Microsoft windows
 ```
 sudo apt update
