@@ -21,6 +21,15 @@ sisanya external storage
   external storage jangan dlu dimount
   pilih leave unmount
 ```
+## alokasi partition di ubuntu lts 24
+1. pilik partition `vfat` untuk booting
+2. partiion lainnya sama seperti versi ubuntu lama contoh.
+   ```
+   `ext4` di mount ke root `/` dan sesuaikan ukuran yang diinginkan 
+   ```
+   ```
+   jika masih ada sisa ingin dibuat partition terpisah dari os create `ext4` dan `mount` ke lokasi yg diinginkan contoh `/home`
+   ```
 
 ## penanganan error saat pembuatan partisi disk
 hapus semua partisi dlu menggunakan acronis partition atau software lainnya.
