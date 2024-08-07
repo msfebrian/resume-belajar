@@ -12,7 +12,7 @@ Country Code : ID
 
 
 ## JIKA INGIN UPDATE PULL IMAGE DENGAN VERSI BERTAHAP
-missal dari versi 17 ke 18 dulu kemudian ke 18
+missal dari versi 17 ke 18 dulu kemudian ke 19 dan selanjutnya.
 karna mempengaruhi struktur data yg sudah ada di docker volume
 
 # Cara Install di docker
