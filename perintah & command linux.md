@@ -924,6 +924,10 @@ Jika opsi ini diatur menjadi no, maka user root tidak dapat login menggunakan ss
 
 # Melihat list port dan service yang berjalan
 ```
+sudo netstat -tulnp
+```
+atau
+```
 sudo netstat -tlnp
 ```
 filter tampil port contoh untuk filter port 80
