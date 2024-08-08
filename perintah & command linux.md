@@ -931,7 +931,7 @@ Jika opsi ini diatur menjadi no, maka user root tidak dapat login menggunakan ss
 sudo apt install net-tools
 ```
 ```
-sudo netstat -tulnp
+sudo netstat -tunlp
 ```
 atau
 ```
