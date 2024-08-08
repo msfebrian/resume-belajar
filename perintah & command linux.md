@@ -691,6 +691,10 @@ apt search php
 
 ## install package deb
 ```
+apt install ./nama-package.deb
+```
+atau
+```
 dpkg -i nama-package.deb
 ```
 
@@ -923,6 +927,9 @@ Jika opsi ini diatur menjadi no, maka user root tidak dapat login menggunakan ss
 ```
 
 # Melihat list port dan service yang berjalan
+```
+sudo apt install net-tools
+```
 ```
 sudo netstat -tulnp
 ```
