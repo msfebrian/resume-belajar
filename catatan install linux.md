@@ -37,7 +37,8 @@ sisanya external storage
 3. Jika MBR boot pakai `legacy` jika `GPT` boot dengan EFI. bisa menggunakan `Ventoy Multi Bootable`
 4. saat pembuatan partition jangan pilih along side tapi pilih `CUSTOM`
 5. Buat partition root dengan ukuran yg dinginkan misalkan 50GB dan mount ke root `/` dengan file system `EXT4`
-6. Jika masih ada sisa partition atau disk lain yg `ingin diformat dan otomatis termount` pilih disk dan `mount pointnya` 
+6. Jika ingin membuat partition SWAP pilih ukuran yg dinginkan. (Jika RAM cukup besar disarankan tidak menggunakan swap.
+7. Jika masih ada sisa partition atau disk lain yg `ingin diformat dan otomatis termount` pilih disk dan `mount pointnya` 
 
 ## penanganan error saat pembuatan partisi disk
 hapus semua partisi dlu menggunakan acronis partition atau software lainnya.
