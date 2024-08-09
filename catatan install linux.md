@@ -21,15 +21,23 @@ sisanya external storage
   external storage jangan dlu dimount
   pilih leave unmount
 ```
-## alokasi partition di ubuntu lts 24
+## alokasi partition di ubuntu lts 24.04
 1. pilih partition `vfat` untuk booting misalkan `500mb`
-2. partiion lainnya sama seperti versi ubuntu lama contoh.
+2. partition lainnya sama seperti versi ubuntu lama contoh.
    ```
    create `ext4` lalu pilih mount ke root `/` dan sesuaikan ukuran yang diinginkan 
    ```
    ```
    jika masih ada sisa ingin dibuat partition terpisah dari os, create `ext4` dan `mount` ke lokasi yg diinginkan contoh `/home`
    ```
+
+## Install Dual Boot Ubuntu LTS 24.04 dengan Windows 11
+1. pastikan partition disk sudah tersedia.
+2. cek tipe disk `MBR` atau `GPT`
+3. Jika MBR boot pakai `legacy` jika `GPT` boot dengan EFI. bisa menggunakan `Ventoy Multi Bootable`
+4. saat pembuatan partition jangan pilih along side tapi pilih `CUSTOM`
+5. Buat partition root dengan ukuran yg dinginkan misalkan 50GB dan mount ke root `/` dengan file system `EXT4`
+6. Jika masih ada sisa partition atau disk lain yg `ingin diformat dan otomatis termount` pilih disk dan `mount pointnya` 
 
 ## penanganan error saat pembuatan partisi disk
 hapus semua partisi dlu menggunakan acronis partition atau software lainnya.
