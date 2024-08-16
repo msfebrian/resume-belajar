@@ -82,6 +82,16 @@ Keterangan :
     -G : grup yg dituju (misalkan grup sudo)
 ```
 
+## Merubah nama user
+format perintah
+```
+sudo usermod -l nama_baru nama_lama
+```
+contoh
+```
+sudo usermod -l febrian admin
+```
+
 ## lihat daftar user dan status grupnya.
 
 Lihat list user & foldernya
