@@ -46,12 +46,12 @@ sisanya external storage
 3. Jika MBR boot pakai `legacy` jika `GPT` boot dengan EFI. bisa menggunakan `Ventoy Multi Bootable`
 4. saat pembuatan partition jangan pilih otomatis tapi pilih `CUSTOM`
 5. Buka GParted
-6. Buat Partisi Boot EFI (jika menggunakan EFI) format pilih fat32 ukuran 500mb sudah cukup. ksh nama tag EFI atau bebas
-7. Buat Partisi Root Linux dan pilih format ext4
-8. Apply dahulu pada GParted kemudian rubah flag mengikuti EFI Windows. Kemudian Apply
-9. pada menu instalasi pointing partisi EFI Linux ke /boot/efi
-10. pointing juga root partition
-11. jika ada partition lain pointing mount ke /home atau ke path yg diinginkan TANPA MEMFORMAT!
+6. `Buat Partisi Boot EFI` (jika menggunakan EFI) format pilih `fat32` ukuran 500mb sudah cukup. `ksh nama tag EFI atau bebas`
+7. `Buat Partisi Root Linux` dan pilih format `ext4`
+8. `Apply dahulu` pada GParted kemudian `rubah flag mengikuti EFI Windows`. Kemudian Apply
+9. pada menu instalasi `pointing` `partisi EFI Linux ke /boot/efi`
+10. pointing juga root partition ke `/` dan `format ext4`
+11. jika ada partition lain pointing mount ke `/home` atau ke path yg diinginkan `TANPA MEMFORMAT!`
 12. ingat path partition efi dan kemudian pilih boot manager ke partition efi linux.
 
 ## penanganan error saat pembuatan partisi disk
