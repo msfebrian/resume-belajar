@@ -1,12 +1,40 @@
 # Setting Permission Write NTFS Drive Linux Mint
-## Buka Aplikasi Disk
-Buka Aplikasi Disk bisa cari dari start menu
-
-## Unmount Disk
+## 1. Unmount Disk
 Unmout Disk yang akan dirubah permission nya
 
-## Catat atau Copy Path Disknya
+## 2. Lihat lokasi disk
+```
+df -h
+```
+## 3. Catat atau Copy Path Disk yang ingin di enable write dari `df -h`
+misalkan
+```
+/dev/sda2
+```
 
+## 4. Enable Write path disk yang diinginkan misalkan
+```
+sudo ntfsfix /dev/sda1
+```
+## 5. Mount kembali disk
+```
+bisa melalui gui atau terminal
+```
+contoh mount melalui terminal (sesuaikan path) contoh.
+```
+mount /dev/sda1 /media/user/Storage
+```
+atau mount pada lokasi folder yg diinginkan
+```
+mkdir /mnt/disk2
+mount /dev/sda1 /mnt/disk2
+```
+atau jika tidak bisa 
+```
+sudo mount -t ntfs-3g /dev/sda2 /media/user/Storage
+```
+
+# Jika cara diatas gagal gunakan cara ini
 ## Install Gnome Disk Utility
 ```
 sudo apt install -y gnome-disk-utility
