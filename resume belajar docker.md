@@ -458,16 +458,31 @@ jika stuck tengah jalan coba lagi, atau hapus perintah update jika tidak bisa
 
 
 
-## Install Portainer
-```
-docker volume create portainer_data
-```
+# Install Portainer
 ```
 docker pull portainer/portainer-ce:latest
 ```
+
+## Install Portainer pada volume dokcer dilokasi default docker
+buat docker volume untuk penyimpanan portainer
+```
+docker volume create portainer_data
+```
+run image portainer
 ```
 docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
 ```
+
+## Install Portainer dilokasi yang diinginkan
+buat direktori dilokasi yang diinginkan untu menyimpan data portainer. contoh di lokasi `/home/docker`.
+```
+ mkdir portainer-data
+```
+run image portainer
+```
+docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /home/docker/portainer-data:/data portainer/portainer-ce:latest
+```
+
 buka portainer via browser
 ```
 http://localhost:9443
