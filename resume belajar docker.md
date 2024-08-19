@@ -19,7 +19,7 @@ wsl --list v
 setelah terinstall wsl kemudian install Docker Desktop Install, 
 kemudian Restart PC.
 
-## Install Docker di Debian
+# Install Docker di Debian
 1. Run the following command to uninstall all conflicting packages:
    ```
    for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
@@ -77,7 +77,7 @@ kemudian Restart PC.
    sudo docker run hello-world
    ```
 
-## Install Dokcer di ubuntu
+# Install Dokcer di ubuntu
 ## 1. Hapus Versi Lama (Opsional):
 ```
    sudo apt remove docker docker-engine docker.io containerd runc
@@ -89,10 +89,6 @@ kemudian Restart PC.
 ```
 ```
    sudo apt install apt-transport-https ca-certificates curl software-properties-common
-```
-```
-
-
 ```
 
 ## 4. Tambahkan Kunci GPG Resmi Docker:
@@ -177,7 +173,7 @@ Untuk menguji apakah Docker terinstal dengan baik, jalankan perintah:
    docker run hello-world
 ```
 
-##  menentukan penyimpanan volume docker di partisi lain saat run image
+#  Memindahkan lokasi default penyimpanan volume docker di partisi lain saat run image
 
 Untuk menyimpan volume docker di partisi lain, perlu mengubah lokasi default dari direktori
 
