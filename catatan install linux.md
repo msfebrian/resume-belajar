@@ -31,6 +31,11 @@ sisanya external storage
    jika masih ada sisa ingin dibuat partition terpisah dari os, create `ext4` dan `mount` ke lokasi yg diinginkan contoh `/home`
    ```
 
+## Alokasi partition di LMDE6 single boot BIOS Legacy
+1. Create root partition dengan ukuran yg diinginkan misalkan 40gb dgn launch GParted format ke ext4 dan mount ke root `/`
+2. Create second partition jika msh ada space dan pointing ke lokasi mount yg diinginkan misalkan ke `/home`
+3. Pilih lokasi boot media ke `parent disk` jangan ke partition
+
 ## Install Dual Boot Ubuntu LTS 24.04 dengan Windows 11
 1. pastikan partition disk sudah tersedia.
 2. cek tipe disk `MBR` atau `GPT`
