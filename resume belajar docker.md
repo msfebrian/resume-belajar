@@ -485,7 +485,7 @@ docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /va
 
 buka portainer via browser
 ```
-http://localhost:9443
+https://localhost:9443
 ```
 
 ## Contoh run docker mysql via docker run
