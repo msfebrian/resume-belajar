@@ -5,9 +5,15 @@ CTRL + SHIFT + P
 ```
 
 # Komentar dengan tanda `/`
+## Memberi komentar
 blok yang akan dikomentar
 ```
 CTRL + K + C
+```
+## Menghapus komentar
+blok yang akan dikomentar
+```
+CTRL + /
 ```
 
 # Komentar dengan tanda `/*` .... `*/`
