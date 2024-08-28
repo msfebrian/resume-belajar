@@ -28,7 +28,7 @@ dan buat folder didalamnya `config`, `data`, `db`
 
 # run docker compose up atau dari stack portainer
 # dari docker file
-buat file docker-compose.yml
+buat file docker-compose.yml. sesuaikan port, dan password
 ```
 version: '3'
 
@@ -45,7 +45,8 @@ services:
       - MYSQL_PASSWORD=InsertPassword
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
-    
+    ports:
+      - 33061:3306 
   app:
     image: lscr.io/linuxserver/nextcloud:latest
     container_name: nextcloud-app
@@ -58,7 +59,7 @@ services:
       - /mnt/storage/nextcloud/data:/data
     ports:
       - 443:443
-    restart: unless-stopped
+    restart: always
 
 ```
 
