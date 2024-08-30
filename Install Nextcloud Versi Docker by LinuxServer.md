@@ -67,8 +67,19 @@ services:
 1. buka `https://alamat-ip:443` 
 2. masukkan username & password yg diinginkan.
 3. setting koneksi database.
+untuk  database host sesuaikan dengan nama service nextcloud-db sesuai docker compose
 ```
-untuk  database host lihat alamat ip dari docker. bisa lihat dari portainer
+dbhost => nextcloud-db
+```
+atau bisa juga konfigurasi setelah tersetup docker
+```
+masuk ke path volume docker nextloud misalkan `/mnt/storage/nextcloud/config/www/nextcloud/config`
+```
+```
+nano config.php
+```
+```
+sesuaikan host, port dll.
 ```
 
 # Aktifkan aplikasi yang diperlukan
@@ -81,7 +92,7 @@ Auditing/Logging
 ```
 
 # Add Trusted Domain
-## masuk ke terminal bash nextcloud
+## masuk ke terminal bash nextcloud atau bisa juga lgsung masuk ke path lokasi volume di assign contoh `/mnt/storage/nextcloud/config/www/nextcloud/config`
 masuk ke bash nextcloud
 ```
 docker exec -it nextcloud-app bash 
