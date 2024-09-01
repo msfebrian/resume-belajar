@@ -1027,6 +1027,11 @@ network:
  sudo zerotier-cli join <network-id>
 ```
 
+## Uninstall zerotier
+```
+apt remove zerotier-one
+```
+
 # Process Management
 ## Monitoring penggunaan hardware prosesor, ram, disk network dll 
 task manager bawaan system
