@@ -536,9 +536,7 @@ services:
 volumes:
   my-db:  
 ```
-mariadb & phpmyadmin
-```
-# Install sepaket dengan phpmyadmin
+mariadb & phpmyadmin.
 sesuaikan port
 ```
 version: '3.7'
@@ -564,7 +562,7 @@ services:
       - PMA_PORT=3306
       - PMA_HOST=mariadb-lts-jammy
 ```
-```
+
 cara run dengan metode compose
 ```
    masuk ke di direktori yg berisi docker-compose.yml
