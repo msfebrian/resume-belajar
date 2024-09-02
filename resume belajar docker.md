@@ -536,7 +536,35 @@ services:
 volumes:
   my-db:  
 ```
+mariadb & phpmyadmin
+```
+# Install sepaket dengan phpmyadmin
+sesuaikan port
+```
+version: '3.7'
 
+services:
+  mariadb:
+    image: mariadb:lts-jammy
+    container_name: mariadb-lts-jammy
+    restart: always
+    volumes:
+      - /home/docker/mariadb-data:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      - MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=1
+  hpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    ports:
+      - 8081:80
+    environment:
+      - PMA_PORT=3306
+      - PMA_HOST=mariadb-lts-jammy
+```
+```
 cara run dengan metode compose
 ```
    masuk ke di direktori yg berisi docker-compose.yml
