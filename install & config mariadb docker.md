@@ -33,7 +33,7 @@ lower_case_table_names=1
 ```
 matikan dan jalankan ulang container
 
-## Mariadb dan Phpmyadmin (msh error cek di laptop)
+## Mariadb dan Phpmyadmin
 sesuaikan port, volume dll docker compose
 ```
 version: '3'
