@@ -115,6 +115,15 @@ sudo usermod -aG sudo nama_user
 ```
 sudo whoami
 ```
+5. Melihat list group sudo
+melihat list user yg ada digroup sudo
+```
+   sudo getent group sudo
+```
+melihat status grup username
+```
+   sudo groups nama_username
+```
 
 # install snap sdh di test di armbian
 ```
