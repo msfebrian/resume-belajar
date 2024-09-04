@@ -413,6 +413,12 @@ contoh
 scp file-saya.txt admin@192.168.2.2:~
 ```
 
+contoh copy folder `/mnt/docker` ke `/mnt/home` pada remote server (fungsi `-r` digunakan untuk mengkopi secara rekursif, sehingga seluruh isi folder akan disalin)
+```
+scp -r /mnt/docker username@alamat_remote_server:/mnt/home
+```
+
+
 ## text editor (notepad)
 ```
     sudo nano 
