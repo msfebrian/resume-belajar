@@ -109,7 +109,7 @@ apt-get install sudo
 ```
 3. Menambahkan Pengguna ke Grup `sudo`
 ```
-usermod -aG sudo nama_user
+sudo usermod -aG sudo nama_user
 ```
 4. Cek Hak Akses sudo
 ```
