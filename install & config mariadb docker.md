@@ -33,3 +33,32 @@ lower_case_table_names=1
 ```
 matikan dan jalankan ulang container
 
+## Mariadb dan Phpmyadmin
+sesuaikan port, volume dll docker compose
+```
+version: '3'
+services:
+  mariadb:
+    image: mariadb:latest
+    container_name: mariadb
+    environment:
+      - MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=1
+    volumes:
+      - mariadb-data:/var/lib/mysql
+    ports:
+      - 3306:3306
+    restart: always
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    ports:
+      - 8081:80
+    environment:
+      - PMA_HOST=mariadb
+      - PMA_PORT=3306
+
+volumes:
+  mariadb-data:
+```
+
