@@ -96,6 +96,26 @@ Nilai default di Ubuntu adalah 60, tetapi menguranginya menjadi 10 akan meningka
 
 # penggunaan volume grup (vg) & lvm (list volume manager) .....
 
+# Catatan install debian
+## install sudo
+bawaan debian tidak ada paket sudo. berikut cara installnya.
+1. masuk dengan user root.
+```
+su -
+```
+2. Install sudo
+```
+apt-get install sudo
+```
+3. Menambahkan Pengguna ke Grup `sudo`
+```
+usermod -aG sudo nama_user
+```
+4. Cek Hak Akses sudo
+```
+sudo whoami
+```
+
 # install snap sdh di test di armbian
 ```
 sudo apt update
