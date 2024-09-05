@@ -34,7 +34,7 @@ version: '3'
 
 services:
   db:
-    image: mariadb:latest
+    image: mysql:8.0.39
     container_name: nextcloud-db
     restart: always
     command: --transaction-isolation=READ-COMMITTED --log-bin=binlog --binlog-format=ROW
