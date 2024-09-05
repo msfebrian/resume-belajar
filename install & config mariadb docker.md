@@ -77,7 +77,7 @@ services:
       - 3306:3306
     environment:
       - MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=1
-  hpmyadmin:
+  phpmyadmin:
     image: phpmyadmin
     container_name: phpmyadmin
     restart: always
