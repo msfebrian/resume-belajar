@@ -1022,6 +1022,12 @@ network:
 ```
 
 # Aplikasi-aplikasi yang sering digunakan
+## Tailscale install
+Install dari script tailscale
+```
+curl -fsSL https://tailscale.com/install.sh | sh
+```
+untuk cara install lengkapnya bisa lihat langsung di `https://tailscale.com/download`
 
 ## Zerotier install
 ```
