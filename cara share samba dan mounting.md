@@ -158,7 +158,7 @@ untuk default debian dan ubuntu konfigurasi file gunakan smb.conf
 ```
 sudo nano /etc/samba/smb.conf
 ```
-untuk casa os konfigurasi file gunakan smb.conf 
+untuk casa os konfigurasi file gunakan smb.casa.conf 
 ```
 sudo nano /etc/samba/smb.casa.conf
 ```
