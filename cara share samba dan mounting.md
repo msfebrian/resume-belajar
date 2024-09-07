@@ -144,3 +144,49 @@ sudo findmnt --verify
 ```
 sudo mount -a
 ```
+
+# Contoh Implementasu set SMB untuk dua folder dengan dua user berbeda
+contoh share folder yang akan dibuat yaitu folder sigit dan dadan
+## Buat Folder
+```
+sudo mkdir /smb/sigit
+sudo mkdir /smb/dadan
+```
+
+## Tambahkan konfigurasi di file smb.conf
+```
+sudo nano /etc/samba/smb.conf
+```
+Tambahkan konfigurasi berikut di akhir file:
+```
+[sigit]
+path = /smb/sigit
+valid users = sigit
+read only = no
+browseable = yes
+
+[dadan]
+path = /smb/dadan
+valid users = dadan
+read only = no
+browseable = yes
+```
+
+## Buat user Samba dan set password:
+```
+sudo adduser sigit
+sudo smbpasswd -a sigit
+# Masukkan password: sigitAuth
+
+sudo adduser dadan
+sudo smbpasswd -a dadan
+# Masukkan password: dadanAuth
+```
+
+## Restart layanan Samba:
+```
+sudo systemctl restart smbd
+```
+
+
+
