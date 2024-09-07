@@ -153,9 +153,14 @@ sudo mkdir /smb/sigit
 sudo mkdir /smb/dadan
 ```
 
-## Tambahkan konfigurasi di file smb.conf
+## Tambahkan konfigurasi di file configurasi smb
+untuk default debian dan ubuntu konfigurasi file gunakan smb.conf 
 ```
 sudo nano /etc/samba/smb.conf
+```
+untuk casa os konfigurasi file gunakan smb.conf 
+```
+sudo nano /etc/samba/smb.casa.conf
 ```
 Tambahkan konfigurasi berikut di akhir file:
 ```
