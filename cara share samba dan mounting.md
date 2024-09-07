@@ -145,7 +145,7 @@ sudo findmnt --verify
 sudo mount -a
 ```
 
-# Contoh Implementasu set SMB untuk dua folder dengan dua user berbeda
+# Contoh Implementasi set SMB untuk dua folder dengan dua user berbeda
 contoh share folder yang akan dibuat yaitu folder sigit dan dadan
 ## Buat Folder
 ```
