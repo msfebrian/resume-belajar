@@ -59,12 +59,23 @@ sudo reboot now
 ```
 
 # Manual Install Desktop Environment tanpa Tasksel
-## Install xfce desktop
+## Install Gnome
+```
+apt update
+```
+```
+apt install gnome
+```
+```
+apt install gnome-core gnome-shell gnome-terminal
+```
+
+# Install xfce desktop
 ```
 sudo apt install -y xfce4 xfce4-goodies
 ```
 
-## Install TigerVNC server untuk remote
+# Install TigerVNC server untuk remote
 ```
 sudo apt install -y tigervnc-standalone-server
 ```
@@ -81,7 +92,7 @@ tidak disarankan pakai user root
 su - nama_user_baru
 ```
 
-## buat file konfigurasi start up VNC Server
+# buat file konfigurasi start up VNC Server
 ```
 vim .vnc/xstartup
 atau
@@ -149,6 +160,20 @@ sudo systemctl restart xrdp
 ```
 ```
 sudo systemctl status xrdp
+```
+
+## Edit /etc/xrdp/startwm.sh
+```
+etc/xrdp/startwm.sh
+```
+pagarkan code2 ini
+```
+# test -x /etc/X11/Xsession && exec /etc/X11/Xsession
+# exec /bin/sh /etc/X11/Xsession
+```
+tambahkan code diakhir
+```
+exec gnome-session
 ```
 
 ## Ijinkan port xrdp di port 3389
