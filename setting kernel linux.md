@@ -1,3 +1,7 @@
+# Cara install kernel linux
+```
+apt install linux-image-VERSI_KERNELNYA
+```
 # Cara restore ke kernel default
 Tahapan kembali ke kernel lama
 ## lihat daftar kernel terinstall
@@ -35,6 +39,9 @@ contoh tampilnya setelah filter
 ## modify GRUB_DEFAULT=0 dengan memilih kernel yang akan diload
 - jika `GRUB_DEFAULT=0` maka hanya kernel yg terakhir saja yg diload
 - jika `GRUB_DEFAULT="1>2"` maka hanya kernel array ke 1 sampai ke 2 yang diload
+```
+sudo nano /etc/default/grub
+```
 - lihat konfigurasi grub yg sudah di edit 
 ```
 grep GRUB_DEFAULT /etc/default/grub
