@@ -3,7 +3,10 @@
 apt install linux-image-VERSI_KERNELNYA
 ```
 # Cara restore ke kernel default
-Tahapan kembali ke kernel lama
+```
+menghapus kernel baru dengan synaptic manager filter linux-app
+```
+# Tahapan kembali ke kernel lama dengan grub config
 ## lihat daftar kernel terinstall
 ```
 dpkg -l | grep linux-image
