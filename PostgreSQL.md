@@ -54,6 +54,13 @@ CREATE TABLE contoh.products
 );
 ```
 
+# insert multi row
+```
+INSERT INTO contoh.products(name)
+VALUES('iphone'),
+      ('Play Station');
+```
+
 
 
 
