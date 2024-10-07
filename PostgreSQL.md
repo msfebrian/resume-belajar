@@ -61,6 +61,14 @@ VALUES('iphone'),
       ('Play Station');
 ```
 
-
+# membuat dan menghapus user
+## membuat user
+```
+CREATE ROLE nama_user
+```
+## menghapus user
+```
+DROP ROLE nama_user
+```
 
 
