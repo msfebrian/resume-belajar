@@ -37,5 +37,23 @@ lihat apakah sudah pindah schema
 SELECT current_schema();
 ```
 
+# contoh select
+format perintah
+```
+select * nama_schema.nama_table
+```
+jika nama schema tidak dicantumkan maka akan merujuk ke default schema yg sedang di set
+
+## contoh create table schema contoh table products dan id auto increment menggunakan serial
+```
+CREATE TABLE contoh.products
+(
+  id serial not null,
+  name varchar(100) not null,
+  primary key (id) 
+);
+```
+
+
 
 
