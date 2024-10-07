@@ -32,6 +32,7 @@ SET search_path TO nama_schema;
 ```
 SHOW search_path;
 ```
+lihat apakah sudah pindah schema
 ```
 SELECT current_schema();
 ```
