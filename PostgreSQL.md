@@ -238,4 +238,100 @@ GRANT ALL PRIVILEGES ON employees TO john;
 Semoga resume ini bermanfaat! Jika ada pertanyaan lebih lanjut, jangan ragu untuk bertanya.
 
 
+# contoh perintah PostgreSQL untuk membuat tabel dengan berbagai tipe data, termasuk ID auto-increment, primary key, dan foreign key, serta membuat relasi antar tabel (relation table).
+
+**Skenario:**
+
+Misalnya, kita ingin membuat sebuah database untuk toko buku. Tabel-tabel yang akan kita buat adalah:
+
+* **authors:** Menyimpan data penulis buku (id, nama, alamat).
+* **books:** Menyimpan data buku (id, judul, tahun terbit, id_author (foreign key ke tabel authors)).
+* **genres:** Menyimpan data genre buku (id, nama).
+* **book_genres:** Tabel relasi untuk menghubungkan buku dengan genre-nya (id, id_book, id_genre).
+
+**Perintah PostgreSQL:**
+
+```sql
+-- Membuat database toko_buku
+CREATE DATABASE toko_buku;
+
+-- Masuk ke database
+\c toko_buku
+
+-- Membuat tabel authors
+CREATE TABLE authors (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    address TEXT
+);
+
+-- Membuat tabel books
+CREATE TABLE books (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255),
+    publish_year INTEGER,
+    author_id INTEGER REFERENCES authors(id)
+);
+
+-- Membuat tabel genres
+CREATE TABLE genres (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50)
+);
+
+-- Membuat tabel relasi book_genres
+CREATE TABLE book_genres (
+    id SERIAL PRIMARY KEY,
+    book_id INTEGER REFERENCES books(id),
+    genre_id INTEGER REFERENCES genres(id)
+);
+```
+
+**Penjelasan:**
+
+* **SERIAL:** Tipe data ini secara otomatis akan menghasilkan nilai unik dan bertambah secara berurutan setiap kali ada data baru ditambahkan. Ini sangat berguna untuk membuat kolom ID auto-increment.
+* **PRIMARY KEY:** Menentukan kolom mana yang akan menjadi kunci utama (primary key) dari sebuah tabel. Kunci utama harus unik dan tidak boleh null.
+* **FOREIGN KEY:** Mendefinisikan hubungan antara dua tabel. Kolom yang memiliki foreign key harus merujuk ke kolom primary key pada tabel lain.
+* **REFERENCES:** Kata kunci ini digunakan untuk mendefinisikan foreign key dan tabel yang dirujuknya.
+
+**Contoh Data:**
+
+```sql
+-- Memasukkan data penulis
+INSERT INTO authors (name, address)
+VALUES
+    ('J.K. Rowling', 'Edinburgh, Scotland'),
+    ('Stephen King', 'Maine, USA');
+
+-- Memasukkan data buku
+INSERT INTO books (title, publish_year, author_id)
+VALUES
+    ('Harry Potter and the Sorcerer\'s Stone', 1997, 1),
+    ('It', 1986, 2);
+
+-- Memasukkan data genre
+INSERT INTO genres (name)
+VALUES
+    ('Fantasy'),
+    ('Horror');
+
+-- Memasukkan data relasi buku dan genre
+INSERT INTO book_genres (book_id, genre_id)
+VALUES
+    (1, 1),
+    (2, 2);
+```
+
+**Penjelasan Relasi:**
+
+Tabel `book_genres` berfungsi untuk menghubungkan antara tabel `books` dan `genres`. Dengan adanya tabel relasi ini, kita dapat mengetahui genre dari setiap buku. Misalnya, buku dengan ID 1 (Harry Potter) memiliki genre Fantasy.
+
+**Penting:**
+
+* Pastikan Anda mengganti nama tabel, kolom, dan data sesuai dengan kebutuhan Anda.
+* Untuk relasi yang lebih kompleks, Anda bisa menggunakan indeks (index) untuk meningkatkan performa query.
+* Perhatikan tipe data yang digunakan untuk setiap kolom agar sesuai dengan jenis data yang akan disimpan.
+
+Dengan contoh di atas, Anda dapat membuat struktur database yang lebih kompleks dan mengatur hubungan antar tabel dengan baik menggunakan PostgreSQL.
+
 
