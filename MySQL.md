@@ -1,3 +1,12 @@
+## Login MySQL
+```
+mysql -u root -p
+```
+
+```
+mysql -u nama_user -p
+```
+
 ## Contoh DML (Data Manipulation Language) serta DDL (Data Definition Language):
 
 ### 1. Membuat Pengguna Baru
