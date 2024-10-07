@@ -1,4 +1,4 @@
-Tentu, dengan senang hati saya bantu. Berikut contoh perintah MySQL untuk memberikan hak akses kepada pengguna dengan fleksibilitas akses dari berbagai host dan hak akses DML (Data Manipulation Language) serta DDL (Data Definition Language):
+## Contoh DML (Data Manipulation Language) serta DDL (Data Definition Language):
 
 ### 1. Membuat Pengguna Baru
 
