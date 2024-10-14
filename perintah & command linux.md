@@ -170,6 +170,10 @@ sudo do-release-upgrade -d
 ```
 sudo lsb_release -a
 ```
+atau
+```
+cat /etc/os-release
+```
 
 ## Melihat versi linux dan nama host
 ```
