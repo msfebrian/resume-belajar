@@ -86,6 +86,15 @@ systemctl enable avahi-daemon
 systemctl status avahi-daemon
 ```
 
+# Add Ukuran Kertas F4
+```
+masuk ke /etc/cups/ppd
+```
+pilih nama file printer dengan extensi ppd dan tambahkan konfiguasi kertas F4
+```
+*PageSize F4/Folio: "<</PageSize[612.000 935.000]/ImagingBBox null>>setpagedevice"
+```
+
 
 
 
