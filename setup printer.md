@@ -99,11 +99,37 @@ dan
 
 *OPOptionHints PageRegion: "dropdown"
 ```
+
 ```
 *PageSize F4/Folio: "<</PageSize[612.000 935.000]/ImagingBBox null>>setpagedevice"
 ```
+
 ```
 untuk kertas default sesuaikan
+```
+
+dan tambahkan juga di bagian ImageAbleArea
+```
+*DefaultImageableArea: F4
+*StpDefaultImageableArea: Letter
+```
+
+```
+*ImageAbleArea F4/Folio: "0.000 0.000 612.000 935.000"
+```
+
+dan tambahkan juga di bagian PaperDimension
+```
+*DefaultPaperDimension: F4
+*StpDefaultPaperDimension: Letter
+```
+
+```
+*PaperDimension F4/Folio: "612.000 935.000"
+```
+
+```
+save
 ```
 
 
