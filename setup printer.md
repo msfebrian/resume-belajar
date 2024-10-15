@@ -87,6 +87,7 @@ systemctl status avahi-daemon
 ```
 
 # Add Ukuran Kertas F4
+## mengubah melalui file konfigurasi printer
 ```
 masuk ke /etc/cups/ppd
 ```
@@ -130,6 +131,11 @@ dan tambahkan juga di bagian PaperDimension
 
 ```
 save
+```
+
+## add melalui terminal pada package cups
+```bash
+lpadmin -E -p nama_printer -o printer-info="custom-page-sizes=8.5x13in"
 ```
 
 
