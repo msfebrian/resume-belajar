@@ -90,9 +90,20 @@ systemctl status avahi-daemon
 ```
 masuk ke /etc/cups/ppd
 ```
-pilih nama file printer dengan extensi ppd dan tambahkan konfiguasi kertas F4
+1. pilih nama file printer dengan extensi ppd dan tambahkan konfiguasi kertas F4
+2. Masukan Konfigurasi di deretan settingan kertas pada
+```
+*OPOptionHints PageSize: "dropdown"
+
+dan
+
+*OPOptionHints PageRegion: "dropdown"
+```
 ```
 *PageSize F4/Folio: "<</PageSize[612.000 935.000]/ImagingBBox null>>setpagedevice"
+```
+```
+untuk kertas default sesuaikan
 ```
 
 
