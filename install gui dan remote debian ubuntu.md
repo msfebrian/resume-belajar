@@ -1,4 +1,4 @@
-# Cara Install GUI di Ubuntu Server 22.04 dan Remote VNC Server
+# Cara Install GUI di Debian & Ubuntu Server 22.04 dan Remote VNC Server
 # Install Desktop Environment dengan Tasksel
 ## Install Tasksel
 Update dan update dahulu
@@ -73,6 +73,19 @@ apt install gnome-core gnome-shell gnome-terminal
 # Install xfce desktop
 ```
 sudo apt install -y xfce4 xfce4-goodies
+```
+
+# Install KDE Plasma
+```
+apt install kde-standar
+```
+```
+kemudian pilih ssdm
+```
+```
+SDDM: Ideal jika Anda menggunakan KDE Plasma sebagai lingkungan desktop utama Anda dan menginginkan tampilan yang bersih dan modern.
+LightDM: Cocok jika Anda sering berganti-ganti antara berbagai lingkungan desktop atau ingin memiliki fleksibilitas tinggi dalam mengkonfigurasi tampilan login.
+GDM: Jika Anda pengguna GNOME sejati dan ingin pengalaman yang konsisten dengan ekosistem GNOME.
 ```
 
 # Install TigerVNC server untuk remote
