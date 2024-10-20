@@ -88,6 +88,20 @@ LightDM: Cocok jika Anda sering berganti-ganti antara berbagai lingkungan deskto
 GDM: Jika Anda pengguna GNOME sejati dan ingin pengalaman yang konsisten dengan ekosistem GNOME.
 ```
 
+## Setting Efek
+Cari desktop effect
+```
+Wobbly Windows : untuk efek jelly saat windows di gerakkan
+Magic Lamp : efek minimaize dan maximize ala mac
+```
+
+## install theme ala mac
+```
+1. get new global themes
+2. cari apple-ventura-dark by adolfo
+3. setelah terdownload ceklis semua, Appreance setting dan Desktop and Windows Layout. kemudian apply
+```
+
 # Install TigerVNC server untuk remote
 ```
 sudo apt install -y tigervnc-standalone-server
