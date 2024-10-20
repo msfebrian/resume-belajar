@@ -77,7 +77,7 @@ sudo apt install -y xfce4 xfce4-goodies
 
 # Install KDE Plasma
 ```
-apt install kde-standar
+apt install kde-standard
 ```
 ```
 kemudian pilih ssdm
