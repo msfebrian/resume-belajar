@@ -349,7 +349,7 @@ pilih disk hasil import
 klik edit
 ceklis discard (jika hardware menggunakan ssd) fungsi untuk tidak menggunakan blok yg tidak digunakan agar memperjang umur ssd dan optimasi performa
 ceklis ssd emulation (jika hardware menggunakan ssd)
-klik ok
+klik Add
 ```
 6. pilih boot order
 ```
