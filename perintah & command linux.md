@@ -576,9 +576,60 @@ chown -R nama_user:nama_group nama_folder
 
 ## Cara mount
 ```
+mount sumber_yang_akan_dimount lokasi_tujuan_mount 
+```
+contoh
+```
     mkdir /mnt/disk2
     mount /dev/sdb1 /mnt/disk2
 ```
+
+## Cara membuat link
+Tentu, dengan senang hati saya akan jelaskan fungsi `ln` di Linux beserta contohnya:
+
+**Fungsi `ln` di Linux**
+
+Perintah `ln` di Linux digunakan untuk **membuat link (tautan)** antara dua file atau direktori. Link ini berfungsi sebagai "jalan pintas" menuju file atau direktori asli. Ada dua jenis link yang bisa dibuat dengan `ln`:
+
+1. **Hard Link:**
+   * Merupakan pointer langsung ke inode (data struktur yang menyimpan metadata file) dari sebuah file.
+   * Jika ada hard link ke sebuah file, menghapus file tersebut tidak akan menghapus file aslinya selama masih ada hard link lain yang menunjuk ke file tersebut.
+   * Hard link hanya bisa dibuat untuk file yang berada di partisi yang sama.
+   * **Contoh:** `ln /home/user/dokumen.txt /home/user/Desktop/dokumen.txt`
+
+2. **Symbolic Link (Symlink):**
+   * Adalah file khusus yang berisi path ke file atau direktori lain.
+   * Symlink bisa menunjuk ke file atau direktori di partisi yang berbeda.
+   * Ketika Anda mengakses symlink, sistem operasi akan mengikuti path yang tersimpan di dalamnya untuk mengakses file atau direktori tujuan.
+   * **Contoh:** `ln -s /home/user/gambar /var/www/html/images`
+
+**Opsi `-s`**
+
+Opsi `-s` digunakan untuk membuat symbolic link. Tanpa opsi ini, perintah `ln` akan membuat hard link.
+
+**Contoh Penggunaan**
+
+* **Membuat hard link:**
+   ```bash
+   ln /home/user/musik.mp3 /mnt/usb/musik.mp3
+   ```
+   Perintah di atas akan membuat hard link dari file `musik.mp3` di direktori `home/user` ke direktori `mnt/usb`. Kedua file ini sebenarnya adalah file yang sama, hanya memiliki nama yang berbeda.
+
+* **Membuat symbolic link:**
+   ```
+   ln -s sumber_path lokasi_tujuan
+   ```
+   contoh
+   ```bash
+   ln -s /usr/local/bin/python3 /usr/bin/python3
+   ```
+   Perintah di atas akan membuat symbolic link dari `python3` yang ada di `usr/local/bin` ke `usr/bin`. Ketika Anda mengetik `python3` di terminal, sistem akan mencari eksekusi di `usr/bin` dan secara otomatis akan diarahkan ke `usr/local/bin/python3`.
+
+**Ringkasan**
+
+* **Hard link:** Pointer langsung ke inode, hanya bisa di partisi yang sama.
+* **Symbolic link:** File khusus berisi path, bisa menunjuk ke partisi berbeda.
+* **Opsi -s:** Untuk membuat symbolic link.
 
 
 ## Tampil penggunaan disk & file system list
