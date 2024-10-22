@@ -353,6 +353,20 @@ klik ok
 ```
 6. pilih boot order
 ```
-naikkan posisi disk ke urutan pertama
+naikkan posisi disk ke urutan pertama setelah cd/iso
 ```
+
+# merubah disk.qcow2 dari preallocation = on menjadi off agar ukuran mengikuti dapat menyesuaikan dengan size real
+**jika preallocation `on` file disk akan mereservasi ukuran disk yang ditentukan
+**jika preallocation `off` file disk akan bertambah bertahap sesuai dengan size yg digunakan
+**sesuaikan permission dengan menggunakan chown namauser:namagroup agar dapat di edit
+disk qcow2 asumsi dari pc diluar server proxmox
+
+**edit preallocation dengan qemu-img convert
+contoh
+```
+sudo qemu-img convert -f qcow2 -0 qcow2 -o preallocation=off manjaro.qcow2 manjaro_new.qcow2
+```
+** import seperti cara sebelumnya ke dalam proxmox
+
 
