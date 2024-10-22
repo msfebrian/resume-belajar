@@ -354,6 +354,7 @@ klik Add
 6. pilih boot order
 ```
 naikkan posisi disk ke urutan pertama setelah cd/iso
+dan ceklis disk boot
 ```
 
 # merubah disk.qcow2 dari preallocation on menjadi off agar ukuran mengikuti dapat menyesuaikan dengan size real
