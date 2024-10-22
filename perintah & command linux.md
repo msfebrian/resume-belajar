@@ -619,7 +619,12 @@ Opsi `-s` digunakan untuk membuat symbolic link. Tanpa opsi ini, perintah `ln` a
    ```
    ln -s sumber_path lokasi_tujuan
    ```
-   contoh
+   contoh link mount dari /mnt/storage ke path /DATA
+   ```
+   ln -s /mnt/usb_storage /DATA
+   ```
+   
+   contoh lainnya
    ```bash
    ln -s /usr/local/bin/python3 /usr/bin/python3
    ```
@@ -631,6 +636,15 @@ Opsi `-s` digunakan untuk membuat symbolic link. Tanpa opsi ini, perintah `ln` a
 * **Symbolic link:** File khusus berisi path, bisa menunjuk ke partisi berbeda.
 * **Opsi -s:** Untuk membuat symbolic link.
 
+## mneghapus link
+cara menghapus link dari perintah ln -s yang dibuat dari perintah ini
+```
+ln -s /mnt/usb_storage /DATA
+```
+menghasilkan folder usb_storage pada PATH data. maka cara menghapusnya sebagai berikut
+```
+rm /DATA/usb_storage
+```
 
 ## Tampil penggunaan disk & file system list
 Perintah df di Linux digunakan untuk melihat penggunaan ruang disk.
