@@ -49,6 +49,12 @@ create mask = 0777
 directory mask = 0777
 ```
 
+## buat user utk smb
+
+```
+sudo smbpasswd -a nama_pengguna
+```
+
 ## fungsi force user = root dan penjelasan lengkap dari gemini
 ```
 force user = root
@@ -143,13 +149,6 @@ Dalam contoh di atas, semua pengguna yang mengakses `[public]` akan dianggap seb
 **Dengan mengikuti langkah-langkah di atas dan mempertimbangkan aspek keamanan, Anda dapat dengan sukses menambahkan pengguna dan mengatur izin dalam konfigurasi Samba Anda.**
 
 **Apakah Anda memiliki pertanyaan lebih lanjut tentang konfigurasi Samba?** 
-
-
-## buat user utk smb
-
-```
-sudo smbpasswd -a nama_pengguna
-```
 
 ## restart samba
 ```
