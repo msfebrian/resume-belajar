@@ -327,3 +327,32 @@ Get-Service QEMU-GA
 ```
 - Jika belum berjalan, gunakan Services control panel untuk memulai dan mengatur agar berjalan otomatis saat boot berikutnya
 
+# Import VMDK dan OVA ke proxmox
+## export dan extract
+1. kirim file ke root proxmox bisa dengan filezilla
+2. jika extensi ova extract dahulu agar dahulu. karna vmdk biasanya dikemas dalam ova dengan perintah
+```
+tar -xvf nama-imagenya.ova
+```
+3. buat virtual machine kemudian remove disk bawaan dengan cara klik tombol `detach` dan `remove` dari menu hardware. dan `ingatkan ID virtual machinenya`
+4. import namafile dgn extensi `vmdk` di root folder hasil extract ke ID Virtual machine dengan perintah
+```
+qm importdisk no_id nama_file_vmdknya nama_storage_yg_dinginkan --format format_yg_diinginkan
+```
+contoh
+```
+qm importdisk 104 ubuntu-vm-disk001.vmdk vm-storage1 -format qcow2 
+```
+5. edit disk hasil import di menu hardware
+```
+pilih disk hasil import
+klik edit
+ceklis discard
+ceklis ssd emulation (jika hardware menggunakan ssd)
+klik ok
+```
+6. pilih boot order
+```
+naikkan posisi disk ke urutan pertama
+```
+
