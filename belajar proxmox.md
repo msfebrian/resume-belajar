@@ -337,11 +337,11 @@ tar -xvf nama-imagenya.ova
 3. buat virtual machine kemudian remove disk bawaan dengan cara klik tombol `detach` dan `remove` dari menu hardware. dan `ingatkan ID virtual machinenya`
 4. import namafile dgn extensi `vmdk` di root folder hasil extract ke ID Virtual machine dengan perintah
 ```
-qm importdisk no_id nama_file_vmdknya nama_storage_yg_dinginkan --format format_yg_diinginkan
+qm importdisk no_id nama_file_vmdknya lokasi_storage_pve --format format_yg_diinginkan
 ```
 contoh
 ```
-qm importdisk 104 ubuntu-vm-disk001.vmdk vm-storage1 -format qcow2 
+qm importdisk 104 ubuntu-vm-disk001.vmdk pve-storage -format vmdk 
 ```
 5. edit disk hasil import di menu hardware
 ```
