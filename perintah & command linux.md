@@ -636,7 +636,7 @@ Opsi `-s` digunakan untuk membuat symbolic link. Tanpa opsi ini, perintah `ln` a
 * **Symbolic link:** File khusus berisi path, bisa menunjuk ke partisi berbeda.
 * **Opsi -s:** Untuk membuat symbolic link.
 
-## mneghapus link
+## menghapus link
 cara menghapus link dari perintah ln -s yang dibuat dari perintah ini
 ```
 ln -s /mnt/usb_storage /DATA
