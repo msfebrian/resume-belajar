@@ -347,7 +347,7 @@ qm importdisk 104 ubuntu-vm-disk001.vmdk vm-storage1 -format qcow2
 ```
 pilih disk hasil import
 klik edit
-ceklis discard
+ceklis discard (jika hardware menggunakan ssd) fungsi untuk tidak menggunakan blok yg tidak digunakan agar memperjang umur ssd dan optimasi performa
 ceklis ssd emulation (jika hardware menggunakan ssd)
 klik ok
 ```
