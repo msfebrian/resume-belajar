@@ -198,9 +198,13 @@ pagarkan code2 ini
 # test -x /etc/X11/Xsession && exec /etc/X11/Xsession
 # exec /bin/sh /etc/X11/Xsession
 ```
-tambahkan code diakhir
+tambahkan code diakhir untuk gnome
 ```
 exec gnome-session
+```
+tambahkan code diakhir untuk kde plasma
+```
+exec startplasma-x11
 ```
 
 ## Ijinkan port xrdp di port 3389
