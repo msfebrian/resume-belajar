@@ -206,6 +206,10 @@ tambahkan code diakhir untuk kde plasma
 ```
 exec startplasma-x11
 ```
+tambahkan code diakhir untuk cinnamon
+```
+exec cinnamon
+```
 
 ## Ijinkan port xrdp di port 3389
 ```
