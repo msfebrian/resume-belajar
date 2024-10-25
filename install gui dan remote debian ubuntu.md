@@ -191,7 +191,7 @@ sudo systemctl status xrdp
 
 ## Edit /etc/xrdp/startwm.sh
 ```
-etc/xrdp/startwm.sh
+nano /etc/xrdp/startwm.sh
 ```
 pagarkan code2 ini
 ```
