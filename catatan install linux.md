@@ -263,3 +263,7 @@ apt dist-upgrade
 ```
 lsb_release -a
 ```
+9. reboot
+```
+sudo reboot now
+```
