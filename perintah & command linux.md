@@ -118,6 +118,11 @@ Lihat direktori pengguna
    ls /home
 ```
 
+# melihat source repository package
+```
+nano /etc/apt/sources.list
+```
+
 # Update dan upgrade package
 ## Update
 ```
