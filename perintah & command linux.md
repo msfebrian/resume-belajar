@@ -175,8 +175,16 @@ apt upgrade -y
 ```
 sudo apt dist-upgrade
 ```
+6. cek versi distro yang sudah diupgrade
+```
+lsb_release -a
+```
+7. reboot
+```
+sudo reboot now
+```
 
-## Install paket update-manager-core
+## Install paket update-manager-core (kernel)
 ```
 sudo apt install update-manager-core
 ```
