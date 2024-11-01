@@ -156,11 +156,26 @@ sudo apt full-upgrade
 sudo apt auto remove
 ```
 
-## Perintah update distro dan kernel baru
-upgrade ke versi distro yang lebih baru atau menginstall kernel baru
+# Perintah update distro dan kernel baru
+Cara Upgrade Linux Debian tanpa install ulang misalkan dari versi bullseyes ke bookworm
+1. rubah source apt package
+rubah semua versi source bullseyes ke bookworm di sources.list
+```
+nano /etc/apt/sources.list
+```
+2. Update Source Repository
+```
+apt update
+```
+4. Upgrade Package
+```
+apt upgrade -y
+```
+5. upgrade ke versi distro yang lebih baru atau menginstall kernel baru
 ```
 sudo apt dist-upgrade
 ```
+
 ## Install paket update-manager-core
 ```
 sudo apt install update-manager-core
