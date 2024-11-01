@@ -240,4 +240,19 @@ Field pass dan dump mungkin memiliki nilai yang berbeda-beda tergantung pada kon
 
 Pastikan untuk merujuk pada dokumentasi sistem file dan kebutuhan spesifik dari sistem Anda untuk menentukan nilai yang tepat untuk field pass dan dump dalam konfigurasi /etc/fstab.
 
-
+# Cara Upgrade Linux Debian tanpa install ulang
+Cara Upgrade Linux Debian tanpa install ulang misalkan dari versi bullseyes ke bookworm
+1. rubah source apt package
+rubah semua versi source bullseyes ke bookworm di sources.list
+```
+nano /etc/apt/sources.list
+```
+2. Update Source Repository
+```
+apt update
+```
+4. Upgrade Package
+```
+apt upgrade
+```
+6. cc
