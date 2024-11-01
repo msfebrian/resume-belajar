@@ -253,6 +253,13 @@ apt update
 ```
 4. Upgrade Package
 ```
-apt upgrade
+apt upgrade -y
 ```
-6. cc
+6. Upgrade distro
+```
+apt dist-upgrade
+```
+8. cek versi distro yang sudah diupgrade
+```
+lsb_release -a
+```
