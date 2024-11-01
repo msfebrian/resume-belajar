@@ -255,15 +255,15 @@ apt update
 ```
 apt upgrade -y
 ```
-6. Upgrade distro
+5. Upgrade distro
 ```
 apt dist-upgrade
 ```
-8. cek versi distro yang sudah diupgrade
+6. cek versi distro yang sudah diupgrade
 ```
 lsb_release -a
 ```
-9. reboot
+7. reboot
 ```
 sudo reboot now
 ```
