@@ -267,3 +267,8 @@ lsb_release -a
 ```
 sudo reboot now
 ```
+
+# menghapus paket yang sudah tidak digunakan setelah upgrade
+```
+sudo apt --purge autoremove -y
+```
