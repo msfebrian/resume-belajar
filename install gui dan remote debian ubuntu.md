@@ -252,7 +252,33 @@ Please find below the commands that need to be applied:
 ```
 
 # cara install kasmvnc remote from Browser
-install library DateTime.pm
+Link source kasmvnc
+```
+https://github.com/kasmtech/KasmVNC/releases/tag/v1.3.2
+```
+
+## Cara install kasmvnc 
+Sesuaikan source versi kasmvnc dan arsitektur di link source kasvnc diatas. Copy link package deb sesuai dgn distro
+```
+# Please choose the package for your distro here (under Assets):
+# https://github.com/kasmtech/KasmVNC/releases
+wget <package_url>
+
+sudo apt-get install ./kasmvncserver_*.deb
+
+# Add your user to the ssl-cert group
+sudo addgroup $USER ssl-cert
+
+# YOU MUST DISCONNECT AND RECONNECT FOR GROUP MEMBERSHIP CHANGE TO APPLY
+
+# start KasmVNC, you will be prompted to create a KasmVNC user and select a desktop environment
+vncserver
+
+# Tail the logs
+tail -f ~/.vnc/*.log
+```
+
+## install library DateTime.pm jika ada error saat run vncserver dgn note DateTime pm
 ```
 sudo apt install libdatetime-perl
 ```
