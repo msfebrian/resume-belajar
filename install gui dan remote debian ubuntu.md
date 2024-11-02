@@ -251,5 +251,10 @@ Please find below the commands that need to be applied:
     echo env -u SESSION_MANAGER -u DBUS_SESSION_BUS_ADDRESS cinnamon-session~/.xsession
 ```
 
+# cara install kasmvnc remote from Browser
+install library DateTime.pm
+```
+sudo apt install libdatetime-perl
+```
 
 
