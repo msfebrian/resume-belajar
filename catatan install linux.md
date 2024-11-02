@@ -272,3 +272,27 @@ sudo reboot now
 ```
 sudo apt --purge autoremove -y
 ```
+
+# cara install flatpak
+```
+sudo apt install flatpak
+```
+## install gui di gnome & xfce
+```
+sudo apt install gnome-software-plugin-flatpak
+```
+
+## install gui di kde plasma
+```
+sudo apt install plasma-discover-backend-flatpak
+```
+
+## Add the Flathub repository
+```
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+```
+
+## restart
+```
+sudo reboot now
+```
