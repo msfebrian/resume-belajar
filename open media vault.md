@@ -1,4 +1,4 @@
-# cara install 
+# cara install open media vault omv debian 12
 ```
 cat <<EOF >> /etc/apt/sources.list.d/openmediavault.list
 deb [signed-by=/usr/share/keyrings/openmediavault-archive-keyring.gpg] http://packages.openmediavault.org/public sandworm main
