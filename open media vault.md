@@ -29,3 +29,8 @@ omv-confdbadm populate
 omv-salt deploy run hosts
 cat /etc/issue
 ```
+
+# default password 
+```
+user : admin
+password: openmediavault
