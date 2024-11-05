@@ -60,28 +60,36 @@ kemudian Restart PC.
    sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
    ```
 
-4. berik akses docker
-   ```
-   sudo usermod -aG docker $USER
-   ```
-   kemudian masukkan password user yang digunakan saat ini
-   
-5. ambil list data repositori
+4. ambil list data repositori
    ```
    sudo apt-get update
    ```
-6. Install Latest Version
+5. Install Latest Version
    ```
    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
    ```
 
-7. View Version & Test
+6. View Version & Test
    ```
    docker --version
    ```
    ```
    sudo docker run hello-world
    ```
+
+5. Konfigurasi Pengguna untuk Akses Docker
+   ```
+   sudo usermod -aG docker $USER
+   ```
+   ```
+   kemudian masukkan password user yang digunakan saat ini
+   ```
+
+   menambahkan pengguna ke grup docker.
+   ```
+   sudo usermod -aG docker nama_username
+   ```
+   
 
 # Install Dokcer di ubuntu
 ## 1. Hapus Versi Lama (Opsional):
