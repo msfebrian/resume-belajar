@@ -295,4 +295,32 @@ tail -f ~/.vnc/*.log
 sudo apt install libdatetime-perl
 ```
 
+# Troubleshooting Desktop Environment
+## KDE Plasma
+Untuk merestart KDE Plasma di Linux, Anda bisa menggunakan beberapa cara berikut:
+
+### 1. Menggunakan Command Line
+Cara yang paling umum dan aman untuk merestart KDE Plasma adalah dengan menggunakan perintah terminal:
+
+```bash
+kquitapp5 plasmashell && kstart5 plasmashell
+```
+
+Perintah di atas akan menghentikan layanan `plasmashell` dan menjalankannya kembali.
+
+### 2. Menggunakan Systemd (Jika Plasma menggunakan systemd user services)
+Jika KDE Plasma Anda menggunakan systemd untuk mengelola layanan pengguna, Anda bisa mencoba perintah berikut:
+
+```bash
+systemctl --user restart plasma-plasmashell.service
+systemctl --user restart plasma-kwin_x11.service  # untuk X11
+systemctl --user restart plasma-kwin_wayland.service  # untuk Wayland
+```
+
+Pastikan Anda menggunakan layanan yang sesuai dengan lingkungan grafis yang sedang digunakan (X11 atau Wayland).
+
+### 3. Logout dan Login Kembali
+Jika kedua cara di atas tidak berhasil, Anda bisa mencoba logout dari sesi KDE Plasma Anda, kemudian login kembali. Cara ini akan me-restart seluruh session Plasma secara otomatis.
+
+Jika Anda memiliki pertanyaan lebih lanjut atau butuh bantuan tambahan, jangan ragu untuk bertanya!
 
