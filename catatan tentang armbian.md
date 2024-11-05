@@ -4,6 +4,9 @@ masuk ke armbian-config
 cari freeze kernel update
 ```
 
+## jika menggunakan desktop environment matikan power sleep
+matikan power sleep terutama pada menu setting
+
 ## Resolusi layar max 728p
 
 Resolusi layar desktop yang direkomendasikan maximal 728p. jika lebih dr itu berat, lag
