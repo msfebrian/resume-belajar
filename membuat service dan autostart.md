@@ -1,3 +1,86 @@
+#Tutorial dari CHATPGT (Belum dicoba)
+## Auto Run Script Bash Running KASMVNC VNCSERVER
+Untuk membuat script Bash agar paket **kasMVNC vncserver** berjalan otomatis saat boot pada Linux Debian, Anda dapat mengikuti langkah-langkah berikut ini:
+
+1. **Install kasmvnc VNC Server (Jika Belum Terpasang)**
+
+   Pastikan Anda sudah menginstal **kasMVNC** dan bisa menjalankannya secara manual. Biasanya instalasi bisa dilakukan melalui paket yang tersedia atau diunduh langsung dari sumber resminya.
+
+2. **Buat Script untuk Menjalankan VNC Server**
+
+   Buat script Bash yang akan menjalankan **kasMVNC**. Simpan script ini di suatu direktori, misalnya `/usr/local/bin`.
+
+   ```bash
+   sudo nano /usr/local/bin/start_kasmvnc.sh
+   ```
+
+   Isi script dengan perintah untuk menjalankan **kasMVNC VNC server**, contohnya:
+
+   ```bash
+   #!/bin/bash
+   # Jalankan kasMVNC VNC server
+
+   /path/to/kasmvnc_executable --argumen-tambahan
+   ```
+
+   Sesuaikan `/path/to/kasmvnc_executable` dengan path ke file eksekusi **kasMVNC** dan tambahkan argumen sesuai kebutuhan. Kemudian, simpan dan tutup file ini.
+
+3. **Berikan Izin Eksekusi pada Script**
+
+   Agar script bisa dijalankan, tambahkan izin eksekusi pada script tersebut.
+
+   ```bash
+   sudo chmod +x /usr/local/bin/start_kasmvnc.sh
+   ```
+
+4. **Tambahkan Script ke Systemd untuk Dijalankan Saat Boot**
+
+   Buat file service untuk **kasMVNC** agar dapat dijalankan sebagai layanan pada saat booting. Gunakan editor untuk membuat file service baru di `/etc/systemd/system/`.
+
+   ```bash
+   sudo nano /etc/systemd/system/kasmvnc.service
+   ```
+
+   Isi file service dengan konfigurasi berikut:
+
+   ```ini
+   [Unit]
+   Description=kasMVNC VNC Server
+   After=network.target
+
+   [Service]
+   ExecStart=/usr/local/bin/start_kasmvnc.sh
+   Restart=always
+   User=yourusername
+   Group=yourgroup
+   Environment=DISPLAY=:1
+
+   [Install]
+   WantedBy=multi-user.target
+   ```
+
+   Pastikan untuk mengganti `yourusername` dan `yourgroup` sesuai dengan user yang digunakan.
+
+5. **Aktifkan dan Jalankan Service**
+
+   Aktifkan service agar dijalankan secara otomatis saat booting, dan langsung jalankan untuk memastikan service berjalan dengan baik.
+
+   ```bash
+   sudo systemctl enable kasmvnc.service
+   sudo systemctl start kasmvnc.service
+   ```
+
+6. **Periksa Status Service**
+
+   Pastikan service berjalan dengan lancar tanpa error:
+
+   ```bash
+   sudo systemctl status kasmvnc.service
+   ```
+
+Jika berhasil, **kasMVNC** VNC server akan berjalan otomatis saat boot di Debian. Anda juga bisa me-restart atau menghentikan service ini kapan saja dengan perintah `sudo systemctl restart kasmvnc.service` atau `sudo systemctl stop kasmvnc.service`.
+
+
 # Tutorial dari CHATGPT (masih bug kadang gagal running service)
 # Membuat Serive dan Auto Start KASMVNC VNCSERVER
 Untuk membuat service otomatis pada Debian yang menjalankan aplikasi `kasmvnc` dengan package `vncserver` dari path `bin`, ikuti langkah-langkah berikut:
