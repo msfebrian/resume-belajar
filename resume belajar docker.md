@@ -59,17 +59,23 @@ kemudian Restart PC.
    $(. /etc/os-release && echo "bookworm") stable" | \
    sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
    ```
+
+4. berik akses docker
+   ```
+   sudo usermod -aG docker $USER
+   ```
+   kemudian masukkan password user yang digunakan saat ini
    
-3. ambil list data repositori
+5. ambil list data repositori
    ```
    sudo apt-get update
    ```
-4. Install Latest Version
+6. Install Latest Version
    ```
    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
    ```
 
-5. View Version & Test
+7. View Version & Test
    ```
    docker --version
    ```
