@@ -1,4 +1,4 @@
-# Tutorial dari CHATGPT
+# Tutorial dari CHATGPT (masih bug kadang gagar running service)
 # Membuat Serive dan Auto Start KASMVNC VNCSERVER
 Untuk membuat service otomatis pada Debian yang menjalankan aplikasi `kasmvnc` dengan package `vncserver` dari path `bin`, ikuti langkah-langkah berikut:
 
@@ -76,7 +76,7 @@ Description=KasmVNC Server
 After=network.target
 
 [Service]
-Type=forking
+Type=simple
 User=root
 ExecStart=/bin/vncserver
 Restart=on-failure
