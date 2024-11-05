@@ -79,7 +79,6 @@ After=network.target
 Type=forking
 User=root
 ExecStart=/bin/vncserver
-ExecStartPost=/bin/sleep infinity
 Restart=on-failure
 
 [Install]
