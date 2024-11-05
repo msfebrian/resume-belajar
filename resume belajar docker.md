@@ -78,6 +78,7 @@ kemudian Restart PC.
    ```
 
 5. Konfigurasi Pengguna untuk Akses Docker
+   manambahkan pengguna saat ini ke group docker
    ```
    sudo usermod -aG docker $USER
    ```
@@ -85,7 +86,7 @@ kemudian Restart PC.
    kemudian masukkan password user yang digunakan saat ini
    ```
 
-   menambahkan pengguna ke grup docker.
+   menambahkan pengguna lain ke grup docker.
    ```
    sudo usermod -aG docker nama_username
    ```
