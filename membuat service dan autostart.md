@@ -100,3 +100,123 @@ sudo systemctl start kasmvnc
 ```
 sudo systemctl status kasmvnc
 ```
+
+# Troubleshooting saat gagal auto run saat reboot
+Untuk mengatasi masalah ini, kita perlu memodifikasi file service agar service tetap berjalan di background. Anda bisa mengubah service menjadi `Type=forking` atau menambahkan script yang memastikan bahwa service berjalan terus. Berikut adalah beberapa langkah yang bisa Anda coba.
+
+### Solusi 1: Mengubah `Type` menjadi `forking`
+
+Jika `kasmvnc` menghasilkan proses yang berjalan di background (misalnya, dengan mode daemon atau multi-threaded), kita bisa mengubah `Type` menjadi `forking`. Edit file `/etc/systemd/system/kasmvnc.service` sebagai berikut:
+
+1. Buka file service:
+    ```bash
+    sudo nano /etc/systemd/system/kasmvnc.service
+    ```
+
+2. Ubah baris `Type=simple` menjadi `Type=forking`:
+
+    ```ini
+    [Service]
+    Type=forking
+    User=<username>                   
+    ExecStart=/path/to/bin/kasmvnc      
+    PIDFile=/run/kasmvnc.pid            # Optional, jika kasmvnc menghasilkan file PID
+    Restart=on-failure
+    ```
+
+3. Reload konfigurasi dan restart service:
+
+    ```bash
+    sudo systemctl daemon-reload
+    sudo systemctl restart kasmvnc
+    ```
+
+4. Periksa status service:
+
+    ```bash
+    systemctl status kasmvnc
+    ```
+
+### Solusi 2: Menambahkan Script `ExecStartPost`
+
+Jika `kasmvnc` tetap terhenti setelah dijalankan, Anda bisa menambahkan perintah tambahan di bagian `ExecStartPost` untuk memastikan bahwa service terus berjalan, atau mencoba perintah di bawah ini:
+
+1. Edit file service lagi:
+
+    ```bash
+    sudo nano /etc/systemd/system/kasmvnc.service
+    ```
+
+2. Tambahkan perintah untuk menjaga koneksi tetap aktif:
+
+    ```ini
+    [Service]
+    Type=simple
+    ExecStart=/path/to/bin/kasmvnc
+    ExecStartPost=/bin/sleep infinity   # Menjaga agar service tetap aktif
+    Restart=on-failure
+    ```
+
+3. Reload konfigurasi dan restart service:
+
+    ```bash
+    sudo systemctl daemon-reload
+    sudo systemctl restart kasmvnc
+    ```
+
+### Solusi 3: Menambahkan Script Shell Sederhana
+
+Jika `kasmvnc` memerlukan loop untuk menjaga proses tetap berjalan, Anda bisa membuat script shell yang menjalankan kasmvnc dalam loop dan membuat service untuk menjalankan script tersebut.
+
+1. Buat file script di `/usr/local/bin/kasmvnc_loop.sh`:
+
+    ```bash
+    sudo nano /usr/local/bin/kasmvnc_loop.sh
+    ```
+
+2. Tambahkan perintah ini ke dalam file script:
+
+    ```bash
+    #!/bin/bash
+    while true; do
+        /path/to/bin/kasmvnc
+        sleep 5     # Jeda agar tidak overloading jika service terus-menerus restart
+    done
+    ```
+
+3. Simpan dan beri izin eksekusi:
+
+    ```bash
+    sudo chmod +x /usr/local/bin/kasmvnc_loop.sh
+    ```
+
+4. Ubah `kasmvnc.service` agar menggunakan script baru ini:
+
+    ```ini
+    [Service]
+    ExecStart=/usr/local/bin/kasmvnc_loop.sh
+    Restart=always
+    ```
+
+5. Reload konfigurasi dan restart service:
+
+    ```bash
+    sudo systemctl daemon-reload
+    sudo systemctl restart kasmvnc
+    ```
+
+### Verifikasi
+
+Setelah membuat perubahan, restart server untuk memastikan `kasmvnc` berjalan otomatis dan tidak berhenti setelah reboot:
+
+```bash
+sudo reboot
+```
+
+Periksa kembali status setelah reboot:
+
+```bash
+systemctl status kasmvnc
+```
+
+Dengan langkah-langkah di atas, service `kasmvnc` seharusnya bisa terus berjalan otomatis setelah reboot.
