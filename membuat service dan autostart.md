@@ -76,9 +76,10 @@ Description=KasmVNC Server
 After=network.target
 
 [Service]
-Type=simple
+Type=forking
 User=root
 ExecStart=/bin/vncserver
+ExecStartPost=/bin/sleep infinity
 Restart=on-failure
 
 [Install]
