@@ -277,6 +277,18 @@ vncserver
 # Tail the logs
 tail -f ~/.vnc/*.log
 ```
+contoh
+```
+wget https://github.com/kasmtech/KasmVNC/releases/download/v1.3.2/kasmvncserver_bookworm_1.3.2_arm64.deb
+
+sudo apt-get install ./kasmvncserver_bookworm_1.3.2_arm64.deb
+
+sudo addgroup febrian ssl-cert
+
+vncserver
+
+tail -f ~/.vnc/*.log
+```
 
 ## install library DateTime.pm jika ada error saat run vncserver dgn note DateTime pm
 ```
