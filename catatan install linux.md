@@ -296,3 +296,54 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 ```
 sudo reboot now
 ```
+
+# Mendisable atau menahan update kernel agar tidak terupdate
+Pada Debian 12 (dan distro Debian-based lainnya), Anda dapat menghentikan update kernel menggunakan metode berikut:
+
+1. **Gunakan APT Hold untuk Kernel Package:**
+
+   Debian memiliki perintah untuk "menahan" paket agar tidak diperbarui. Anda bisa menggunakan perintah berikut untuk mencegah kernel dari pembaruan otomatis:
+
+   ```bash
+   sudo apt-mark hold linux-image-$(uname -r)
+   ```
+
+   Perintah ini akan "memegang" (hold) versi kernel yang saat ini sedang Anda gunakan, sehingga tidak akan diperbarui saat Anda melakukan `apt upgrade`.
+
+   Untuk melepas (unhold) kernel dan mengizinkan update kembali, gunakan:
+
+   ```bash
+   sudo apt-mark unhold linux-image-$(uname -r)
+   ```
+
+2. **Blokir Kernel Update melalui File Preferences (Optional):**
+
+   Anda juga bisa menggunakan file `preferences` di APT untuk memastikan kernel tidak diupdate. Langkah-langkahnya:
+
+   - Buat atau edit file di `/etc/apt/preferences.d/` (misalnya, `no-kernel-upgrade`):
+
+     ```bash
+     sudo nano /etc/apt/preferences.d/no-kernel-upgrade
+     ```
+
+   - Tambahkan baris berikut untuk menahan paket kernel:
+
+     ```plaintext
+     Package: linux-image*
+     Pin: release a=stable
+     Pin-Priority: -1
+     ```
+
+     Dengan pengaturan di atas, APT tidak akan memperbarui paket kernel (apapun yang diawali dengan `linux-image`). Jika Anda ingin menyesuaikan agar hanya memblokir versi tertentu, Anda dapat mengganti `*` dengan versi kernel yang ingin Anda tahan.
+
+3. **Cek dan Verifikasi:**
+
+   Setelah melakukan perubahan, Anda bisa memverifikasi apakah kernel sudah "ditahan" dari update dengan menjalankan:
+
+   ```bash
+   apt-mark showhold
+   ```
+
+   Ini akan menunjukkan daftar paket yang ditandai sebagai "hold."
+
+Dengan langkah-langkah di atas, kernel pada Debian Anda tidak akan diperbarui secara otomatis.
