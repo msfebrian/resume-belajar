@@ -1,3 +1,9 @@
+## Disable Kernel Update
+```
+masuk ke armbian-config
+cari freeze kernel update
+```
+
 ## Resolusi layar max 728p
 
 Resolusi layar desktop yang direkomendasikan maximal 728p. jika lebih dr itu berat, lag
