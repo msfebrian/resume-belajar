@@ -283,7 +283,7 @@ wget https://github.com/kasmtech/KasmVNC/releases/download/v1.3.2/kasmvncserver_
 
 sudo apt-get install ./kasmvncserver_bookworm_1.3.2_arm64.deb
 
-sudo addgroup febrian ssl-cert
+sudo addgroup $USER ssl-cert
 
 vncserver
 
