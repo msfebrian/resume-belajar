@@ -51,7 +51,7 @@ sudo apt install inxi mesa-utils neofetch
 ```
 aplikasi benchmark
 ```
-sudo apt install glmark2 glamark2-es2
+sudo apt install glmark2 glmark2-es2
 ```
 ``` 
 glxinfo | grep "OpenGL"   #--> dek menn=ggunakan LLVM atau 3d lima driver
@@ -63,9 +63,15 @@ glmark2    #--> cek kemampuan LLVM
 sudo nano /etc/X11/xorg.conf.d/01-armbian-defaults.conf
 sudo apt upgrade
 ```
+update mesa driver
+```
+sudo add-apt-repository ppa:oibaf/graphics-drivers
+sudo apt upgrade
+```
 cara cek menggunakan LLVM atau 3g lima driver
 ```
 glxinfo | grep "OpenGL"
 ```
+
 ## menonaktifkan display compositing di xfce
 masuk ke menu -> setting -> windows manager tweaks. nonaktifkan enable display compos glmark2
