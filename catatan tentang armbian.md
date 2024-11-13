@@ -44,3 +44,17 @@ install synaptic package manager
 ```
 sudo apt-get install synaptic
 ```
+
+# Install Driver 3d Lima Linux Armbian STB HG680P
+sudo apt install inxi mesa-utils neofetch
+sudo apt install glmark2 glamark2-es2   --> aplikasi benchmark
+glxinfo | grep "OpenGL"   -> dek menn=ggunakan LLVM atau 3d lima driver
+glmark2    --> cek kemampuan LLVM
+
+## mengaktifkan lima driver
+sudo nano /etc/X11/xorg.conf.d/01-armbian-defaults.conf
+sudo apt upgrade
+glxinfo | grep "OpenGL"  --> cek menggunakan LLVM atau 3g lima driver
+
+## menonaktifkan display compositing di xfce
+masuk ke menu -> setting -> windows manager tweaks. nonaktifkan enable display compos glmark2
