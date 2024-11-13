@@ -53,9 +53,13 @@ aplikasi benchmark
 ```
 sudo apt install glmark2 glmark2-es2
 ```
+## cek mennggunakan LLVM atau 3d lima driver
 ``` 
-glxinfo | grep "OpenGL"   #--> dek menn=ggunakan LLVM atau 3d lima driver
-glmark2    #--> cek kemampuan LLVM
+glxinfo | grep "OpenGL"
+```
+## cek kemampuan LLVM
+```
+glmark2    
 ```
 
 ## mengaktifkan lima driver
