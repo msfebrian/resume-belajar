@@ -63,7 +63,9 @@ glmark2    #--> cek kemampuan LLVM
 sudo nano /etc/X11/xorg.conf.d/01-armbian-defaults.conf
 sudo apt upgrade
 ```
-glxinfo | grep "OpenGL"  --> cek menggunakan LLVM atau 3g lima driver
-
+cara cek menggunakan LLVM atau 3g lima driver
+```
+glxinfo | grep "OpenGL"
+```
 ## menonaktifkan display compositing di xfce
 masuk ke menu -> setting -> windows manager tweaks. nonaktifkan enable display compos glmark2
