@@ -254,7 +254,7 @@ Please find below the commands that need to be applied:
 # cara install kasmvnc remote from Browser
 Link source kasmvnc
 ```
-https://github.com/kasmtech/KasmVNC/releases/tag/v1.3.2
+https://github.com/kasmtech/KasmVNC/releases
 ```
 
 ## Cara install kasmvnc 
