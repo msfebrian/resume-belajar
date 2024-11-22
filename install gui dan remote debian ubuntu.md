@@ -279,9 +279,9 @@ tail -f ~/.vnc/*.log
 ```
 contoh
 ```
-wget https://github.com/kasmtech/KasmVNC/releases/download/v1.3.3/kasmvncserver_bookworm_1.3.3_amd64.deb
+wget https://github.com/kasmtech/KasmVNC/releases/download/v1.3.3/kasmvncserver_bookworm_1.3.3_arm64.deb
 
-sudo apt-get install ./kasmvncserver_bookworm_1.3.3_amd64.deb
+sudo apt-get install ./kasmvncserver_bookworm_1.3.3_arm64.deb
 
 sudo addgroup $USER ssl-cert
 
