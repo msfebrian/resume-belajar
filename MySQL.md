@@ -18,7 +18,17 @@ CREATE USER 'nama_pengguna'@'%' IDENTIFIED BY 'kata_sandi_kuat';
 * **'nama_pengguna'@'%':** Mendefinisikan nama pengguna dan host yang diizinkan untuk login. Tanda '%' berarti pengguna dapat login dari host mana saja.
 * **'kata_sandi_kuat':** Ganti dengan kata sandi yang kuat.
 
-### 2. Memberikan Hak Akses
+### 2. Melihat daftar user database
+```sql
+SELECT user, host FROM mysql.user;
+```
+
+### 3. Melihat detail hak akses:
+```sql
+SHOW GRANTS FOR 'nama_user'@'host';
+```
+
+### 4. Memberikan Hak Akses
 
 ```sql
 GRANT ALL PRIVILEGES ON yourdatabase.* TO 'nama_pengguna'@'%';
