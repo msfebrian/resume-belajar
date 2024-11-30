@@ -17,6 +17,16 @@ CREATE USER 'nama_pengguna'@'%' IDENTIFIED BY 'kata_sandi_kuat';
 
 * **'nama_pengguna'@'%':** Mendefinisikan nama pengguna dan host yang diizinkan untuk login. Tanda '%' berarti pengguna dapat login dari host mana saja.
 * **'kata_sandi_kuat':** Ganti dengan kata sandi yang kuat.
+#### Merubah akses nama user dari host tertentu misal localhost
+cabut dahulu akses usernya
+```sql
+REVOKE ALL PRIVILEGES ON *.* FROM 'myuser'@'%';
+```
+rubah hak akses
+```sql
+GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'localhost';
+```
+  
 
 ### 2. Melihat daftar user database
 ```sql
