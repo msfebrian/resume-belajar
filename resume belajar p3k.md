@@ -11,9 +11,11 @@ Menetapkan standar kompetensi dan tugas pranata komputer dalam mengelola sistem 
 
 ## Metode Agile dalam Pengembangan Perangkat Lunak
 1. Perencanaan
-2. Implementasi
-3. Tes Perangkat Lunak
-4. Dokumentasi
-5. Deployment
-6. Pemeliharaan 
+2. Implementasi = pengkodean software
+3. Tes Perangkat Lunak = kontrol kualitas, perbaikan bug
+4. Dokumentasi 
+5. Deployment = menguji kualitas sistem telah memenuhi syarat, software sudah siap untuk di publish/dikembangkan
+6. Pemeliharaan
+
+
 
