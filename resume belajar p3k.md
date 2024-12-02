@@ -8,3 +8,12 @@ UU No. 11 Tahun 2008 tentang Informasi dan Transaksi Elektronik
 ```
 Menetapkan standar kompetensi dan tugas pranata komputer dalam mengelola sistem teknologi informasi
 ```
+
+## Metode Agile dalam Pengembangan Perangkat Lunak
+1. Perencanaan
+2. Implementasi
+3. Tes Perangkat Lunak
+4. Dokumentasi
+5. Deployment
+6. Pemeliharaan 
+
