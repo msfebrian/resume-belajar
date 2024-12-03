@@ -1077,6 +1077,10 @@ atau
 # Lihat ip address 
 ## Melihat detil semua alamat ip & network name pada system
 ```
+ifconfig
+```
+atau
+```
   sudo ip add
 ```
 
