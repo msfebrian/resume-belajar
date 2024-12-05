@@ -133,3 +133,33 @@ Misalnya, smartphone atau laptop Anda menggunakan Wi-Fi di rumah:
 Bayangkan IPv4 seperti nomor telepon lama dengan 10 digit. Karena jumlahnya terbatas, banyak orang tidak mendapat nomor. IPv6 adalah nomor telepon baru dengan **sangat banyak digit**, sehingga semua orang bisa mendapat nomor unik, bahkan untuk perangkat kecil seperti jam pintar atau sensor IoT.
 
 Semoga penjelasan ini simpel dan mudah dipahami! 😊
+
+
+# normalisasi basis data - bentuk-bentuk normal (normal form) dalam basis data:
+
+### Bentuk-Bentuk Normal dalam Basis Data
+
+Bentuk normal adalah suatu standar atau aturan dalam desain basis data relasional yang bertujuan untuk mengurangi redundansi data, meningkatkan integritas data, dan membuat basis data lebih fleksibel. Berikut penjelasan mengenai masing-masing bentuk normal:
+
+#### A. 1NF (Bentuk Normal Pertama)
+* **Definisi:** Setiap sel dalam tabel hanya boleh berisi satu nilai atomik (nilai tunggal yang tidak dapat dibagi lagi).
+* **Contoh pelanggaran:** Satu sel berisi beberapa nilai yang dipisahkan oleh koma (misal, "Jakarta, Bandung")
+* **Tujuan:** Mencegah terjadinya ambiguitas dan inkonsistensi data.
+
+#### B. 2NF (Bentuk Normal Kedua)
+* **Definisi:** Selain memenuhi 1NF, setiap atribut non-kunci harus sepenuhnya bergantung pada kunci utama.
+* **Contoh pelanggaran:** Ada atribut yang hanya bergantung pada sebagian kunci komposit.
+* **Tujuan:** Menghilangkan ketergantungan parsial pada kunci utama.
+
+#### C. 3NF (Bentuk Normal Ketiga)
+* **Definisi:** Selain memenuhi 2NF, tidak ada ketergantungan fungsional non-trivial dari atribut non-kunci ke atribut non-kunci lainnya.
+* **Contoh pelanggaran:** Ada atribut yang bergantung pada atribut non-kunci lainnya, bukan pada kunci utama.
+* **Tujuan:** Menghilangkan ketergantungan transitif.
+
+#### D. BCNF (Boyce-Codd Normal Form)
+* **Definisi:** Setiap penentu harus menjadi kunci kandidat.
+* **Tujuan:** Lebih ketat daripada 3NF, terutama untuk relasi dengan lebih dari satu kunci kandidat.
+
+#### E. 4NF (Bentuk Normal Keempat)
+* **Definisi:** Tidak ada multivalued dependencies (MVD) non-trivial yang tidak secara implisit didefinisikan oleh kunci kandidat.
+* **Tujuan:** Mengatasi masalah dengan ketergantungan multi-nilai.
