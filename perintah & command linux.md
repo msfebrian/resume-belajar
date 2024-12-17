@@ -509,6 +509,125 @@ contoh mencari file dgn nama cloud-init.log
 find /var/log/ | grep cloud-init.log
 ```
 
+Untuk mencari file di Command Line Interface (CLI) Linux, ada beberapa perintah yang dapat digunakan, tergantung pada kebutuhan spesifik. Berikut adalah perintah-perintah yang sering digunakan:
+
+---
+
+### 1. **Perintah `find`**
+Perintah ini sangat fleksibel untuk mencari file berdasarkan nama, tipe, ukuran, atau parameter lainnya. Contoh:
+
+#### a. Mencari file berdasarkan nama:
+```bash
+find /path/ke/direktori -name "nama_file"
+```
+**Contoh:**
+```bash
+find /home/user -name "dokumen.txt"
+```
+
+#### b. Mencari file tanpa memperhatikan huruf besar/kecil:
+```bash
+find /path/ke/direktori -iname "nama_file"
+```
+
+#### c. Mencari file berdasarkan tipe:
+- Hanya file biasa:
+  ```bash
+  find /path/ke/direktori -type f
+  ```
+- Hanya direktori:
+  ```bash
+  find /path/ke/direktori -type d
+  ```
+
+#### d. Mencari file berdasarkan ukuran:
+- File lebih besar dari 10MB:
+  ```bash
+  find /path/ke/direktori -size +10M
+  ```
+- File lebih kecil dari 1KB:
+  ```bash
+  find /path/ke/direktori -size -1k
+  ```
+
+#### e. Mencari file berdasarkan tanggal modifikasi:
+- File yang diubah dalam 7 hari terakhir:
+  ```bash
+  find /path/ke/direktori -mtime -7
+  ```
+- File yang diubah lebih dari 30 hari lalu:
+  ```bash
+  find /path/ke/direktori -mtime +30
+  ```
+
+---
+
+### 2. **Perintah `locate`**
+Perintah ini lebih cepat dibandingkan `find`, tetapi membutuhkan database yang diperbarui secara berkala menggunakan `updatedb`.
+
+#### a. Mencari file:
+```bash
+locate nama_file
+```
+**Contoh:**
+```bash
+locate dokumen.txt
+```
+
+#### b. Perbarui database `locate` (opsional jika hasil pencarian tidak sesuai):
+```bash
+sudo updatedb
+```
+
+---
+
+### 3. **Perintah `grep`**
+Jika Anda ingin mencari file berdasarkan kontennya, gunakan `grep`.
+
+#### a. Mencari teks dalam file:
+```bash
+grep "teks_yang_dicari" /path/ke/direktori/*
+```
+**Contoh:**
+```bash
+grep "password" /home/user/*
+```
+
+#### b. Rekursif mencari di semua subdirektori:
+```bash
+grep -r "teks_yang_dicari" /path/ke/direktori
+```
+
+---
+
+### 4. **Perintah `find` dengan `grep`**
+Untuk mencari file berdasarkan nama dan memeriksa kontennya, kombinasikan `find` dengan `grep`.
+
+#### Contoh:
+Mencari file bernama `*.txt` yang mengandung kata "laporan":
+```bash
+find /path/ke/direktori -name "*.txt" | xargs grep "laporan"
+```
+
+---
+
+### 5. **Perintah `ls` dengan `grep`**
+Jika direktori tidak terlalu besar, gunakan:
+```bash
+ls -R /path/ke/direktori | grep "nama_file"
+```
+
+---
+
+### Tips Tambahan
+- Gunakan wildcard (`*` atau `?`) untuk pencarian lebih fleksibel.
+  - `*.txt` untuk semua file dengan ekstensi `.txt`.
+  - `file?` untuk file dengan nama lima karakter, di mana karakter terakhir bervariasi.
+- Tambahkan opsi `-exec` pada `find` untuk menjalankan perintah pada file yang ditemukan, misalnya:
+  ```bash
+  find /path/ke/direktori -name "*.log" -exec rm {} \;
+  ```
+
 ## Membuka file dan edit dengan vim 
 ```
    contoh configurasi batasan file nextcloud
