@@ -70,6 +70,18 @@ apt install gnome
 apt install gnome-core gnome-shell gnome-terminal
 ```
 
+## Install Rekomendasi Extensi Gnome
+1. Install Extension Manager dari Store
+2. Install GNOME Tweaks
+3. Jika Tidak ada Ubuntu Dock install dari Extension Manager
+   - Ubuntu Dock atau
+   - Dash to Dock
+5. Install Vitals utk Monitor Hardware
+6. Install Compiz alike magic lamp effect
+7. Compiz windows effect
+8. Allow Locked Remote Desktop
+9. Jika bukan distro gnome bawaan ubuntu install Desktop Icon NG (DING) utk icon di desktop 
+
 # Install xfce desktop
 ```
 sudo apt install -y xfce4 xfce4-goodies
