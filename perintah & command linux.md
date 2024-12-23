@@ -92,28 +92,57 @@ contoh
 sudo usermod -l febrian admin
 ```
 
-## lihat daftar user dan status grupnya.
+## lihat daftar user dan status groupnya.
 
-Lihat list user & foldernya
+### Lihat list user & foldernya
 ```
    cat /etc/paswd atau getent passwd
 ```
-Lihat hanya nama pengguna (cut dan awk)
+
+### Lihat hanya nama pengguna (cut dan awk)
 ```
    cut -d: -f1 /etc/passwd
 ```
 
-melihat list user yg ada digroup sudo
+### melihat semua list group
+```
+cat /etc/group
+```
+atau tampil output group lebih bersih
+```
+getent group
+```
+
+### melihat list user yg ada digroup sudo
 ```
    sudo getent group sudo
 ```
 
-melihat status grup username
+### Menggunakan Perintah `cut` atau `awk`: Untuk hanya menampilkan nama grup:
+```
+cut -d: -f1 /etc/group
+```
+```
+getent group | awk -F: '{print $1}'
+```
+
+### melihat status grup username
 ```
    sudo groups nama_username
 ```
 
-Lihat direktori pengguna
+## Menghapus Group
+```
+sudo groupdel nama_grup
+```
+
+### Jika grup terkait dengan file atau direktori, gunakan perintah find untuk mencari semua file yang dimiliki oleh grup tersebut:
+```
+find / -group nama_grup
+```
+
+
+## Lihat direktori pengguna
 ```
    ls /home
 ```
