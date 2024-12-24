@@ -80,7 +80,8 @@ apt install gnome-core gnome-shell gnome-terminal
 6. Install Compiz alike magic lamp effect
 7. Compiz windows effect
 8. Allow Locked Remote Desktop
-9. Jika bukan distro gnome bawaan ubuntu install Desktop Icon NG (DING) utk icon di desktop 
+9. Bing Wallpaper
+10. Jika bukan distro gnome bawaan ubuntu install Desktop Icon NG (DING) utk icon di desktop 
 
 # Install xfce desktop
 ```
