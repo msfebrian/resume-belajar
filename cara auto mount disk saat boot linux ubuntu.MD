@@ -45,6 +45,10 @@ jika error jangan gunakan/hapus default 0 2.
 
 lakukan verifikasi dan pastikan tidak error sebelum reboot. jika error dan di reboot akan menyebabkan ke gagalan booting os
 ```
+sudo systemctl daemon-reload
+```
+
+```
 sudo findmnt --verify
 ```
 
