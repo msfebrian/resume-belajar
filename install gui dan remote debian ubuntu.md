@@ -74,6 +74,8 @@ apt install gnome-core gnome-shell gnome-terminal
 1. Install Extension Manager dari Store
 2. Install GNOME Tweaks
 3. Jika Tidak ada Ubuntu Dock install dari Extension Manager
+   - Dash2Dock Animated by dash2dock-lite@icedman.github.com (recomended)
+     atau
    - Ubuntu Dock atau
    - Dash to Dock
 5. Install Vitals utk Monitor Hardware
