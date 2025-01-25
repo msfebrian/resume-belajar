@@ -83,7 +83,7 @@ apt install gnome-core gnome-shell gnome-terminal
 9. Bing Wallpaper
 10. install Desktop Icon NG (DING) utk icon di desktop. Jika bukan distro gnome bawaan ubuntu Install Add To Desktop by Tommimon
 11.  Forge by forge-ext untuk otomatis manage multi windows dan bisa didisable dari panel
-12.  Gnome Fuzzy App Search untuk pencarian aplikasi dengan pencocokan ai / prediksi
+12.  Gnome Fuzzy App Search by charlotte untuk pencarian aplikasi dengan pencocokan ai / prediksi
 13.  Clipboard indicator by clipboard-indikator@tudmotu.com untuk list clipboard di panel
 14.  Logo Menu by logomenu@aryan_k untuk logo menu di header kiri atas panel gnome
 15.  [QSTweak] Quick Setting Tweaker by quick-setting-tweaks@qwreey untuk merubah posisi notifikasi yg semua di tengah dari menu jam ke menu paling kiri atas di grup menu wifi battery dll.
