@@ -347,3 +347,86 @@ Pada Debian 12 (dan distro Debian-based lainnya), Anda dapat menghentikan update
    Ini akan menunjukkan daftar paket yang ditandai sebagai "hold."
 
 Dengan langkah-langkah di atas, kernel pada Debian Anda tidak akan diperbarui secara otomatis.
+
+# Pilih Kernel Saat Booting (GRUB)
+Setelah install kernel baru, jangan langsung hapus kernel lama. Reboot dulu, lalu di menu GRUB, pilih "Advanced options for [distro kamu]" dan pilih kernel yang baru diinstal.
+
+Jika kernel baru berjalan lancar, kamu bisa menghapus kernel lama pakai:
+```sh
+sudo dnf remove kernel-5.xx.x  # Fedora  
+sudo apt remove linux-image-5.xx.x  # Debian  
+```
+# informasi kernel untuk intel gen 6
+Untuk Intel generasi ke-6 (Skylake), kernel yang paling stabil biasanya versi 5.10 hingga 6.1.
+
+- Kernel 5.10 LTS → Stabil dan masih mendapat pembaruan keamanan. Cocok kalau butuh sistem yang solid tanpa gangguan.
+- Kernel 5.15 LTS → Lebih baru dengan perbaikan pada driver i915 untuk GPU Intel.
+- Kernel 6.1 LTS → Salah satu kernel terbaru dengan dukungan jangka panjang, performa lebih baik, dan lebih optimal untuk Skylake.
+
+## cara install kernel
+cari dahulu di repository
+```
+sudo apt search kernel-lts  
+```
+install versi kernel lts
+```
+sudo apt install kernel-lts  
+```
+contoh install versi kernel yang diinginkan misalkan versi 5
+```
+sudo apt install linux-image-5.10.0-xx-amd64  
+```
+Jangan lupa juga install header-nya jika perlu:
+```
+sudo apt install linux-headers-5.10.0-xx-amd64  
+```
+
+# cek kernel yang terpasang
+```
+uname -r
+```
+
+# mengatasi hang
+Sepertinya kamu maksud **Intel Core i5-6600** atau **Intel UHD 660**? Kalau kamu pakai prosesor Intel generasi ke-6 (Skylake), memang ada beberapa masalah kompatibilitas dengan kernel baru, terutama terkait driver grafis.  
+
+Kalau setiap update kernel bikin sistem hang atau lag, bisa jadi ada konflik dengan driver **i915** (driver grafis Intel di Linux). Beberapa solusi yang bisa dicoba:  
+
+1. **Tambahkan opsi kernel di GRUB**  
+   - Edit GRUB:  
+     ```sh
+     sudo nano /etc/default/grub
+     ```  
+   - Tambahkan di `GRUB_CMDLINE_LINUX_DEFAULT`:  
+     ```
+     i915.enable_psr=0
+     ```
+   - Simpan, lalu update GRUB:  
+     ```sh
+     sudo update-grub
+     ```  
+   - Reboot dan lihat apakah masalahnya berkurang.  
+
+2. **Coba downgrade kernel**  
+   Kalau versi kernel terbaru malah bikin masalah, coba pakai kernel versi sebelumnya yang lebih stabil buat Skylake.  
+
+3. **Pastikan paket firmware Intel sudah terinstall**  
+   ```sh
+   sudo apt install firmware-misc-nonfree
+   ```  
+   atau di Fedora:  
+   ```sh
+   sudo dnf install linux-firmware
+   ```  
+
+4. **Gunakan Xorg, bukan Wayland**  
+   Kadang Wayland kurang stabil di GPU Intel lama. Coba masuk ke Xorg di login screen sebelum masuk desktop.  
+
+Kalau masih sering hang setelah update kernel, bisa coba cek log dengan:  
+```sh
+journalctl -b -1 -p err
+```  
+atau  
+```sh
+dmesg | grep -i i915
+```  
+Biar tahu apa penyebab spesifiknya. Kamu pakai GPU terpisah atau hanya yang bawaan Intel?
