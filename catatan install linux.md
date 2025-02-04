@@ -430,3 +430,89 @@ atau
 dmesg | grep -i i915
 ```  
 Biar tahu apa penyebab spesifiknya. Kamu pakai GPU terpisah atau hanya yang bawaan Intel?
+
+# Cara install vmware tool
+Berikut adalah panduan lengkap untuk menginstal VMware Tools (atau open-vm-tools) pada Debian:
+
+---
+
+### **Metode 1: Menggunakan `open-vm-tools` (Rekomendasi)**
+`open-vm-tools` adalah paket sumber terbuka yang dikelola komunitas dan lebih mudah diinstal. Cocok untuk Debian versi terbaru.
+
+1. **Perbarui Daftar Paket**
+   ```bash
+   sudo apt update
+   ```
+
+2. **Instal Paket open-vm-tools**
+   - Untuk Debian **tanpa antarmuka GUI** (server/headless):
+     ```bash
+     sudo apt install open-vm-tools
+     ```
+   - Untuk Debian **dengan GUI** (desktop):
+     ```bash
+     sudo apt install open-vm-tools open-vm-tools-desktop
+     ```
+
+3. **Restart Layanan** (opsional)
+   ```bash
+   sudo systemctl restart open-vm-tools
+   ```
+
+4. **Verifikasi Instalasi**
+   ```bash
+   sudo systemctl status open-vm-tools
+   ```
+   - Pastikan layanan aktif (`active (running)`).
+
+---
+
+### **Metode 2: Instal VMware Tools Manual (Lewat ISO)**
+Gunakan metode ini jika Anda memerlukan fitur spesifik dari VMware Tools versi resmi.
+
+1. **Persiapkan Dependensi**
+   ```bash
+   sudo apt update
+   sudo apt install build-essential linux-headers-$(uname -r)
+   ```
+
+2. **Mount ISO VMware Tools**
+   - Di VMware: Klik **VM > Install VMware Tools**.
+   - Di terminal Debian, mount ISO ke direktori:
+     ```bash
+     sudo mount /dev/cdrom /mnt
+     ```
+
+3. **Ekstrak dan Jalankan Instalasi**
+   ```bash
+   # Salin file installer ke direktori sementara
+   mkdir -p /tmp/vmware-tools
+   cd /tmp/vmware-tools
+   tar xzf /mnt/VMwareTools-*.tar.gz
+
+   # Jalankan installer
+   cd vmware-tools-distrib/
+   sudo ./vmware-install.pl -d
+   ```
+   - Tekan **Enter** untuk semua prompt jika menggunakan opsi `-d` (default).
+
+4. **Selesai dan Restart**
+   ```bash
+   sudo umount /mnt  # Unmount ISO
+   reboot
+   ```
+
+---
+
+### **Verifikasi Fungsi VMware Tools**
+- Cek versi:
+  ```bash
+  vmware-toolbox-cmd -v
+  ```
+- Fitur seperti *copy-paste*, *drag-drop*, dan resolusi layar otomatis seharusnya bekerja.
+
+### Catatan:
+- **Reboot** sistem setelah instalasi untuk memastikan semua modul kernel aktif.
+- Untuk Debian versi lama (misal: Debian 9), mungkin perlu menambahkan repositori `contrib` di `/etc/apt/sources.list`.
+
+Jika ada masalah, pastikan ISO VMware Tools terpasang dengan benar atau gunakan `sudo apt reinstall open-vm-tools` untuk memperbaiki instalasi.
