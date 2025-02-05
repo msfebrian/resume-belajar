@@ -516,3 +516,77 @@ Gunakan metode ini jika Anda memerlukan fitur spesifik dari VMware Tools versi r
 - Untuk Debian versi lama (misal: Debian 9), mungkin perlu menambahkan repositori `contrib` di `/etc/apt/sources.list`.
 
 Jika ada masalah, pastikan ISO VMware Tools terpasang dengan benar atau gunakan `sudo apt reinstall open-vm-tools` untuk memperbaiki instalasi.
+
+
+# Mengatasi Error 3d acceleration debian pada vmware
+
+Berikut adalah langkah-langkah untuk memperbaiki masalah 3D acceleration pada Debian di VMware:
+
+### 1. **Pastikan VMware Tools Terinstal dengan Benar**
+   - Gunakan **open-vm-tools** (rekomendasi untuk Debian modern):
+   ```bash
+   sudo apt update
+   sudo apt install open-vm-tools open-vm-tools-desktop
+   sudo apt install mesa-utils libgl1-mesa-dri libgl1-mesa-glx
+   ```
+
+   - Jika menggunakan **VMware Tools resmi**, pastikan:
+     - Paket `vmware-tools` terinstal
+     - Driver grafis VMware aktif
+
+### 2. **Periksa Driver Kernel**
+   - Pastikan driver `vmwgfx` (VMware SVGA) aktif:
+   ```bash
+   lsmod | grep vmwgfx
+   ```
+   - Jika tidak muncul, muat manual:
+   ```bash
+   sudo modprobe vmwgfx
+   ```
+
+### 3. **Konfigurasi Xorg**
+   - Buat file konfigurasi Xorg:
+   ```bash
+   sudo nano /etc/X11/xorg.conf.d/10-vmware.conf
+   ```
+   - Tambahkan konfigurasi ini:
+     ```conf
+     Section "Device"
+       Identifier  "VMware SVGA"
+       Driver      "vmware"
+       Option      "Accel3D" "true"
+     EndSection
+     ```
+
+### 4. **Update Mesa Drivers**
+   - Untuk Debian 11/12:
+   ```bash
+   sudo apt install mesa-utils mesa-vulkan-drivers libgl1-mesa-dri
+   ```
+
+### 5. **Verifikasi 3D Acceleration**
+   - Reboot VM
+   - Periksa Direct Rendering:
+   ```bash
+   glxinfo | grep -i "direct rendering"
+   ```
+   - Harus muncul: `direct rendering: Yes`
+
+### 6. **Cek Log Xorg**
+   - Periksa error grafis:
+   ```bash
+   grep -iE 'vmware|dri|3d' /var/log/Xorg.0.log
+   ```
+
+### 7. **Tips Tambahan**
+   - Pastikan versi VMware Workstation/Player **≥ 15.x**
+   - Gunakan Debian versi terbaru (11 Bullseye atau 12 Bookworm)
+   - Alokasi memori VRAM minimal **4GB** di setelan VM
+
+Jika masih bermasalah, coba:
+```bash
+sudo apt install xserver-xorg-video-vmware
+sudo apt --reinstall install libgl1-mesa-glx
+```
+
+Let me know jika Anda menemukan error spesifik dari log Xorg! 🐧
