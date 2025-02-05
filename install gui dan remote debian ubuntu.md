@@ -84,7 +84,6 @@ apt install gnome-core gnome-shell gnome-terminal
 8. Allow Locked Remote Desktop
 9. Bing Wallpaper
 10. install Desktop Icon NG (DING) utk icon di desktop. Jika bukan distro gnome bawaan ubuntu Install Add To Desktop by Tommimon
-    atau Dash2Dock Animated by icedman (untuk dock dengan animasi)
 12.  Forge by forge-ext untuk otomatis manage multi windows dan bisa didisable dari panel
 13.  Gnome Fuzzy App Search by charlotte untuk pencarian aplikasi dengan pencocokan ai / prediksi
 14.  Clipboard indicator by clipboard-indikator@tudmotu.com untuk list clipboard di panel
