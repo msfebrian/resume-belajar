@@ -97,7 +97,22 @@ Nilai default di Ubuntu adalah 60, tetapi menguranginya menjadi 10 akan meningka
 # penggunaan volume grup (vg) & lvm (list volume manager) .....
 
 # Catatan install debian
-## install sudo
+# masukkan user selain root ke sudoer
+```
+su
+dan masukkan password
+```
+```
+nano /etc/sudoers
+```
+masukkan user dibawah setelah root contoh memasukkan user febrian
+```
+# User privilege specification
+root    ALL=(ALL:ALL) ALL
+febrian    ALL=(ALL:ALL) ALL
+```
+
+## install sudo jika belum ada jika sudah ada skip
 bawaan debian tidak ada paket sudo. berikut cara installnya.
 1. masuk dengan user root.
 ```
@@ -124,6 +139,7 @@ melihat status grup username
 ```
    sudo groups nama_username
 ```
+
 
 # install snap sdh di test di armbian
 ```
