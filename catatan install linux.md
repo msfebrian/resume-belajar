@@ -140,6 +140,33 @@ melihat status grup username
    sudo groups nama_username
 ```
 
+# Disable Kernel Update
+cari caranya dicatatan bawah
+
+# Tambahkan repository untuk install driver nvidia
+```
+sudo add-apt-repository contrib
+```
+```
+sudo add-apt-repository non-free
+```
+```
+sudo apt update
+```
+```
+sudo apt install nvidia-driver
+```
+
+# setting time out select os di grub debian desktop (jika diperlukan)
+```
+sudo nano /etc/default/grub
+```
+```
+sudo upgrade-grub
+```
+```
+sudo reboot now
+```
 
 # install snap sdh di test di armbian
 ```
