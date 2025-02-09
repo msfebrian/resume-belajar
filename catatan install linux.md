@@ -103,6 +103,11 @@ su
 dan masukkan password
 ```
 ```
+sudo visudo
+```
+
+atau
+```
 nano /etc/sudoers
 ```
 masukkan user dibawah setelah root contoh memasukkan user febrian
