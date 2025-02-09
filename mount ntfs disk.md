@@ -75,6 +75,7 @@ tambahkan entri berikut ke file /etc/fstab:
 Simpan dan tutup file, lalu jalankan perintah ```
 mount -a 
 ```
+```
 
 untuk memasang semua partisi yang dikonfigurasi dalam /etc/fstab.
 
