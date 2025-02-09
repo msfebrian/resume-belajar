@@ -1625,3 +1625,73 @@ Berikut adalah penjelasan mengapa perintah `shutdown now` dan `reboot now` mungk
 - Jika semua solusi gagal, pastikan tidak ada layanan atau proses yang menggantung (hang) yang menghalangi shutdown/reboot.
 
 Semoga membantu! 🙌
+
+# install aplikasi flatpak dari terminal 
+Ya, aplikasi Flatpak dapat diinstal melalui terminal di Debian. Berikut langkah-langkahnya:
+
+---
+
+### **1. Instal Flatpak**  
+Pastikan paket `flatpak` terinstal di sistem Anda:  
+```bash
+sudo apt update
+sudo apt install flatpak
+```
+
+---
+
+### **2. Tambahkan Repository Flathub**  
+Flathub adalah repositori utama untuk aplikasi Flatpak. Tambahkan dengan perintah:  
+```bash
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+```
+
+---
+
+### **3. Instal Aplikasi Flatpak**  
+Cari aplikasi yang ingin diinstal (misal: GIMP) di [Flathub](https://flathub.org), lalu gunakan ID aplikasinya. Contoh:  
+```bash
+flatpak install flathub org.gimp.GIMP
+```
+
+- Untuk instalasi **sistem-wide** (untuk semua pengguna), tambahkan `--system`:  
+  ```bash
+  sudo flatpak install --system flathub org.gimp.GIMP
+  ```
+
+- Untuk instalasi **user-specific** (hanya pengguna saat ini), gunakan:  
+  ```bash
+  flatpak install --user flathub org.gimp.GIMP
+  ```
+
+---
+
+### **4. Jalankan Aplikasi**  
+Setelah terinstal, jalankan melalui terminal dengan:  
+```bash
+flatpak run <application-id>
+# Contoh:
+flatpak run org.gimp.GIMP
+```
+
+Atau cari aplikasi di menu aplikasi Debian (GUI).
+
+---
+
+### **5. Perbarui Aplikasi Flatpak**  
+Update semua aplikasi Flatpak dengan:  
+```bash
+flatpak update
+```
+
+---
+
+### **Catatan Penting**  
+- Flatpak terpisah dari paket `.deb` Debian, sehingga aplikasi Flatpak tidak akan mengganggu paket sistem.  
+- Pastikan sistem Debian Anda sudah diperbarui sebelum instalasi (`sudo apt update && sudo apt upgrade`).  
+- Untuk menghapus aplikasi, gunakan:  
+  ```bash
+  flatpak uninstall <application-id>
+  ```
+
+Jika ada masalah, pastikan layanan `flatpak` aktif dan repositori Flathub sudah ditambahkan dengan benar.
