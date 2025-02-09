@@ -72,9 +72,10 @@ tambahkan entri berikut ke file /etc/fstab:
 /dev/sda1 /mnt/fat32 vfat rw,user,exec,umask=000 0 0
 ```
 
-Simpan dan tutup file, lalu jalankan perintah ```
-mount -a 
+Simpan dan tutup file, lalu jalankan perintah 
+ 
 ```
+mount -a
 ```
 
 untuk memasang semua partisi yang dikonfigurasi dalam /etc/fstab.
