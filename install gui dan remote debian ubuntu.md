@@ -90,6 +90,75 @@ apt install gnome-core gnome-shell gnome-terminal
 15.  Logo Menu by logomenu@aryan_k untuk logo menu di header kiri atas panel gnome
 16.  [QSTweak] Quick Setting Tweaker by quick-setting-tweaks@qwreey untuk merubah posisi notifikasi yg semua di tengah dari menu jam ke menu paling kiri atas di grup menu wifi battery dll.
 
+## Cara Backup dan Restore Konfigurasi, Extension dan Theme Gnome
+Untuk mencadangkan (backup) konfigurasi tema dan ekstensi GNOME di Debian, Anda dapat mengikuti langkah-langkah berikut:
+
+### 1. **Backup Tema GNOME**
+Tema GNOME biasanya disimpan di direktori `~/.themes` (untuk tema yang diinstal secara manual) atau `/usr/share/themes` (untuk tema sistem). Anda bisa menyalin direktori tersebut ke lokasi cadangan.
+
+```bash
+cp -r ~/.themes /path/ke/lokasi/backup
+```
+
+Jika Anda menggunakan tema sistem:
+```bash
+cp -r /usr/share/themes /path/ke/lokasi/backup
+```
+
+### 2. **Backup Ekstensi GNOME**
+Ekstensi GNOME disimpan di direktori `~/.local/share/gnome-shell/extensions`. Anda bisa menyalin direktori tersebut ke lokasi cadangan.
+
+```bash
+cp -r ~/.local/share/gnome-shell/extensions /path/ke/lokasi/backup
+```
+
+### 3. **Backup Konfigurasi GNOME**
+Konfigurasi GNOME disimpan di direktori `~/.config/dconf`. File `user` di dalam direktori ini berisi pengaturan GNOME, termasuk tema dan ekstensi yang aktif.
+
+```bash
+cp ~/.config/dconf/user /path/ke/lokasi/backup
+```
+
+### 4. **Backup Daftar Ekstensi yang Terpasang**
+Anda juga bisa mencadangkan daftar ekstensi yang terpasang menggunakan perintah berikut:
+
+```bash
+gnome-extensions list > /path/ke/lokasi/backup/gnome-extensions-list.txt
+```
+
+### 5. **Restore Backup**
+Untuk mengembalikan backup, Anda cukup menyalin kembali file dan direktori yang telah dicadangkan ke lokasi aslinya.
+
+- **Tema:**
+  ```bash
+  cp -r /path/ke/lokasi/backup/.themes ~/
+  ```
+
+- **Ekstensi:**
+  ```bash
+  cp -r /path/ke/lokasi/backup/extensions ~/.local/share/gnome-shell/
+  ```
+
+- **Konfigurasi GNOME:**
+  ```bash
+  cp /path/ke/lokasi/backup/user ~/.config/dconf/
+  ```
+
+Setelah mengembalikan file konfigurasi, Anda mungkin perlu memuat ulang pengaturan dengan perintah:
+
+```bash
+dconf load / < ~/.config/dconf/user
+```
+
+### 6. **Mengaktifkan Ekstensi**
+Setelah mengembalikan ekstensi, Anda mungkin perlu mengaktifkannya kembali melalui `gnome-shell-extension-prefs` atau `gnome-tweaks`.
+
+### Catatan:
+- Pastikan Anda memiliki hak akses yang sesuai saat menyalin file dan direktori.
+- Jika Anda menggunakan GNOME Shell versi yang berbeda setelah restore, beberapa ekstensi mungkin tidak kompatibel.
+
+Dengan mengikuti langkah-langkah di atas, Anda dapat mencadangkan dan mengembalikan konfigurasi tema dan ekstensi GNOME di Debian dengan mudah.
+
 # Install xfce desktop
 ```
 sudo apt install -y xfce4 xfce4-goodies
