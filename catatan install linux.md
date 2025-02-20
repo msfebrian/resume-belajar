@@ -208,6 +208,17 @@ Pilih Universal Access (Akses Universal) atau Accessibility (Aksesibilitas), ter
 Cari opsi Bounce Keys atau Keyboard (Tombol Keyboard) dan pastikan fitur tersebut tidak diaktifkan.
 Jika masalah tidak terkait dengan Bounce Keys, mungkin ada pengaturan lain yang mempengaruhi responsivitas keyboard. Anda juga bisa mencoba mengecek pengaturan Repeat Keys (Ulangi Tombol) di bagian Keyboard dari Settings. Pastikan pengaturan untuk kecepatan ulang dan penundaan ulang sesuai dengan preferensi Anda.
 
+# install plank panel dock plank di cinnamon & kde
+install plank
+```
+sudo apt update
+sudo apt install plank
+```
+konfigurasi plank
+```
+plank --preferences
+```
+
 # CARA AUTO MOUNT DISK SAAT BOOT DI LINUX UBUNTU SERVER
 
 masuk terlebih dahulu ke super admin
