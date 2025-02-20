@@ -218,7 +218,7 @@ konfigurasi plank
 ```
 plank --preferences
 ```
-setting statup
+setting startup plank
 ```
 - masuk ke system setting
 - pilih Startup Application
