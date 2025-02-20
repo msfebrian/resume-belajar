@@ -222,6 +222,7 @@ setting startup plank
 ```
 - masuk ke system setting
 - pilih Startup Application
+- + tambahkan plank
 - Aktifkan Plank
 ```
 
