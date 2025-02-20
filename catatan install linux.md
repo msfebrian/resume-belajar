@@ -208,7 +208,7 @@ Pilih Universal Access (Akses Universal) atau Accessibility (Aksesibilitas), ter
 Cari opsi Bounce Keys atau Keyboard (Tombol Keyboard) dan pastikan fitur tersebut tidak diaktifkan.
 Jika masalah tidak terkait dengan Bounce Keys, mungkin ada pengaturan lain yang mempengaruhi responsivitas keyboard. Anda juga bisa mencoba mengecek pengaturan Repeat Keys (Ulangi Tombol) di bagian Keyboard dari Settings. Pastikan pengaturan untuk kecepatan ulang dan penundaan ulang sesuai dengan preferensi Anda.
 
-# install plank panel dock di xfce, cinnamon, & kde
+# install plank panel dock di xfce & cinnamon
 install plank
 ```
 sudo apt update
@@ -678,3 +678,7 @@ Ferdium = WhatsApp Client
 XnConvert = Batch Foto Editor/Compress/Resize
 Mission Center = Task Manager 
 Fondo = repository wallpaper
+
+# Aplikasi di KDE
+latte-dock
+gtile
