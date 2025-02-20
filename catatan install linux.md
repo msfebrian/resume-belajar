@@ -208,16 +208,17 @@ Pilih Universal Access (Akses Universal) atau Accessibility (Aksesibilitas), ter
 Cari opsi Bounce Keys atau Keyboard (Tombol Keyboard) dan pastikan fitur tersebut tidak diaktifkan.
 Jika masalah tidak terkait dengan Bounce Keys, mungkin ada pengaturan lain yang mempengaruhi responsivitas keyboard. Anda juga bisa mencoba mengecek pengaturan Repeat Keys (Ulangi Tombol) di bagian Keyboard dari Settings. Pastikan pengaturan untuk kecepatan ulang dan penundaan ulang sesuai dengan preferensi Anda.
 
-# install plank panel dock di cinnamon & kde
+# install plank panel dock di xfce, cinnamon, & kde
 install plank
 ```
 sudo apt update
 sudo apt install plank
 ```
-konfigurasi plank dan sesuaikan
+buka konfigurasi plank dan sesuaikan
 ```
 plank --preferences
 kemudian tekan ctrl c jika sudah dikonfigurasi
+atau ctr + klik kanan pada dock
 ```
 
 setting startup plank
@@ -228,6 +229,15 @@ setting startup plank
 - Aktifkan Plank
 - tekan tombol gear dibawah dan tekan run new
 ```
+
+# rekomendasi aplikasi di xfce
+1. Kupfer = launcher ringan 
+- setting search hnya application
+- setting auto start di system setting dan kupfer preference
+- disable icon notification 
+2. xfce-appmenu-plugin (global menu)
+- pcmanfm (alternatif thunar file manager)
+
 
 # CARA AUTO MOUNT DISK SAAT BOOT DI LINUX UBUNTU SERVER
 
@@ -659,3 +669,12 @@ sudo apt --reinstall install libgl1-mesa-glx
 ```
 
 Let me know jika Anda menemukan error spesifik dari log Xorg! 🐧
+
+# Rekomendasi aplikasi di linux
+Reaper DAW = Editing Audio
+KeePassXC = Password manager
+AnyType = Text Editor
+Ferdium = WhatsApp Client 
+XnConvert = Batch Foto Editor/Compress/Resize
+Mission Center = Task Manager 
+Fondo = repository wallpaper
