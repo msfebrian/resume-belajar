@@ -214,16 +214,19 @@ install plank
 sudo apt update
 sudo apt install plank
 ```
-konfigurasi plank
+konfigurasi plank dan sesuaikan
 ```
 plank --preferences
+kemudian tekan ctrl c jika sudah dikonfigurasi
 ```
+
 setting startup plank
 ```
 - masuk ke system setting
 - pilih Startup Application
-- + tambahkan plank
+- tekan tombol + dibawah dan tambahkan plank
 - Aktifkan Plank
+- tekan tombol gear dibawah dan tekan run new
 ```
 
 # CARA AUTO MOUNT DISK SAAT BOOT DI LINUX UBUNTU SERVER
