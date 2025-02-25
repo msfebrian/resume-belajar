@@ -954,6 +954,10 @@ apt search php
 ```
    sudo apt remove nama_package
 ```
+untuk full remove package
+```
+  sudo apt --purge autoremove nama_package
+```
 
 ## install package deb
 ```
