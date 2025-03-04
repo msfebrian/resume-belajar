@@ -326,7 +326,7 @@ create mask = 0777
 directory mask = 0777
 force user = root
 ```
-rumah parameter berikut
+rubah parameter berikut
 ```
 public = No
 guest ok = No
