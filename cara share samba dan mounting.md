@@ -333,3 +333,5 @@ guest ok = No
 #force user = root
 valid users = nama_user
 ```
+## note
+kelemahan di casa os untuk share folder private akan kembali ke reset ketika menambahkan share folder baru. maka perlu di konfigurasi ulang.
