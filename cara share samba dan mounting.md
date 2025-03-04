@@ -304,7 +304,7 @@ sudo smbpasswd -a dadan
 sudo systemctl restart smbd
 ```
 
-## cek user apakah terdaftar di samba
+## cek user apakah sudah terdaftar di samba
 ```
 sudo smbpasswd -x nama_user
 ```
@@ -315,6 +315,11 @@ sudo smbpasswd -x nama_user
 ```
 useradd nama_user
 smbpasswd -a nama_user
+```
+
+cek user apakah sudah terdaftar di samba
+```
+sudo smbpasswd -x nama_user
 ```
 3. edit file di konfig di `/etc/samba/smb.casa.conf` bisa melalui file manager casa os atau terminal
 contoh konfigurasi sebelum edit
