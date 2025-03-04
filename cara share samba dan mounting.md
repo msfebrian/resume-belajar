@@ -304,6 +304,10 @@ sudo smbpasswd -a dadan
 sudo systemctl restart smbd
 ```
 
+## cek user apakah terdaftar di samba
+```
+sudo smbpasswd -x nama_user
+```
 
 # Konfigurasi password share di SMB Casa OS
 1. siapkan folder untuk di share private kemudian aktifkan share dari casa os
