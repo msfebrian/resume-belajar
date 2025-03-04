@@ -305,4 +305,31 @@ sudo systemctl restart smbd
 ```
 
 
-
+# Konfigurasi password share di SMB Casa OS
+1. siapkan folder untuk di share private kemudian aktifkan share dari casa os
+2. buat user dan password untuk smb
+```
+useradd nama_user
+smbpasswd -a nama_user
+```
+3. edit file di konfig di `/etc/samba/smb.casa.conf` bisa melalui file manager casa os atau terminal
+contoh konfigurasi sebelum edit
+```
+[SAFIYA]
+comment = CasaOS share SAFIYA
+public = Yes
+path = /media/devmon/SAFIYA
+browseable = Yes
+read only = No
+guest ok = Yes
+create mask = 0777
+directory mask = 0777
+force user = root
+```
+rumah parameter berikut
+```
+public = No
+guest ok = No
+#force user = root
+valid users = nama_user
+```
