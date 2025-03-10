@@ -1087,9 +1087,14 @@ sebelum enable firewall pastikan juga user telah diijinkan akses ssh agar dapat 
   
 ```
 
-hapus firewall
+format perintah hapus firewall
 ```
-   sudo ufw delete allow 8291
+  ufw delete action port/app/number/protocol
+```
+contoh hapus firewall
+```
+  sudo ufw delete allow 8291
+  sudo ufw delete allow 8088/tcp
 ```
 
 ## Konfigurasi Trusted Domain OpenSSH
